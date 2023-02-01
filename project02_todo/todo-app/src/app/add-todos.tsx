@@ -24,7 +24,7 @@ export default function AddTodos() {
           setName("");
         }}
       >
-        Add Notes
+        Insert
       </button>
     </div>
   );

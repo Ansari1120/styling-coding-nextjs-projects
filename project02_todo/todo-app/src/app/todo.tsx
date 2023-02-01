@@ -29,7 +29,7 @@ export default function Todo({ todo }: any) {
       />
       <span>{todo.name}</span>
       <button onClick={() => DeleteTodo(todo.id, router.refresh)}>
-        Delete
+        Discard !
       </button>
     </>
   );
