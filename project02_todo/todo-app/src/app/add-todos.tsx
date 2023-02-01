@@ -27,7 +27,6 @@ export default function AddTodos() {
       >
         Insert
       </button>
-
     </div>
   );
 }
