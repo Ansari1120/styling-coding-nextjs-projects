@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+
 async function Add(name: any, refresh: any) {
   await fetch(`/api/todo/add`, {
     method: "POST",
@@ -26,6 +27,7 @@ export default function AddTodos() {
       >
         Insert
       </button>
+
     </div>
   );
 }

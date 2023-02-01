@@ -5,7 +5,8 @@
 // const inter = Inter({ subsets: ['latin'] })
 
 import AddTodos from "./add-todos";
-import TodoList from "./todo-list";
+import Listing from "./hawai";
+
 export default function Home() {
   return (
     <>
@@ -13,7 +14,8 @@ export default function Home() {
         <AddTodos />
       </div>
       <div>
-        <TodoList />
+      <Listing/>
+
       </div>
     </>
   );
