@@ -5,18 +5,27 @@ const getTodos = async () => {
 };
 export default async function TodoList() {
   const { todos } = await getTodos();
-  console.log(todos);
   return (
-    <div>
-      <ul>
-        {todos.map((t: any) => {
-          return (
-            <li key={t.id}>
-              <Todo todo = {t}/>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <>
+      {
+        <ul style={{ listStyleType: "none", padding: 0 }}>
+          {todos.map((t: any) => {
+            return (
+              <li
+                style={{
+                  color: t.isDone ? "green" : "orange",
+                  fontStyle: "oblique",
+                  listStyle: "none",
+                  padding: "5px 0",
+                }}
+                key={t.id}
+              >
+                <Todo todo={t} />
+              </li>
+            );
+          })}
+        </ul>
+      }
+    </>
   );
 }
