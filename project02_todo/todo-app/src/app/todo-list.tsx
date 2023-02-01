@@ -4,7 +4,7 @@ const getTodos = async () => {
   return todos.json();
 };
 export default async function TodoList() {
-  let {todos} = await getTodos();
+  let { todos } = await getTodos();
   return (
     <>
       {
@@ -20,7 +20,7 @@ export default async function TodoList() {
                 }}
                 key={t.id}
               >
-                <Todo todo={t} />
+                {<Todo todo={t} />}
               </li>
             );
           })}
@@ -29,4 +29,3 @@ export default async function TodoList() {
     </>
   );
 }
-

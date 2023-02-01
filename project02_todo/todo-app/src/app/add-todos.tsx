@@ -9,7 +9,8 @@ async function Add(name: any, refresh: any) {
   });
   refresh();
 }
-export default function AddTodos() {
+
+export default function AddTodo() {
   const router = useRouter();
   let [name, setName] = useState("");
   return (
