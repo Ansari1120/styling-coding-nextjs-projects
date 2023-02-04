@@ -4,17 +4,13 @@
 
 // const inter = Inter({ subsets: ['latin'] })
 
-import AddTodos from "../component/add-todos";
-import TodoList from "../component/todo-list";
+import AddTodos from "../component/todo-list";
 
 export default function Home() {
   return (
     <>
       <div>
         <AddTodos />
-      </div>
-      <div>
-        <TodoList />
       </div>
     </>
   );
