@@ -33,3 +33,6 @@ export default function Post() {
     </>
   );
 }
+
+// if we have many pages we organize them in the form of route groups
+// route groups are the folder comes between main folder and sub folder looks like (abc) or [abc]
