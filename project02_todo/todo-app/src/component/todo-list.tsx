@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-
+import "../styling/styling.css";
 async function Add(name: any, refresh?: any) {
   await fetch(`/api/todo/add`, {
     method: "POST",
@@ -51,27 +51,7 @@ export default function AddTodo() {
   let [toggleSubmit, setTogggleSubmit] = useState(true);
   let [EditItemID, setEditItemID] = useState(null);
   let [Editname, setEditName] = useState("");
-  let addTodos = () => {
-    // if (name && !toggleSubmit) {
-    //   // const edit_handle = async (e:any) => {
-    //   //   let response = await fetch(`api/todo/${todo.id}`,{name:setEditItemID})
-    //   // };
-    //   // async () => {
-    //   //   await updateEditedTodo(EditItemID, newTodo.name);
-    //   // };
-    //   setTodos(
-    //     todos.map((x: any) => {
-    //       if (x.id === EditItemID) {
-    //         return { ...x, name: name };
-    //       }
-    //       return x;
-    //     })
-    //   );
-    //   setTogggleSubmit(true);
-    //   setEditItemID(null);
-    //   setName("");
-    // }
-  };
+
   let newTodo: any;
   //edit earlier todo
   editTodo = (id: any) => {
@@ -87,7 +67,6 @@ export default function AddTodo() {
     };
     fetchData();
   }, [todos]);
-  // todos = Array.from(todos);
 
   return (
     <div>
@@ -132,15 +111,6 @@ export default function AddTodo() {
           <button
             title="update item"
             onClick={async () => {
-              // setTodos(
-              //   todos.map((x: any) => {
-              //     if (x.id === EditItemID) {
-              //       return { ...x, name: name };
-              //     }
-              //     return x;
-              //   })
-              // );
-              //  setTodos(Editname);
               await updateEditedTodo(EditItemID, Editname, router.refresh);
 
               setTogggleSubmit(true);
@@ -155,17 +125,20 @@ export default function AddTodo() {
 
       {/*  ............................................Todo list.......................................  */}
       <ul style={{ listStyleType: "none", padding: 0 }}>
-        {todos.map((t: any) => {
+        {todos.map((t: any, i: any) => {
           return (
             <li
               style={{
-                color: t.isDone ? "green" : "orange",
+                color: t.isDone ? "green" : "black",
                 fontStyle: "oblique",
                 listStyle: "none",
                 padding: "5px 0",
+                fontWeight: "bold",
               }}
               key={t.id}
+              className="card"
             >
+              {i}
               {<Todo todo={t} />}
             </li>
           );
