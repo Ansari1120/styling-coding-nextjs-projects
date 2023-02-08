@@ -21,10 +21,9 @@ export default function Pricing() {
           m="auto"
           mt={"-150"}
           bg="white"
-          height="336"
+          height="300"
           overflow={"hidden"}
           boxShadow=" 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04)"
-          borderRadius="16px"
         >
           {/* main container */}
           <Flex>
@@ -47,19 +46,19 @@ export default function Pricing() {
                 Access these features when you get this pricing package for your
                 business.
               </Text>
-              <HStack mb="10px" paddingTop={"7px"}>
+              <HStack>
                 <Icon as={checkmarkicon}></Icon>
                 <Text>International calling and messaging API</Text>
               </HStack>
-              <HStack mb="10px" paddingTop={"7px"}>
+              <HStack>
                 <Icon as={checkmarkicon}></Icon>
                 <Text>Additional phone numbers</Text>
               </HStack>
-              <HStack mb="10px" paddingTop={"7px"}>
+              <HStack>
                 <Icon as={checkmarkicon}></Icon>
                 <Text>Automated messages via Zapier</Text>
               </HStack>
-              <HStack mb="10px" paddingTop={"7px"}>
+              <HStack>
                 <Icon as={checkmarkicon}></Icon>
                 <Text>24/7 support and consulting</Text>
               </HStack>

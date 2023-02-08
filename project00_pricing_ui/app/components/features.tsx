@@ -8,6 +8,7 @@ import {
   Heading,
   HStack,
   Icon,
+  SimpleGrid,
   Text,
 } from "@chakra-ui/react";
 import staricon from "../icons/staricon";
@@ -15,14 +16,8 @@ import iconetwo from "../icons/iconetwo";
 import iconethree from "../icons/iconethree";
 export default function Features() {
   return (
-    <Box
-      w={"800"}
-      m="auto"
-      mt="15px"
-      alignContent={"center"}
-      position="absolute"
-    >
-      <Flex>
+    <Box margin={"auto"} mt="20px" px={"50px"}>
+      <Flex justifyContent={"center"} gap="5">
         <HStack>
           <Icon as={staricon}></Icon>
           <Text>30 days money back Guarantee</Text>
