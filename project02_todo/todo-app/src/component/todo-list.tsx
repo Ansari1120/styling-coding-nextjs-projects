@@ -87,7 +87,6 @@ export default function AddTodo() {
             <Input
               mb="20px"
               width="400px"
-              variant="filled"
               placeholder="add text"
               type="text"
               onChange={(e) => {
