@@ -5,7 +5,6 @@ import {
   ColorModeScript,
   useColorModeValue,
 } from "@chakra-ui/react";
-
 import theme from "./theme";
 
 export default function RootLayout({

@@ -13,11 +13,15 @@ import { AddIcon, DeleteIcon, EditIcon } from "@chakra-ui/icons";
 // The default icon size is 1em (16px)
 
 async function Add(name: any, refresh?: any) {
-  await fetch(`/api/todo/add`, {
-    method: "POST",
-    body: JSON.stringify({ name }),
-  });
-  refresh();
+  if (name.length > 0) {
+    await fetch(`/api/todo/add`, {
+      method: "POST",
+      body: JSON.stringify({ name }),
+    });
+    refresh();
+  } else {
+    alert("input required !");
+  }
 }
 
 const getTodos = async () => {
