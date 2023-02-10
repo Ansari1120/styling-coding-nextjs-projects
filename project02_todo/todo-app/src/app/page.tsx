@@ -1,17 +1,15 @@
-// import Image from 'next/image'
-// import { Inter } from '@next/font/google'
-// import styles from './page.module.css'
-
-// const inter = Inter({ subsets: ['latin'] })
+"use client";
+import { ChakraProvider, Heading } from "@chakra-ui/react";
 
 import AddTodos from "../component/todo-list";
 
 export default function Home() {
   return (
-    <>
-      <div>
-        <AddTodos />
-      </div>
-    </>
+    <ChakraProvider>
+      <Heading fontSize="45" fontWeight="semibold" textAlign="center" mt="20px" mb="30px">
+        Best Todo App
+      </Heading>
+      <AddTodos />
+    </ChakraProvider>
   );
 }

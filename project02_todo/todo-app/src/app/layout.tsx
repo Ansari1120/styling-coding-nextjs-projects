@@ -1,9 +1,7 @@
-// import './globals.css'
-
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -12,8 +10,9 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>
-        <h1>Best Todo App</h1>{children}</body>
+      <body style={{ backgroundColor: "rgba(218, 218, 218, 0.8)" }}>
+        {children}
+      </body>
     </html>
-  )
+  );
 }

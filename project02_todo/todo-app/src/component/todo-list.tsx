@@ -1,7 +1,17 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import "../styling/styling.css";
+import {
+  Box,
+  IconButton,
+  Input,
+  SimpleGrid,
+  textDecoration,
+} from "@chakra-ui/react";
+import { AddIcon, DeleteIcon, EditIcon } from "@chakra-ui/icons";
+
+// The default icon size is 1em (16px)
+
 async function Add(name: any, refresh?: any) {
   await fetch(`/api/todo/add`, {
     method: "POST",
@@ -55,7 +65,7 @@ export default function AddTodo() {
   let newTodo: any;
   //edit earlier todo
   editTodo = (id: any) => {
-    newTodo = todos.find((t: any) => t.id === id); // when todos id matched with triggered id of edit todo function of edit todo button return it
+    newTodo = todos.find((t: any) => t.id === id); // when todos id matched with triggered id of edit todo function of edit todo IconButton return it
     setEditName(newTodo.name); // set edit todo fetched(newtodo) name into set edit item id
     setTogggleSubmit(false);
     setEditItemID(newTodo.id);
@@ -70,83 +80,123 @@ export default function AddTodo() {
 
   return (
     <div>
-      {
-        //add input
-        toggleSubmit ? (
-          <input
-            placeholder="add text"
-            type="text"
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
-            value={name}
-          />
-        ) : (
-          //edit input
-          <input
-            placeholder="change Text"
-            type="text"
-            onChange={(e) => {
-              setEditName(e.target.value);
-            }}
-            value={Editname}
-          />
-        )
-      }
-
-      {
-        //add button
-        toggleSubmit ? (
-          <button
-            title="add item"
-            onClick={async () => {
-              await Add(name, router.refresh);
-              setName("");
-            }}
-          >
-            Insert
-          </button>
-        ) : (
-          //edit button
-          <button
-            title="update item"
-            onClick={async () => {
-              await updateEditedTodo(EditItemID, Editname, router.refresh);
-
-              setTogggleSubmit(true);
-              setEditItemID(null);
-              setEditName("");
-            }}
-          >
-            edit
-          </button>
-        )
-      }
-
-      {/*  ............................................Todo list.......................................  */}
-      <ul style={{ listStyleType: "none", padding: 0 }}>
-        {todos.map((t: any, i: any) => {
-          return (
-            <li
-              style={{
-                color: t.isDone ? "green" : "black",
-                fontStyle: "oblique",
-                listStyle: "none",
-                padding: "5px 0",
-                fontWeight: "bold",
+      <Box textAlign={"center"}>
+        {
+          //add Input
+          toggleSubmit ? (
+            <Input
+              mb="20px"
+              width="400px"
+              variant="filled"
+              placeholder="add text"
+              type="text"
+              onChange={(e) => {
+                setName(e.target.value);
               }}
-              key={t.id}
-              className="card"
+              value={name}
+            />
+          ) : (
+            //edit Input
+            <Input
+              mb="20px"
+              width="400px"
+              variant="filled"
+              placeholder="change Text"
+              type="text"
+              onChange={(e) => {
+                setEditName(e.target.value);
+              }}
+              value={Editname}
+            />
+          )
+        }
+
+        {
+          //add IconButton
+          toggleSubmit ? (
+            <IconButton
+              w={"50px"}
+              h={"30px"}
+              ml="40px"
+              mb="5px"
+              title="add item"
+              icon={<AddIcon />}
+              onClick={async () => {
+                await Add(name, router.refresh);
+                setName("");
+              }}
+              aria-label={""}
             >
-              {i}
-              {<Todo todo={t} />}
-            </li>
-          );
-        })}
-      </ul>
-      {<br />}
-      {<br />}
-      {todos.length === 0 && <label>No Tasks Added Yet !</label>}
+              Insert
+            </IconButton>
+          ) : (
+            //edit IconButton
+            <IconButton
+              icon={<EditIcon />}
+              w={"50px"}
+              h={"30px"}
+              ml="40px"
+              mb="5px"
+              title="update item"
+              onClick={async () => {
+                await updateEditedTodo(EditItemID, Editname, router.refresh);
+
+                setTogggleSubmit(true);
+                setEditItemID(null);
+                setEditName("");
+              }}
+              aria-label={""}
+            >
+              Edit
+            </IconButton>
+          )
+        }
+
+        {/*  ............................................Todo list.......................................  */}
+        <SimpleGrid
+          bg="rgba(218, 218, 218, 0.8)"
+          spacing="8"
+          p="10"
+          textAlign="center"
+          rounded="lg"
+          color="gray.950"
+          marginLeft={"200"}
+          marginRight={"200"}
+        >
+          <Box
+            boxShadow="dark-lg"
+            padding="6"
+            rounded="md"
+            bg="gray.300"
+            mx={"auto"}
+          >
+            <ul>
+              {todos.map((t: any, i: any) => {
+                return (
+                  <li
+                    style={{
+                      color: t.isDone ? "green" : "black",
+                      fontStyle: "oblique",
+                      listStyle: "none",
+                      padding: "5px 0",
+                      fontWeight: "bold",
+                      borderBottom: "2px solid black",
+                    }}
+                    key={t.id}
+                  >
+                    {i}
+                    {" - "}
+                    {<Todo todo={t} />}
+                  </li>
+                );
+              })}
+            </ul>
+          </Box>
+        </SimpleGrid>
+        {<br />}
+        {<br />}
+        {todos.length === 0 && <label>No Tasks Added Yet !</label>}
+      </Box>
     </div>
   );
 }
@@ -156,15 +206,36 @@ function Todo({ todo }: any) {
   return (
     <>
       <input
+        style={{
+          marginRight: "8px",
+        }}
         type="checkbox"
         onChange={(e) => updatetodo(todo.id, router.refresh, e.target.checked)}
         checked={todo.isDone}
       />
       <span>{todo.name}</span>
-      <button onClick={() => DeleteTodo(todo.id, router.refresh)}>
+      <IconButton
+        icon={<DeleteIcon />}
+        w={"50px"}
+        h={"30px"}
+        ml="40px"
+        onClick={() => DeleteTodo(todo.id, router.refresh)}
+        aria-label={""}
+      >
         Discard !
-      </button>
-      {<button onClick={() => editTodo(todo.id)}>edit</button>}
+      </IconButton>
+      {
+        <IconButton
+          icon={<EditIcon />}
+          w={"50px"}
+          h={"30px"}
+          ml="10px"
+          onClick={() => editTodo(todo.id)}
+          aria-label={""}
+        >
+          Edit
+        </IconButton>
+      }
     </>
   );
 }
