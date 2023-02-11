@@ -150,8 +150,8 @@ export default function AddTodo() {
         {/*  ............................................Todo list.......................................  */}
         <SimpleGrid
           bg="rgba(218, 218, 218, 0.8)"
-          // minW="854px"
-          marginX={"auto"}
+          minW="300px"
+          margin={"auto"}
           spacing="8"
           p="10"
           rounded="lg"
@@ -173,7 +173,11 @@ export default function AddTodo() {
                   }}
                   key={t.id}
                 >
-                  {<Todo todo={t} />}
+                  <div>
+                    {i}
+                    {" - "}
+                    {<Todo todo={t} />}
+                  </div>
                 </List>
               );
             })}
@@ -204,7 +208,7 @@ function Todo({ todo }: any) {
         icon={<DeleteIcon />}
         w={"50px"}
         h={"30px"}
-        m={{ base: "column", lg: "auto" }}
+        m={{ base: "column", lg: "row" }}
         onClick={() => DeleteTodo(todo.id, router.refresh)}
         aria-label={""}
       >
@@ -215,7 +219,7 @@ function Todo({ todo }: any) {
           icon={<EditIcon />}
           w={"50px"}
           h={"30px"}
-          m={{ base: "column", lg: "auto" }}
+          m={{ base: "column", lg: "row" }}
           onClick={() => editTodo(todo.id)}
           aria-label={""}
         >
