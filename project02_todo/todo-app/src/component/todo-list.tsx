@@ -1,13 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import {
-  Box,
-  IconButton,
-  Input,
-  SimpleGrid,
-  textDecoration,
-} from "@chakra-ui/react";
+import { Box, IconButton, Input, SimpleGrid } from "@chakra-ui/react";
 import { AddIcon, DeleteIcon, EditIcon } from "@chakra-ui/icons";
 
 // The default icon size is 1em (16px)
@@ -90,7 +84,7 @@ export default function AddTodo() {
           toggleSubmit ? (
             <Input
               mb="20px"
-              width="400px"
+              width={{ base: "170px", md: "200px", lg: "400px" }}
               placeholder="add text"
               type="text"
               onChange={(e) => {
@@ -101,8 +95,8 @@ export default function AddTodo() {
           ) : (
             //edit Input
             <Input
+              width={{ base: "170px", md: "200px", lg: "400px" }}
               mb="20px"
-              width="400px"
               variant="filled"
               placeholder="change Text"
               type="text"
@@ -158,13 +152,14 @@ export default function AddTodo() {
         {/*  ............................................Todo list.......................................  */}
         <SimpleGrid
           bg="rgba(218, 218, 218, 0.8)"
+          // minW="854px"
+          marginX={{ base: "30px", md: "60px" ,  lg: "200px" }}
           spacing="8"
           p="10"
-          textAlign="center"
           rounded="lg"
           color="gray.950"
-          marginLeft={"200"}
-          marginRight={"200"}
+          // marginLeft={"200"}
+          // marginRight={"200"}
         >
           <Box
             boxShadow="dark-lg"
@@ -172,25 +167,28 @@ export default function AddTodo() {
             rounded="md"
             bg="gray.300"
             mx={"auto"}
+            alignContent={"center"}
           >
             <ul>
               {todos.map((t: any, i: any) => {
                 return (
-                  <li
-                    style={{
-                      color: t.isDone ? "green" : "black",
-                      fontStyle: "oblique",
-                      listStyle: "none",
-                      padding: "5px 0",
-                      fontWeight: "bold",
-                      borderBottom: "2px solid black",
-                    }}
-                    key={t.id}
-                  >
-                    {i}
-                    {" - "}
-                    {<Todo todo={t} />}
-                  </li>
+                  <Box mx={{ base: "20px", md: "50px" ,  lg: "350px" }}>
+                    <li
+                      style={{
+                        color: t.isDone ? "green" : "black",
+                        fontStyle: "oblique",
+                        listStyle: "none",
+                        padding: "5px 0",
+                        fontWeight: "bold",
+                        borderBottom: "2px solid black",
+                      }}
+                      key={t.id}
+                    >
+                      {i}
+                      {" - "}
+                      {<Todo todo={t} />}
+                    </li>
+                  </Box>
                 );
               })}
             </ul>
@@ -221,7 +219,7 @@ function Todo({ todo }: any) {
         icon={<DeleteIcon />}
         w={"50px"}
         h={"30px"}
-        ml="40px"
+       m={{base : "column", lg : "auto"}}
         onClick={() => DeleteTodo(todo.id, router.refresh)}
         aria-label={""}
       >
@@ -232,7 +230,7 @@ function Todo({ todo }: any) {
           icon={<EditIcon />}
           w={"50px"}
           h={"30px"}
-          ml="10px"
+          m={{base : "column", lg : "auto"}}
           onClick={() => editTodo(todo.id)}
           aria-label={""}
         >

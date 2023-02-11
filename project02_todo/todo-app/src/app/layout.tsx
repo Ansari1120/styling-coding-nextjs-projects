@@ -19,7 +19,7 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <Box bg={useColorModeValue("gray.100", "gray.900")}>
+      <Box >
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <ChakraProvider>{children}</ChakraProvider>
