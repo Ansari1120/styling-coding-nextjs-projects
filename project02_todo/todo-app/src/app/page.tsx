@@ -17,7 +17,7 @@ export default function Home() {
         {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
       </Button>
       <Heading
-        fontSize="45"
+        fontSize={{ base: "30px", md: "35px", lg: "45px" }}
         fontWeight="semibold"
         textAlign="center"
         mt="20px"

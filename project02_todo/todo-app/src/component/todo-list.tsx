@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { Box, IconButton, Input, List, SimpleGrid } from "@chakra-ui/react";
+import { Box, IconButton, Input, SimpleGrid, List } from "@chakra-ui/react";
 import { AddIcon, DeleteIcon, EditIcon } from "@chakra-ui/icons";
 
 async function Add(name: any, refresh?: any) {
@@ -151,7 +151,7 @@ export default function AddTodo() {
         <SimpleGrid
           bg="rgba(218, 218, 218, 0.8)"
           // minW="854px"
-          marginX={{ base: "auto", md: "auto", lg: "auto" }}
+          marginX={"auto"}
           spacing="8"
           p="10"
           rounded="lg"
@@ -160,27 +160,23 @@ export default function AddTodo() {
           // marginRight={"200"}
         >
           <Box boxShadow="dark-lg" padding="6" rounded="md" bg="gray.300">
-            <ul>
-              {todos.map((t: any, i: any) => {
-                return (
-                  <List
-                    marginX={{ base: "auto", md: "auto", lg: "auto" }}
-                    style={{
-                      color: t.isDone ? "green" : "black",
-                      fontStyle: "oblique",
-                      listStyle: "none",
-                      fontWeight: "bold",
-                      borderBottom: "2px solid black",
-                    }}
-                    key={t.id}
-                  >
-                    {i}
-                    {" - "}
-                    {<Todo todo={t} />}
-                  </List>
-                );
-              })}
-            </ul>
+            {todos.map((t: any, i: any) => {
+              return (
+                <List
+                  marginX={"auto"}
+                  style={{
+                    color: t.isDone ? "green" : "black",
+                    fontStyle: "oblique",
+                    listStyle: "none",
+                    fontWeight: "bold",
+                    borderBottom: "2px solid black",
+                  }}
+                  key={t.id}
+                >
+                  {<Todo todo={t} />}
+                </List>
+              );
+            })}
           </Box>
         </SimpleGrid>
         {<br />}
