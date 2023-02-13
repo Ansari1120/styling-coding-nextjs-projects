@@ -1,7 +1,15 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { Box, IconButton, Input, SimpleGrid, List } from "@chakra-ui/react";
+import {
+  Box,
+  IconButton,
+  Input,
+  SimpleGrid,
+  List,
+  Stack,
+  Flex,
+} from "@chakra-ui/react";
 import { AddIcon, DeleteIcon, EditIcon } from "@chakra-ui/icons";
 
 async function Add(name: any, refresh?: any) {
@@ -166,11 +174,13 @@ export default function AddTodo() {
                   marginX={"auto"}
                   style={{
                     color: t.isDone ? "green" : "black",
+                    textDecoration: t.isDone ? "line-through" : "",
                     fontStyle: "oblique",
                     listStyle: "none",
                     fontWeight: "bold",
                     borderBottom: "2px solid black",
                   }}
+                  marginBottom={"2"}
                   key={t.id}
                 >
                   <div>
@@ -204,28 +214,30 @@ function Todo({ todo }: any) {
         checked={todo.isDone}
       />
       <span>{todo.name}</span>
-      <IconButton
-        icon={<DeleteIcon />}
-        w={"50px"}
-        h={"30px"}
-        m={{ base: "column", lg: "row" }}
-        onClick={() => DeleteTodo(todo.id, router.refresh)}
-        aria-label={""}
-      >
-        Discard !
-      </IconButton>
-      {
+
+      <Stack direction={"row"} justifyContent={"center"} marginY="2">
+        <IconButton
+          icon={<DeleteIcon />}
+          w={"50px"}
+          h={"30px"}
+
+          onClick={() => DeleteTodo(todo.id, router.refresh)}
+          aria-label={""}
+        >
+          Discard !
+        </IconButton>
+
         <IconButton
           icon={<EditIcon />}
           w={"50px"}
           h={"30px"}
-          m={{ base: "column", lg: "row" }}
+          
           onClick={() => editTodo(todo.id)}
           aria-label={""}
         >
           Edit
         </IconButton>
-      }
+      </Stack>
     </>
   );
 }
