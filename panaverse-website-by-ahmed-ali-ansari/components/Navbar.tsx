@@ -4,10 +4,15 @@ import {
   Container,
   Flex,
   Icon,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   SimpleGrid,
   useColorMode,
 } from "@chakra-ui/react";
-import { BellIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { BellIcon, HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../public/logo.png";
@@ -24,17 +29,18 @@ function Navbar() {
       <Container maxW="1400">
         {/*we have 3 divs each into one row */}
         <SimpleGrid
-          templateColumns={"repeat(6,1fr)"}
+          templateColumns={{ base: "repeat(5,1fr)", lg: "repeat(6,1fr)" }}
           placeItems={"center"}
           height={"97px"}
         >
-          <Box>
+          <Box width={{ base: "100px", lg: "initial" }}>
             <Link href={"/"}>
               <Image src={logo} alt="panaverse logo"></Image>
             </Link>
           </Box>
 
           <Flex
+            display={{ lg: "flex", base: "none" }}
             marginLeft={"140"}
             fontSize="18"
             fontWeight={"semi-bold"}
@@ -43,25 +49,65 @@ function Navbar() {
           >
             <Link href={""}>Home</Link>
             <Link href={""}>Syllabus</Link>
-            <Link href={""}>Courses</Link>
+            <Link href={""}>Explore</Link>
             <Link href={""}>Contact</Link>
             <Link href={""}>About</Link>
           </Flex>
           <Box>
-            <Button left="59" float="right">
+            <Button
+              display={{ lg: "initial", md: "initial", base: "none" }}
+              left="59"
+              float="right"
+            >
               <Icon as={BellIcon} size={"50"}></Icon>
             </Button>
           </Box>
           <Box>
-            <Button float="right" right="30" onClick={toggleColorMode}>
+            <Button
+              display={{ lg: "initial", md: "initial", base: "none" }}
+              float="right"
+              right="30"
+              onClick={toggleColorMode}
+            >
               {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             </Button>
           </Box>
 
           <Box>
-            <Button size="lg" bg="#11AD8E" left="30" float="right">
+            <Button
+              display={{ lg: "initial", md: "initial", base: "none" }}
+              size={{ md: "md", lg: "lg" }}
+              bg="#11AD8E"
+              left={{ lg: "30", md: "-30px" }}
+              marginY={{ base: "6px" }}
+            >
               Apply
             </Button>
+          </Box>
+          <Box display={{ lg: "none", base: "initial" }}>
+            <Menu>
+              <MenuButton
+                float="right"
+                as={IconButton}
+                aria-label="Options"
+                icon={<HamburgerIcon />}
+                variant="outline"
+              />
+              <MenuList>
+                <MenuItem>Home</MenuItem>
+                <MenuItem>Syllabus</MenuItem>
+                <MenuItem>Explore</MenuItem>
+                <MenuItem>About</MenuItem>
+                <MenuItem>Contact</MenuItem>
+                <MenuItem icon={<BellIcon />}>Notify</MenuItem>
+                <MenuItem
+                  onClick={toggleColorMode}
+                  icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+                >
+                  {colorMode === "light" ? "Dark Theme" : "Light Theme"}
+                </MenuItem>
+              </MenuList>
+            </Menu>
           </Box>
         </SimpleGrid>
       </Container>
