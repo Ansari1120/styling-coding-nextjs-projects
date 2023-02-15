@@ -48,7 +48,7 @@ function Navbar() {
             gap={{ base: "5", md: "5", lg: "10" }}
           >
             <Link href={""}>Home</Link>
-            <Link href={""}>Syllabus</Link>
+            <Link href={""}>Courses</Link>
             <Link href={""}>Explore</Link>
             <Link href={""}>Contact</Link>
             <Link href={""}>About</Link>
@@ -95,7 +95,7 @@ function Navbar() {
               />
               <MenuList>
                 <MenuItem>Home</MenuItem>
-                <MenuItem>Syllabus</MenuItem>
+                <MenuItem>Courses</MenuItem>
                 <MenuItem>Explore</MenuItem>
                 <MenuItem>About</MenuItem>
                 <MenuItem>Contact</MenuItem>
