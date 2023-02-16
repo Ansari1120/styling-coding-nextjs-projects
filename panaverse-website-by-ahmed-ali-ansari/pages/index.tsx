@@ -1,6 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Head from "next/head";
 import Footer from "@/components/Footer";
+import Landingpage from "@/components/Landingpage";
+import Landing from "../public/Landingpage.png";
+
 export default function Home() {
   return (
     <>
@@ -12,6 +15,7 @@ export default function Home() {
       </Head>
       <div>
         <Navbar />
+        <Landingpage />
         <Footer />
       </div>
     </>

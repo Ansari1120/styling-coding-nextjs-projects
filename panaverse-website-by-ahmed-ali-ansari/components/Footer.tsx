@@ -1,6 +1,7 @@
 import {
   Box,
   Container,
+  Flex,
   Grid,
   Heading,
   Link,
@@ -11,10 +12,13 @@ import NextLink from "next/link";
 import Location from "./icons/Location";
 import Image from "next/image";
 import Favi from "../public/favi.png";
+import Copyright from "../public/AiFillCopyrightCircle.png";
+import Line from "../public/Line.png";
+
 import { PhoneIcon, EmailIcon } from "@chakra-ui/icons";
 export default function Footer() {
   return (
-    <Box bg="#0c0c0c">
+    <Box bg="#0c0c0c" fontFamily="sans-serif">
       <Container maxW={1300}>
         <SimpleGrid
           spacing={"10px"}
@@ -92,6 +96,17 @@ export default function Footer() {
           </Box>
         </SimpleGrid>
       </Container>
+      <Box pb="50px" px={"-200px"}>
+            <Image src={Line} alt="Line"  />
+          </Box>
+        <Flex gap="4px" paddingLeft={{base:"200px", lg:"520px"}} paddingBottom="40px">
+          <Box>
+            <Image src={Copyright} alt="copyright" />
+          </Box>
+          <Box>
+            <Text color = "white">Made by Ahmed Ali Ansari PIAIC171908</Text>
+          </Box>
+        </Flex>
     </Box>
   );
 }

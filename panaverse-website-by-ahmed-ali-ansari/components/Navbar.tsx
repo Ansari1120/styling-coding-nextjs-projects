@@ -16,24 +16,29 @@ import { BellIcon, HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../public/logo.png";
+import Bar from "./icons/Bar";
 function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Box
-      color={colorMode === "light" ? "gray.900" : "gray.200"}
-      boxShadow="lg"
+      color={colorMode === "light" ? "gray.900" : "gray.100"}
+      boxShadow="lg "
       bg={
         "linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)), rgba(18, 18, 18, 0.4)"
       }
     >
-      <Container maxW="1400">
+      <Container maxW="1400" >
         {/*we have 3 divs each into one row */}
         <SimpleGrid
-          templateColumns={{ base: "repeat(5,1fr)", lg: "repeat(6,1fr)" }}
+          templateColumns={{ base: "repeat(6,1fr)", lg: "repeat(7,1fr)" }}
           placeItems={"center"}
           height={"97px"}
         >
-          <Box width={{ base: "100px", lg: "initial" }}>
+          <Box
+            width={{ base: "100px", lg: "150px" }}
+            position="relative"
+            left={"35px"}
+          >
             <Link href={"/"}>
               <Image src={logo} alt="panaverse logo"></Image>
             </Link>
@@ -49,24 +54,29 @@ function Navbar() {
           >
             <Link href={""}>Home</Link>
             <Link href={""}>Courses</Link>
-            <Link href={""}>Explore</Link>
             <Link href={""}>Contact</Link>
             <Link href={""}>About</Link>
           </Flex>
-          <Box>
+          <Box marginLeft={"38px"}>
             <Button
               display={{ lg: "initial", md: "initial", base: "none" }}
-              left="59"
+              left="262"
               float="right"
             >
               <Icon as={BellIcon} size={"50"}></Icon>
             </Button>
           </Box>
+          <Box position="relative" left={"240px"}>
+            <Icon
+              display={{ lg: "initial", md: "initial", base: "none" }}
+              as={Bar}
+            ></Icon>
+          </Box>
           <Box>
             <Button
               display={{ lg: "initial", md: "initial", base: "none" }}
               float="right"
-              right="30"
+              left={"200px"}
               onClick={toggleColorMode}
             >
               {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
@@ -78,7 +88,8 @@ function Navbar() {
               display={{ lg: "initial", md: "initial", base: "none" }}
               size={{ md: "md", lg: "lg" }}
               bg="#11AD8E"
-              left={{ lg: "30", md: "-30px" }}
+              left={{ lg: "30px", md: "-30px" }}
+              marginLeft={"250px"}
               marginY={{ base: "6px" }}
             >
               Apply
@@ -96,7 +107,6 @@ function Navbar() {
               <MenuList>
                 <MenuItem>Home</MenuItem>
                 <MenuItem>Courses</MenuItem>
-                <MenuItem>Explore</MenuItem>
                 <MenuItem>About</MenuItem>
                 <MenuItem>Contact</MenuItem>
                 <MenuItem icon={<BellIcon />}>Notify</MenuItem>
