@@ -1,7 +1,7 @@
 import { Text, Box, Container, Flex, Heading, Button } from "@chakra-ui/react";
 import ImageNext from "next/image";
 import Character from "../public/Character.png";
-import CharacterTwo from "../public/CharacterTwo.png";
+import CharacterTwo from "../public/Charactertwo.png";
 import Icon from "../public/iconone.png";
 import Po from "../public/product owner.png";
 import accessglobalmarketbydao from "../public/accessglobalmarketbydao.png";

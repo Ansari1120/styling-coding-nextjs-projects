@@ -15,7 +15,7 @@ import {
 import { BellIcon, HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../public/logo.png";
+import logo from "../public/favi.png";
 import Bar from "./icons/Bar";
 function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -27,7 +27,7 @@ function Navbar() {
         "linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)), rgba(18, 18, 18, 0.4)"
       }
     >
-      <Container maxW="1400" >
+      <Container maxW="1400">
         {/*we have 3 divs each into one row */}
         <SimpleGrid
           templateColumns={{ base: "repeat(6,1fr)", lg: "repeat(7,1fr)" }}
