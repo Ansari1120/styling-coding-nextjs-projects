@@ -15,7 +15,6 @@ import panacloudlogo from "../public/partners/panacloudlogo.png";
 import piaiclogo from "../public/partners/piaiclogo.png";
 import psxlogo from "../public/partners/psxlogo.png";
 import saylanilogo from "../public/partners/saylanilogo.png";
-import themeblob from "../public/cities/theme-blob 1.png";
 import comingsoon from "../public/cities/comingsoon.png";
 import islamabad from "../public/cities/islamabad.png";
 import karachi from "../public/cities/karachi.png";
