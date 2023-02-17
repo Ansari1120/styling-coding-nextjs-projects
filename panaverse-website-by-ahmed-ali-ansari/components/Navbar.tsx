@@ -15,17 +15,19 @@ import {
 import { BellIcon, HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../public/favi.png";
+import logo from "../public/panaverse.png";
 import Bar from "./icons/Bar";
 function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Box
       color={colorMode === "light" ? "gray.900" : "gray.100"}
-      boxShadow="lg "
+      boxShadow="lg"
       bg={
         "linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)), rgba(18, 18, 18, 0.4)"
       }
+      opacity="initial"
+      position={"fixed"}
     >
       <Container maxW="1400">
         {/*we have 3 divs each into one row */}
@@ -52,10 +54,10 @@ function Navbar() {
             fontFamily="sans-serif"
             gap={{ base: "5", md: "5", lg: "10" }}
           >
-            <Link href={""}>Home</Link>
-            <Link href={""}>Courses</Link>
-            <Link href={""}>Contact</Link>
-            <Link href={""}>About</Link>
+            <Link href={"/"}>Home</Link>
+            <Link href={"/courses"}>Courses</Link>
+            <Link href={"/contact"}>Contact</Link>
+            <Link href={"/about"}>About</Link>
           </Flex>
           <Box marginLeft={"38px"}>
             <Button
@@ -76,7 +78,7 @@ function Navbar() {
             <Button
               display={{ lg: "initial", md: "initial", base: "none" }}
               float="right"
-              left={"200px"}
+              left={"206px"}
               onClick={toggleColorMode}
             >
               {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
@@ -92,7 +94,7 @@ function Navbar() {
               marginLeft={"250px"}
               marginY={{ base: "6px" }}
             >
-              Apply
+              Apply Now
             </Button>
           </Box>
           <Box display={{ lg: "none", base: "initial" }}>
@@ -126,3 +128,4 @@ function Navbar() {
 }
 
 export default Navbar;
+

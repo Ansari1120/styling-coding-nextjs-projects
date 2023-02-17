@@ -26,9 +26,14 @@ export default function Landingpage() {
     <>
       <Box bgImage="./Landingpage.png">
         {/* {keep all content size (width or height same)} */}
-        <Container minW={300} maxW={1400}>
+        <Container  maxW={1400}>
           {/* {keep all content in column form */}
-          <Flex pt={"150px"} pb={"100px"} px={"60px"}>
+          <Flex
+            pt={"150px"}
+            pb={"100px"}
+            px={"60px"}
+            direction={{ lg: "initial", base: "column" }}
+          >
             {/* align you box content */}
             <Box flexBasis={"50%"}>
               <Heading color="white" size="2xl">
@@ -47,10 +52,7 @@ export default function Landingpage() {
                 More Info
               </Button>
             </Box>
-            <Box
-              mt={{ lg: "-55px", base: "55px" }}
-              flexBasis={{ lg: "50%", base: "100%" }}
-            >
+            <Box mt={{ lg: "-55px", base: "55px" }} flexBasis="50%">
               <ImageNext src={Character} alt="Character" width={"490"} />
             </Box>
           </Flex>

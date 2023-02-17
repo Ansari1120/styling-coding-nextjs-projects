@@ -97,16 +97,22 @@ export default function Footer() {
         </SimpleGrid>
       </Container>
       <Box pb="50px" px={"-200px"}>
-            <Image src={Line} alt="Line"  />
-          </Box>
-        <Flex gap="4px" paddingLeft={{base:"200px", lg:"520px"}} paddingBottom="40px">
-          <Box>
-            <Image src={Copyright} alt="copyright" />
-          </Box>
-          <Box>
-            <Text color = "white">Made by Ahmed Ali Ansari PIAIC171908</Text>
-          </Box>
-        </Flex>
+        <Image src={Line} alt="Line" />
+      </Box>
+      <Flex
+        alignItems="center"
+        gap="4px"
+        paddingLeft={{ base: "4px", lg: "26px" }}
+        paddingBottom="40px"
+        justifyContent={"center"}
+      >
+        <Box>
+          <Image src={Copyright} alt="copyright" />
+        </Box>
+        <Box>
+          <Text color="white">Made by Ahmed Ali Ansari PIAIC171908</Text>
+        </Box>
+      </Flex>
     </Box>
   );
 }
