@@ -19,6 +19,7 @@ import logo from "../public/panaverse.png";
 import Bar from "./icons/Bar";
 function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <Box
       color={colorMode === "light" ? "gray.900" : "gray.100"}
@@ -86,16 +87,19 @@ function Navbar() {
           </Box>
 
           <Box>
-            <Button
-              display={{ lg: "initial", md: "initial", base: "none" }}
-              size={{ md: "md", lg: "lg" }}
-              bg="#11AD8E"
-              left={{ lg: "30px", md: "-30px" }}
-              marginLeft={"250px"}
-              marginY={{ base: "6px" }}
-            >
-              Apply Now
-            </Button>
+            <Link href={"https://portal.piaic.org/signup"}>
+              <Button
+                onClick={() => "https://portal.piaic.org/signup"}
+                display={{ lg: "initial", md: "initial", base: "none" }}
+                size={{ md: "md", lg: "lg" }}
+                bg="#11AD8E"
+                left={{ lg: "30px", md: "-30px" }}
+                marginLeft={"250px"}
+                marginY={{ base: "6px" }}
+              >
+                Apply Now
+              </Button>
+            </Link>
           </Box>
           <Box display={{ lg: "none", base: "initial" }}>
             <Menu>
@@ -107,10 +111,22 @@ function Navbar() {
                 variant="outline"
               />
               <MenuList>
-                <MenuItem>Home</MenuItem>
-                <MenuItem>Courses</MenuItem>
-                <MenuItem>About</MenuItem>
-                <MenuItem>Contact</MenuItem>
+                <MenuItem>
+                  {" "}
+                  <Link href={"/"}>Home</Link>
+                </MenuItem>
+                <MenuItem>
+                  {" "}
+                  <Link href={"/courses"}>Courses</Link>
+                </MenuItem>
+                <MenuItem>
+                  {" "}
+                  <Link href={"/about"}>About</Link>
+                </MenuItem>
+                <MenuItem>
+                  {" "}
+                  <Link href={"/contact"}>contact</Link>
+                </MenuItem>
                 <MenuItem icon={<BellIcon />}>Notify</MenuItem>
                 <MenuItem
                   onClick={toggleColorMode}
@@ -128,4 +144,3 @@ function Navbar() {
 }
 
 export default Navbar;
-

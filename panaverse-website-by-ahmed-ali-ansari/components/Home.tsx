@@ -11,7 +11,7 @@ export default function Home(hello: any) {
       borderBottomRadius="150px"
     >
       <Container maxW={1400}>
-        <Heading color={"white"} size="2xl">
+        <Heading color={"black"} size="2xl">
           {hello.title}
         </Heading>
       </Container>

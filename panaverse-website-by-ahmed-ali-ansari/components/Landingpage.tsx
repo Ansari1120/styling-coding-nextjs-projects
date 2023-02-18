@@ -20,13 +20,14 @@ import islamabad from "../public/cities/islamabad.png";
 import karachi from "../public/cities/karachi.png";
 import lahore from "../public/cities/lahore.png";
 import peshawar from "../public/cities/peshawar.png";
+import CoursesCards from "@/components/CoursesCards";
 
 export default function Landingpage() {
   return (
     <>
       <Box bgImage="./Landingpage.png">
         {/* {keep all content size (width or height same)} */}
-        <Container  maxW={1400}>
+        <Container maxW={1400}>
           {/* {keep all content in column form */}
           <Flex
             pt={"150px"}
@@ -58,6 +59,7 @@ export default function Landingpage() {
           </Flex>
         </Container>
       </Box>
+
       {/* About Section onwards*/}
 
       <Box>
@@ -71,7 +73,7 @@ export default function Landingpage() {
             <Box
               flexBasis="50%"
               marginBottom={"115px"}
-              paddingBottom={"50px"}
+              paddingY={"50px"}
               borderRadius={"16px"}
               bg="linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)), rgba(18, 18, 18, 0.4)"
               boxShadow={
@@ -276,7 +278,7 @@ export default function Landingpage() {
                 Oprational <br /> cities
               </Text>
             </Box>
-            <Box>
+            <Box >
               {" "}
               <ImageNext src={karachi} alt="Uni logo" />
             </Box>

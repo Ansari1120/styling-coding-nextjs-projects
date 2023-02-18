@@ -1,10 +1,18 @@
 import Home from "@/components/Home";
-import { Box, Container, Flex, Heading, Text, Image } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Flex,
+  Heading,
+  Text,
+  Image,
+  Grid,
+} from "@chakra-ui/react";
 import ImageNext from "next/image";
 import PresidentPhoto from "../../public/Faculty/President.png";
 import Logoone from "../../public/Faculty/logo5.png";
 import Sirzia from "../../public/Faculty/Zia.jpg";
-
+import Rectangle from "../../public/Rectangle 6.png";
 export default function index() {
   return (
     <>
@@ -87,35 +95,41 @@ export default function index() {
               <ImageNext src={Logoone} alt="panaverse" />
             </Box>
           </Flex>
-          <Box px={{ lg: "300px", base: "40px" }}>
-            <Heading
-              // fontSize={{ lg: "initial", base: "sm" }}
-              color="black"
-              textAlign={"center"}
-              pb="40px"
-            >
-              Program of Studies
-            </Heading>
-            <Text
-              // fontSize={{ lg: "initial", base: "sm" }}
-              fontWeight={"semibold"}
-              textAlign={"center"}
-              color="black"
-            >
-              This curriculum is intended for beginners who want to learn
-              software development from the ground up. The first three quarters
-              are shared by all specialties and are dedicated to studying
-              Object-Oriented Programming and cutting-edge Full-Stack Web 2.0
-              development. It is going to be a fifteen-month-long hybrid program
-              that includes both onsite and online classes and is divided into
-              five quarters of 13 weeks each. The emphasis will be on hands-on
-              learning by educating students to produce projects. To accommodate
-              everyone, courses will be held primarily on weekends or after 6:00
-              p.m. (Pakistan Time) on weekdays. It employs a hybrid teaching
-              format, with core onsite classes complemented by online Zoom
-              laboratories and recorded videos.
-            </Text>
-          </Box>
+          <Grid>
+            <Box px={{ lg: "300px", base: "40px" }}>
+              <Heading
+                // fontSize={{ lg: "initial", base: "sm" }}
+                color="black"
+                textAlign={"center"}
+                pb="40px"
+              >
+                Program of Studies
+              </Heading>
+              <Text
+                // fontSize={{ lg: "initial", base: "sm" }}
+                fontWeight={"semibold"}
+                textAlign={"center"}
+                color="black"
+              >
+                This curriculum is intended for beginners who want to learn
+                software development from the ground up. The first three
+                quarters are shared by all specialties and are dedicated to
+                studying Object-Oriented Programming and cutting-edge Full-Stack
+                Web 2.0 development. It is going to be a fifteen-month-long
+                hybrid program that includes both onsite and online classes and
+                is divided into five quarters of 13 weeks each. The emphasis
+                will be on hands-on learning by educating students to produce
+                projects. To accommodate everyone, courses will be held
+                primarily on weekends or after 6:00 p.m. (Pakistan Time) on
+                weekdays. It employs a hybrid teaching format, with core onsite
+                classes complemented by online Zoom laboratories and recorded
+                videos.
+              </Text>
+            </Box>
+            <Box pt="50px">
+              <ImageNext src={Rectangle} alt="icon" />
+            </Box>
+          </Grid>
 
           <Flex
             padding={{ lg: "100px", base: "20px" }}
