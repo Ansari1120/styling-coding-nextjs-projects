@@ -11,7 +11,8 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
-export default function CommonCards({ id, description }: any) {
+import Link from "next/link";
+export default function CommonCards({ id, description,link }: any) {
   return (
     <Box>
       <Container maxW={1400}>
@@ -47,7 +48,11 @@ export default function CommonCards({ id, description }: any) {
               <Text fontWeight={"semibold"}>{description}</Text>
             </CardBody>
             <CardFooter>
+              <Link
+              href={`/courses/common${link}`}
+              >
               <Button>See Details</Button>
+              </Link>
             </CardFooter>
           </Card>
         </SimpleGrid>

@@ -40,11 +40,12 @@ export default function Landingpage() {
               <Heading color="white" size="2xl">
                 Become
               </Heading>
+
               <Heading color="#11AD8E" size="2xl">
-                Certified Web 3.0 and
-                <br />
+                Certified Web 3.0 <Heading color={"white"}>and</Heading>
                 Metaverse Developer
               </Heading>
+
               <Text color="white" mt={"20px"}>
                 Launch Your Dev Career With Web 3 and Metaverse Getting Ready
                 for the Next Generation of the Internet
@@ -278,7 +279,7 @@ export default function Landingpage() {
                 Oprational <br /> cities
               </Text>
             </Box>
-            <Box >
+            <Box>
               {" "}
               <ImageNext src={karachi} alt="Uni logo" />
             </Box>

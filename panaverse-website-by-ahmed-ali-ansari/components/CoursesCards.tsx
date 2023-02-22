@@ -11,8 +11,8 @@ import {
   Heading,
   Grid,
   Center,
-  Flex,
 } from "@chakra-ui/react";
+import Link from "next/link";
 
 export default function CoursesCards(props: any) {
   const { data } = props;
@@ -54,7 +54,7 @@ export default function CoursesCards(props: any) {
                           "0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 5px 5px rgba(0, 0, 0, 0.2)"
                         }
                         border={"2px solid #11AD8E"}
-                        marginX="300px"
+                        marginX="400px"
                       >
                         <CardHeader>
                           <Heading
@@ -77,7 +77,9 @@ export default function CoursesCards(props: any) {
                           <Text fontWeight={"semibold"}>{x.description}</Text>
                         </CardBody>
                         <CardFooter>
-                          <Button>See Details</Button>
+                          <Link href={`/courses${x.link}`}>
+                            <Button>See Details</Button>
+                          </Link>
                         </CardFooter>
                       </Card>
                     </Box>

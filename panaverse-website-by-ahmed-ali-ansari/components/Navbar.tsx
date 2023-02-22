@@ -89,7 +89,6 @@ function Navbar() {
           <Box>
             <Link href={"https://portal.piaic.org/signup"}>
               <Button
-                onClick={() => "https://portal.piaic.org/signup"}
                 display={{ lg: "initial", md: "initial", base: "none" }}
                 size={{ md: "md", lg: "lg" }}
                 bg="#11AD8E"
@@ -126,6 +125,12 @@ function Navbar() {
                 <MenuItem>
                   {" "}
                   <Link href={"/contact"}>contact</Link>
+                </MenuItem>
+                <MenuItem>
+                  {" "}
+                  <Link href={"https://portal.piaic.org/signup"}>
+                    Apply Now
+                  </Link>
                 </MenuItem>
                 <MenuItem icon={<BellIcon />}>Notify</MenuItem>
                 <MenuItem
