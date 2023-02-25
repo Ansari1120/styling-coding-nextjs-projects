@@ -27,7 +27,10 @@ export default function Pricing() {
         " 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04);"
       }
     >
-      <Flex direction={{ base: "column", md: "column", lg: "row" }}>
+      <Flex
+        direction={{ base: "column", md: "column", lg: "row" }}
+        alignItems={"center"}
+      >
         {/* left box */}
         <Box bg="#cbb8ee" p="40px" textAlign={"center"}>
           <Text fontSize={"24px"} fontWeight={"bold"}>
@@ -35,7 +38,12 @@ export default function Pricing() {
           </Text>
           <Heading fontSize={"60px"}>$329</Heading>
           <Text>billed just once</Text>
-          <Button mt={"20px"} w={"300px"} color={"white"} bg={"#805AD5"}>
+          <Button
+            mt={"20px"}
+            w={{ lg: "300px", base: "200px" }}
+            color={"white"}
+            bg={"#805AD5"}
+          >
             Get Started
           </Button>
         </Box>
