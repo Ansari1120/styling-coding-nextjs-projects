@@ -52,7 +52,15 @@ export default function Quarterlayout({
               {quarterContents}
             </Heading>
           </Box>
-          <Flex>
+          <Flex
+            bgGradient="linear(to-r, teal.500, green.500)"
+            borderRadius={"16px"}
+            paddingLeft="14px"
+            paddingRight={"10px"}
+            paddingBottom={{ base: "10px", lg: "initial" }}
+            paddingTop={{ base: "10px", lg: "initial" }}
+            marginBottom="10px"
+          >
             <Box>
               <Text fontWeight={"semibold"}>{quarterContentText}</Text>
             </Box>
