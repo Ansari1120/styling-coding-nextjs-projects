@@ -50,16 +50,13 @@ export default function Footer() {
               <Link as={NextLink} href="/">
                 Home
               </Link>
-              <Link as={NextLink} href="/">
+              <Link as={NextLink} href="/courses">
                 Courses
               </Link>
-              <Link as={NextLink} href="/">
-                Explore
-              </Link>
-              <Link as={NextLink} href="/">
+              <Link as={NextLink} href="/about">
                 About
               </Link>
-              <Link as={NextLink} href="/">
+              <Link as={NextLink} href="/contact">
                 Contact
               </Link>
             </Grid>
@@ -69,11 +66,15 @@ export default function Footer() {
               Follow Us
             </Heading>
             <Grid color="gray">
-              <Link href="/">Facbook</Link>
-              <Link href="/">LinkedIn</Link>
-              <Link href="/">Youtube</Link>
-              <Link href="/">Github</Link>
-              <Link href="/">Twitter</Link>
+              <Link href="https://www.facebook.com/groups/panaverse/">
+                Facbook
+              </Link>
+              <Link href="https://www.linkedin.com/school/piaic-pk/">
+                LinkedIn
+              </Link>
+              <Link href="https://www.youtube.com/@panaverse">Youtube</Link>
+              <Link href="https://github.com/panaverse">Github</Link>
+              <Link href="https://twitter.com/Panaverse_edu">Twitter</Link>
             </Grid>
           </Box>
 
@@ -82,10 +83,10 @@ export default function Footer() {
               Contact Us
             </Heading>
             <Grid color="gray">
-              <Link as={NextLink} href="/">
+              <Link as={NextLink} href="https://wa.me/+921234567890/">
                 <PhoneIcon /> +92 123 4567890
               </Link>
-              <Link as={NextLink} href="/">
+              <Link as={NextLink} href="mailto:panaverse@gmail.com">
                 <EmailIcon /> panaverse@gmail.com
               </Link>
               <Link as={NextLink} href="/">

@@ -30,7 +30,7 @@ function Navbar() {
       opacity="initial"
       position={"fixed"}
     >
-      <Container maxWidth={{lg:1400,base:351}}>
+      <Container maxWidth={{ lg: 1400, base: 360 }}>
         {/*we have 3 divs each into one row */}
         <SimpleGrid
           templateColumns={{ base: "repeat(5,1fr)", lg: "repeat(7,1fr)" }}
@@ -101,10 +101,8 @@ function Navbar() {
               </Button>
             </Link>
           </Box>
-          <Box display={{ lg: "none", base: "initial" }}
-          >
-            <Menu
-            >
+          <Box display={{ lg: "none", base: "initial" }}>
+            <Menu>
               <MenuButton
                 float="right"
                 as={IconButton}

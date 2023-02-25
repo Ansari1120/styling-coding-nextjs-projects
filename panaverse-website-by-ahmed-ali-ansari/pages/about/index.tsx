@@ -165,7 +165,7 @@ export default function index() {
               </Text>
             </Box>
           </Flex>
-          <Box px={{ lg: "590px", base: "125px" }} pt="100px">
+          <Box px={{ lg: "590px", base: "110px" }} pt="100px">
             <Heading color="black">Faculty</Heading>
           </Box>
 
@@ -186,7 +186,7 @@ export default function index() {
               }
             >
               <Image
-                marginX={{ lg: "63px", base: "113px" }}
+                marginX={{ lg: "63px", base: "98px" }}
                 borderRadius="full"
                 boxSize="100px"
                 src="https://media.licdn.com/dms/image/C4E03AQHtvGSpsfadRg/profile-displayphoto-shrink_800_800/0/1517684731220?e=2147483647&v=beta&t=9VvJMkTuQnBzoqprL-7HQaLgWYBQj_ubr4eL4fpp23w"
@@ -210,7 +210,7 @@ export default function index() {
               }
             >
               <Image
-                marginX={{ lg: "63px", base: "113px" }}
+                marginX={{ lg: "63px", base: "98px" }}
                 borderRadius="full"
                 boxSize="100px"
                 src="https://media.licdn.com/dms/image/C4D03AQE1Hzv61ccMVw/profile-displayphoto-shrink_800_800/0/1556048207367?e=2147483647&v=beta&t=KjDz0Y-aELrRyRuqh_mj8oCSwUimyoK66DqheBx8aMk"
@@ -234,7 +234,7 @@ export default function index() {
               }
             >
               <Image
-                marginX={{ lg: "63px", base: "113px" }}
+                marginX={{ lg: "63px", base: "98px" }}
                 borderRadius="full"
                 boxSize="100px"
                 src="https://avatars.githubusercontent.com/u/62209503?v=4"
@@ -258,7 +258,7 @@ export default function index() {
               }
             >
               <Image
-                marginX={{ lg: "63px", base: "113px" }}
+                marginX={{ lg: "63px", base: "98px" }}
                 borderRadius="full"
                 boxSize="100px"
                 src="https://panaverse-dao-complete-syllabus.vercel.app/_next/image?url=%2Fassets%2Finstructors%2Fmiss-hira.jpg&w=256&q=75"

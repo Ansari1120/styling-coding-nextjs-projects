@@ -20,6 +20,7 @@ import islamabad from "../public/cities/islamabad.png";
 import karachi from "../public/cities/karachi.png";
 import lahore from "../public/cities/lahore.png";
 import peshawar from "../public/cities/peshawar.png";
+import Link from "next/link";
 
 export default function Landingpage() {
   return (
@@ -49,9 +50,11 @@ export default function Landingpage() {
                 Launch Your Dev Career With Web 3 and Metaverse Getting Ready
                 for the Next Generation of the Internet
               </Text>
+              <Link href="/about" >
               <Button size={"lg"} colorScheme="teal" mt={"20px"}>
                 More Info
               </Button>
+              </Link>
             </Box>
             <Box mt={{ lg: "-55px", base: "55px" }} flexBasis="50%">
               <ImageNext src={Character} alt="Character" width={"490"} />

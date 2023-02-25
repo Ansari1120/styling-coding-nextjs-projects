@@ -94,7 +94,7 @@ export default function index() {
         />
       </Box>
       <Container maxW={1400}>
-        <Box textAlign={"center"} py="30px" mx={{ lg: "200px", base: "70px" }}>
+        <Box textAlign={"center"} py="30px" mx={{ lg: "200px", base: "30px" }}>
           <Heading
             fontSize={{ lg: "4xl", base: "xl" }}
             pb="20px"
