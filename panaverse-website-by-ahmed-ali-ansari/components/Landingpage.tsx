@@ -50,10 +50,10 @@ export default function Landingpage() {
                 Launch Your Dev Career With Web 3 and Metaverse Getting Ready
                 for the Next Generation of the Internet
               </Text>
-              <Link href="/about" >
-              <Button size={"lg"} colorScheme="teal" mt={"20px"}>
-                More Info
-              </Button>
+              <Link href="/about">
+                <Button size={"lg"} colorScheme="teal" mt={"20px"}>
+                  More Info
+                </Button>
               </Link>
             </Box>
             <Box mt={{ lg: "-55px", base: "55px" }} flexBasis="50%">
@@ -113,6 +113,7 @@ export default function Landingpage() {
                 textAlign={"center"}
                 color="white"
                 paddingBottom={"20px"}
+                marginX={{ base: "20px", lg: "initial" }}
               >
                 In this brand-new type of curriculum, students will learn how to
                 make money and boost exports in the classroom and will begin
