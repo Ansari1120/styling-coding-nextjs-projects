@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading, Text } from "@chakra-ui/react";
 import Home from "@/components/Home";
 import CoursesCards from "@/components/CoursesCards";
 import CommonCoursesCards from "@/components/CommonCoursesCards";
@@ -87,61 +87,67 @@ export default function index() {
   ];
   return (
     <>
-      <Box pt="95px">
+      <Box>
         <Home
           title="Courses Detail"
           src="https://img.freepik.com/free-photo/book-with-green-board-background_1150-3837.jpg?w=740&t=st=1676621406~exp=1676622006~hmac=fe9e41ea8ccb5a8210ce3e2e6d64b2f9fb935daa82ed404cdfdf5fa554a74e22"
         />
       </Box>
-      <Box textAlign={"center"} py="30px" mx={{ lg: "200px", base: "70px" }}>
-        <Heading fontSize={{ lg: "4xl", base: "xl" }} pb="20px" color="#11AD8E">
-          Course Curriculum
-        </Heading>
-        <Text color="WhiteAlpha.700" fontWeight={"semibold"}>
-          The first three quarters are shared by all specialties and are
-          dedicated to studying Object-Oriented Programming and cutting-edge
-          Full-Stack Web 2.0 development. It is going to be a fifteen-month-long
-          hybrid program that includes both onsite and online classes and is
-          divided into five quarters of 13 weeks each
-        </Text>
-      </Box>
-      <CommonCoursesCards
-        title="Core Courses (Common in All Specializations):"
-        text="Every participant of the program will start by completing the following three core courses"
-      />
-      <Flex
-        alignItems={"center"}
-        justifyContent="center"
-        direction={{ base: "column", lg: "row" }}
-      >
-        <Box flexBasis={"50%"}>
-          <CommonCards
-            id="Quarter I"
-            description="CS-101: Object-Oriented Programming using TypeScript and Typescript for React"
-            link="/q1"
-          />
+      <Container maxW={1400}>
+        <Box textAlign={"center"} py="30px" mx={{ lg: "200px", base: "70px" }}>
+          <Heading
+            fontSize={{ lg: "4xl", base: "xl" }}
+            pb="20px"
+            color="#11AD8E"
+          >
+            Course Curriculum
+          </Heading>
+          <Text color="WhiteAlpha.700" fontWeight={"semibold"}>
+            The first three quarters are shared by all specialties and are
+            dedicated to studying Object-Oriented Programming and cutting-edge
+            Full-Stack Web 2.0 development. It is going to be a
+            fifteen-month-long hybrid program that includes both onsite and
+            online classes and is divided into five quarters of 13 weeks each
+          </Text>
         </Box>
-        <Box flexBasis={"40%"}>
-          <CommonCards
-            id="Quarter II"
-            description="W2-201: Developing Planet-Scale Web 2.0 Serverless Cloud Cloud Apps and APIs using Next.js 13 and Cloud Development Kit (CDK) for Terraform"
-            link="/q2"
-          />
-        </Box>
-        <Box flexBasis={"50%"}>
-          <CommonCards
-            id="Quarter III"
-            description="$-101: Dollar Making Bootcamp - Full-Stack Template and API Product Development"
-            link="/q3"
-          />
-        </Box>
-      </Flex>
-      <CommonCoursesCards
-        title="Specialized Tracks"
-        text="After completing the first three quarters the participants will select one or more specializations
+        <CommonCoursesCards
+          title="Core Courses (Common in All Specializations):"
+          text="Every participant of the program will start by completing the following three core courses"
+        />
+        <Flex
+          alignItems={"center"}
+          justifyContent="center"
+          direction={{ base: "column", lg: "row" }}
+        >
+          <Box flexBasis={"50%"}>
+            <CommonCards
+              id="Quarter I"
+              description="CS-101: Object-Oriented Programming using TypeScript and Typescript for React"
+              link="/q1"
+            />
+          </Box>
+          <Box flexBasis={"40%"}>
+            <CommonCards
+              id="Quarter II"
+              description="W2-201: Developing Planet-Scale Web 2.0 Serverless Cloud Cloud Apps and APIs using Next.js 13 and Cloud Development Kit (CDK) for Terraform"
+              link="/q2"
+            />
+          </Box>
+          <Box flexBasis={"50%"}>
+            <CommonCards
+              id="Quarter III"
+              description="$-101: Dollar Making Bootcamp - Full-Stack Template and API Product Development"
+              link="/q3"
+            />
+          </Box>
+        </Flex>
+        <CommonCoursesCards
+          title="Specialized Tracks"
+          text="After completing the first three quarters the participants will select one or more specializations
         consisting of two courses each:"
-      />
-      <CoursesCards data={spacializedtracks} />
+        />
+        <CoursesCards data={spacializedtracks} />
+      </Container>
     </>
   );
 }

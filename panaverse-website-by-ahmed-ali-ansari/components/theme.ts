@@ -1,4 +1,5 @@
 import { extendTheme, type ThemeConfig } from "@chakra-ui/react";
+import React from "react";
 
 // 2. Extend the theme to include custom colors, fonts, etc
 // 2. Add your color mode config

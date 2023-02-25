@@ -32,7 +32,7 @@ export default function q1() {
           </Link>
         }
       />
-      <Box mt={{lg:"-260px",base:"-300"}}>
+      <Box mt={{ lg: "-260px", base: "-300" }}>
         <Quarterlayout
           quarterContentText=" Learn CSS Intro by Hira Khan "
           links={

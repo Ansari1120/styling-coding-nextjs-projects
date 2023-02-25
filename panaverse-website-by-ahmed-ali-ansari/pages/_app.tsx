@@ -2,7 +2,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { ChakraProvider } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
-import theme from "./theme";
+import theme from "../components/theme";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {

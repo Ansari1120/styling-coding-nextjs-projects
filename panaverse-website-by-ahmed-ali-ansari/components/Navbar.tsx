@@ -30,10 +30,10 @@ function Navbar() {
       opacity="initial"
       position={"fixed"}
     >
-      <Container maxW="1400">
+      <Container maxWidth={{lg:1400,base:351}}>
         {/*we have 3 divs each into one row */}
         <SimpleGrid
-          templateColumns={{ base: "repeat(6,1fr)", lg: "repeat(7,1fr)" }}
+          templateColumns={{ base: "repeat(5,1fr)", lg: "repeat(7,1fr)" }}
           placeItems={"center"}
           height={"97px"}
         >
@@ -69,11 +69,12 @@ function Navbar() {
               <Icon as={BellIcon} size={"50"}></Icon>
             </Button>
           </Box>
-          <Box position="relative" left={"240px"}>
-            <Icon
-              display={{ lg: "initial", md: "initial", base: "none" }}
-              as={Bar}
-            ></Icon>
+          <Box
+            position="relative"
+            left={"240px"}
+            display={{ lg: "initial", md: "initial", base: "none" }}
+          >
+            <Icon as={Bar}></Icon>
           </Box>
           <Box>
             <Button
@@ -100,8 +101,10 @@ function Navbar() {
               </Button>
             </Link>
           </Box>
-          <Box display={{ lg: "none", base: "initial" }}>
-            <Menu>
+          <Box display={{ lg: "none", base: "initial" }}
+          >
+            <Menu
+            >
               <MenuButton
                 float="right"
                 as={IconButton}

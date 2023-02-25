@@ -26,6 +26,7 @@ export default function CommonCards({ id, description,link }: any) {
               "0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 5px 5px rgba(0, 0, 0, 0.2)"
             }
             border={"2px solid #11AD8E"}
+            
           >
             <CardHeader>
               <Heading
