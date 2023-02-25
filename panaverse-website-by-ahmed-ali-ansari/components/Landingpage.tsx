@@ -1,7 +1,7 @@
 import { Text, Box, Container, Flex, Heading, Button } from "@chakra-ui/react";
 import ImageNext from "next/image";
 import Character from "../public/Character.png";
-import CharacterTwo from "../public/Charactertwo.png";
+import CharacterTwo from "../public/charactertwo.png";
 import Icon from "../public/iconone.png";
 import Po from "../public/product owner.png";
 import accessglobalmarketbydao from "../public/accessglobalmarketbydao.png";
@@ -20,7 +20,6 @@ import islamabad from "../public/cities/islamabad.png";
 import karachi from "../public/cities/karachi.png";
 import lahore from "../public/cities/lahore.png";
 import peshawar from "../public/cities/peshawar.png";
-import CoursesCards from "@/components/CoursesCards";
 
 export default function Landingpage() {
   return (
