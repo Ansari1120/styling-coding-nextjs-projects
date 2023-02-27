@@ -36,12 +36,13 @@ export default function Landingpage() {
             px={"60px"}
             direction={{ lg: "initial", base: "column" }}
           >
-            {/* align you box content */}
+            {/* align your box content */}
             <Box flexBasis={"50%"}>
-              <RevealWrapper
-                origin="left"
+              <RevealList
+                origin="bottom"
                 delay={200}
                 duration={1000}
+                interval={160}
                 distance="500px"
                 reset={true}
                 desktop={true}
@@ -65,7 +66,8 @@ export default function Landingpage() {
                     More Info
                   </Button>
                 </Link>
-              </RevealWrapper>
+              </RevealList>
+              {/* </RevealWrapper> */}
             </Box>
             <Box mt={{ lg: "-40px", base: "55px" }}>
               <RevealWrapper

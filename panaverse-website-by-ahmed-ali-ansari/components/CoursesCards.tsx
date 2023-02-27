@@ -88,10 +88,10 @@ export default function CoursesCards(props: any) {
                           marginX="400px"
                         >
                           <RevealList
-                            delay={500}
+                            delay={300}
                             interval={160}
                             origin="bottom"
-                            duration={1500}
+                            duration={1000}
                             distance="500px"
                             reset={true}
                             desktop={true}

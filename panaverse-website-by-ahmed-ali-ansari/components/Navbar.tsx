@@ -27,8 +27,7 @@ function Navbar() {
       bg={
         "linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)), rgba(18, 18, 18, 0.4)"
       }
-      opacity="initial"
-      position={"fixed"}
+      position="absolute"
     >
       <Container maxWidth={{ lg: 1400, base: 360 }}>
         {/*we have 3 divs each into one row */}

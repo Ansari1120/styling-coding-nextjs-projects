@@ -94,16 +94,16 @@ export default function index() {
             direction={{ lg: "initial", base: "column" }}
             py="30px"
           >
-            <Box paddingRight={"20px"} flexBasis={"50%"}>
-              <RevealWrapper
-                origin="right"
-                delay={200}
-                duration={1000}
-                distance="500px"
-                reset={true}
-                desktop={true}
-                mobile={true}
-              >
+            <RevealWrapper
+              origin="right"
+              delay={200}
+              duration={1000}
+              distance="500px"
+              reset={true}
+              desktop={true}
+              mobile={true}
+            >
+              <Box paddingRight={"20px"} flexBasis={"50%"}>
                 <Heading color="black" pb="40px">
                   About Panaverse Dao
                 </Heading>
@@ -121,22 +121,21 @@ export default function index() {
                   blockchain, cloud and edge computing, voice computing, ambient
                   computing, and more.
                 </Text>
-              </RevealWrapper>
-            </Box>
-
-            <Box flexBasis={"50%"}>
-              <RevealWrapper
-                origin="left"
-                delay={200}
-                duration={1000}
-                distance="500px"
-                reset={true}
-                desktop={true}
-                mobile={true}
-              >
+              </Box>
+            </RevealWrapper>
+            <RevealWrapper
+              origin="left"
+              delay={200}
+              duration={1000}
+              distance="500px"
+              reset={true}
+              desktop={true}
+              mobile={true}
+            >
+              <Box flexBasis={"50%"}>
                 <ImageNext src={Logoone} alt="panaverse" />
-              </RevealWrapper>
-            </Box>
+              </Box>
+            </RevealWrapper>
           </Flex>
           <Grid>
             <Box px={{ lg: "300px", base: "40px" }}>
