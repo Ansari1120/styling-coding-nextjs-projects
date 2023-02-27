@@ -1,4 +1,5 @@
 import { Box, Container, Grid, Heading, Text } from "@chakra-ui/react";
+import { RevealWrapper } from "next-reveal";
 
 export default function CommonCoursesCards(CourseProps: any) {
   return (
@@ -6,12 +7,28 @@ export default function CommonCoursesCards(CourseProps: any) {
       <Container maxW={1400}>
         <Grid>
           <Box textAlign={"center"} py="30px">
-            <Heading fontWeight={"bold"} pb="30px" color="#11AD8E" size="lg">
-              {CourseProps.title}
-            </Heading>
-            <Text color="WhiteAlpha.700" fontWeight="semibold">
-              {CourseProps.text}
-            </Text>
+            <RevealWrapper
+              origin="left"
+              delay={600}
+              duration={1000}
+              distance="500px"
+              reset={true}
+            >
+              <Heading fontWeight={"bold"} pb="30px" color="#11AD8E" size="lg">
+                {CourseProps.title}
+              </Heading>
+            </RevealWrapper>
+            <RevealWrapper
+              origin="right"
+              delay={600}
+              duration={1000}
+              distance="500px"
+              reset={true}
+            >
+              <Text color="WhiteAlpha.700" fontWeight="semibold">
+                {CourseProps.text}
+              </Text>
+            </RevealWrapper>
           </Box>
         </Grid>
       </Container>

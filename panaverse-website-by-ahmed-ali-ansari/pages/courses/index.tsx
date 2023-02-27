@@ -3,6 +3,7 @@ import Home from "@/components/Home";
 import CoursesCards from "@/components/CoursesCards";
 import CommonCoursesCards from "@/components/CommonCoursesCards";
 import CommonCards from "@/components/CommonCards";
+import { RevealWrapper } from "next-reveal";
 
 export default function index() {
   const spacializedtracks = [
@@ -95,20 +96,36 @@ export default function index() {
       </Box>
       <Container maxW={1400}>
         <Box textAlign={"center"} py="30px" mx={{ lg: "200px", base: "30px" }}>
-          <Heading
-            fontSize={{ lg: "4xl", base: "xl" }}
-            pb="20px"
-            color="#11AD8E"
+          <RevealWrapper
+            origin="left"
+            delay={200}
+            duration={1000}
+            distance="500px"
+            reset={true}
           >
-            Course Curriculum
-          </Heading>
-          <Text color="WhiteAlpha.700" fontWeight={"semibold"}>
-            The first three quarters are shared by all specialties and are
-            dedicated to studying Object-Oriented Programming and cutting-edge
-            Full-Stack Web 2.0 development. It is going to be a
-            fifteen-month-long hybrid program that includes both onsite and
-            online classes and is divided into five quarters of 13 weeks each
-          </Text>
+            <Heading
+              fontSize={{ lg: "4xl", base: "xl" }}
+              pb="20px"
+              color="#11AD8E"
+            >
+              Course Curriculum
+            </Heading>
+          </RevealWrapper>
+          <RevealWrapper
+            origin="right"
+            delay={200}
+            duration={1000}
+            distance="500px"
+            reset={true}
+          >
+            <Text color="WhiteAlpha.700" fontWeight={"semibold"}>
+              The first three quarters are shared by all specialties and are
+              dedicated to studying Object-Oriented Programming and cutting-edge
+              Full-Stack Web 2.0 development. It is going to be a
+              fifteen-month-long hybrid program that includes both onsite and
+              online classes and is divided into five quarters of 13 weeks each
+            </Text>
+          </RevealWrapper>
         </Box>
         <CommonCoursesCards
           title="Core Courses (Common in All Specializations):"
@@ -120,25 +137,49 @@ export default function index() {
           direction={{ base: "column", lg: "row" }}
         >
           <Box flexBasis={"50%"}>
-            <CommonCards
-              id="Quarter I"
-              description="CS-101: Object-Oriented Programming using TypeScript and Typescript for React"
-              link="/q1"
-            />
+            <RevealWrapper
+              origin="top"
+              delay={200}
+              duration={1000}
+              distance="500px"
+              reset={true}
+            >
+              <CommonCards
+                id="Quarter I"
+                description="CS-101: Object-Oriented Programming using TypeScript and Typescript for React"
+                link="/q1"
+              />
+            </RevealWrapper>
           </Box>
           <Box flexBasis={"40%"}>
-            <CommonCards
-              id="Quarter II"
-              description="W2-201: Developing Planet-Scale Web 2.0 Serverless Cloud Cloud Apps and APIs using Next.js 13 and Cloud Development Kit (CDK) for Terraform"
-              link="/q2"
-            />
+            <RevealWrapper
+              origin="top"
+              delay={400}
+              duration={1000}
+              distance="500px"
+              reset={true}
+            >
+              <CommonCards
+                id="Quarter II"
+                description="W2-201: Developing Planet-Scale Web 2.0 Serverless Cloud Cloud Apps and APIs using Next.js 13 and Cloud Development Kit (CDK) for Terraform"
+                link="/q2"
+              />
+            </RevealWrapper>
           </Box>
           <Box flexBasis={"50%"}>
-            <CommonCards
-              id="Quarter III"
-              description="$-101: Dollar Making Bootcamp - Full-Stack Template and API Product Development"
-              link="/q3"
-            />
+            <RevealWrapper
+              origin="top"
+              delay={600}
+              duration={1000}
+              distance="500px"
+              reset={true}
+            >
+              <CommonCards
+                id="Quarter III"
+                description="$-101: Dollar Making Bootcamp - Full-Stack Template and API Product Development"
+                link="/q3"
+              />
+            </RevealWrapper>
           </Box>
         </Flex>
         <CommonCoursesCards
@@ -146,6 +187,7 @@ export default function index() {
           text="After completing the first three quarters the participants will select one or more specializations
         consisting of two courses each:"
         />
+
         <CoursesCards data={spacializedtracks} />
       </Container>
     </>

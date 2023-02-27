@@ -12,21 +12,18 @@ import {
   Text,
 } from "@chakra-ui/react";
 import Link from "next/link";
-export default function CommonCards({ id, description,link }: any) {
+
+export default function CommonCards({ id, description, link }: any) {
   return (
     <Box>
       <Container maxW={1400}>
-        <SimpleGrid
-          templateColumns="repeat(auto-fill,(3,1fr))"
-          py="10px"
-        >
+        <SimpleGrid templateColumns="repeat(auto-fill,(3,1fr))" py="10px">
           <Card
             bg="linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)), rgba(18, 18, 18, 0.4)"
             boxShadow={
               "0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 5px 5px rgba(0, 0, 0, 0.2)"
             }
             border={"2px solid #11AD8E"}
-            
           >
             <CardHeader>
               <Heading
@@ -49,10 +46,8 @@ export default function CommonCards({ id, description,link }: any) {
               <Text fontWeight={"semibold"}>{description}</Text>
             </CardBody>
             <CardFooter>
-              <Link
-              href={`/courses/common${link}`}
-              >
-              <Button>See Details</Button>
+              <Link href={`/courses/common${link}`}>
+                <Button>See Details</Button>
               </Link>
             </CardFooter>
           </Card>
