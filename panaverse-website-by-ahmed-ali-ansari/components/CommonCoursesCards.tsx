@@ -13,6 +13,8 @@ export default function CommonCoursesCards(CourseProps: any) {
               duration={1000}
               distance="500px"
               reset={true}
+              desktop={true}
+              mobile={true}
             >
               <Heading fontWeight={"bold"} pb="30px" color="#11AD8E" size="lg">
                 {CourseProps.title}
@@ -24,6 +26,8 @@ export default function CommonCoursesCards(CourseProps: any) {
               duration={1000}
               distance="500px"
               reset={true}
+              desktop={true}
+              mobile={true}
             >
               <Text color="WhiteAlpha.700" fontWeight="semibold">
                 {CourseProps.text}

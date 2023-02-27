@@ -27,23 +27,26 @@ export default function Landingpage() {
     <>
       <Box bgImage="./Landingpage.png">
         {/* {keep all content size (width or height same)} */}
-        <RevealWrapper
-          origin="left"
-          delay={200}
-          duration={1000}
-          distance="500px"
-          reset={true}
-        >
-          <Container maxW={1400}>
-            {/* {keep all content in column form */}
-            <Flex
-              pt={"150px"}
-              pb={"100px"}
-              px={"60px"}
-              direction={{ lg: "initial", base: "column" }}
-            >
-              {/* align you box content */}
-              <Box flexBasis={"50%"}>
+
+        <Container maxW={1400}>
+          {/* {keep all content in column form */}
+          <Flex
+            pt={"150px"}
+            pb={"100px"}
+            px={"60px"}
+            direction={{ lg: "initial", base: "column" }}
+          >
+            {/* align you box content */}
+            <Box flexBasis={"50%"}>
+              <RevealWrapper
+                origin="left"
+                delay={200}
+                duration={1000}
+                distance="500px"
+                reset={true}
+                desktop={true}
+                mobile={true}
+              >
                 <Heading color="white" size="2xl">
                   Become
                 </Heading>
@@ -62,13 +65,23 @@ export default function Landingpage() {
                     More Info
                   </Button>
                 </Link>
-              </Box>
-              <Box mt={{ lg: "-55px", base: "55px" }} flexBasis="50%">
+              </RevealWrapper>
+            </Box>
+            <Box mt={{ lg: "-40px", base: "55px" }}>
+              <RevealWrapper
+                desktop={true}
+                mobile={true}
+                origin="right"
+                delay={200}
+                duration={1000}
+                distance="500px"
+                reset={true}
+              >
                 <ImageNext src={Character} alt="Character" width={"490"} />
-              </Box>
-            </Flex>
-          </Container>
-        </RevealWrapper>
+              </RevealWrapper>
+            </Box>
+          </Flex>
+        </Container>
       </Box>
 
       {/* About Section onwards*/}
@@ -97,6 +110,8 @@ export default function Landingpage() {
                 duration={1000}
                 distance="500px"
                 reset={true}
+                desktop={true}
+                mobile={true}
               >
                 <Heading
                   position={"relative"}
@@ -145,6 +160,8 @@ export default function Landingpage() {
                 duration={1000}
                 distance="500px"
                 reset={true}
+                desktop={true}
+                mobile={true}
               >
                 <ImageNext
                   src={CharacterTwo}
@@ -175,6 +192,8 @@ export default function Landingpage() {
               duration={1000}
               distance="500px"
               reset={true}
+              desktop={true}
+              mobile={true}
             >
               <Text fontWeight={"semibold"} textAlign={"center"} pb="40px">
                 In this brand-new type of curriculum, students will learn how to
@@ -191,6 +210,8 @@ export default function Landingpage() {
               duration={1500}
               distance="500px"
               reset={true}
+              desktop={true}
+              mobile={true}
             >
               <Flex
                 justifyContent={"center"}
@@ -294,6 +315,8 @@ export default function Landingpage() {
             duration={1500}
             distance="500px"
             reset={true}
+            desktop={true}
+            mobile={true}
           >
             <Flex
               bg="linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)), #191A1B"
@@ -342,6 +365,8 @@ export default function Landingpage() {
             duration={1500}
             distance="500px"
             reset={true}
+            desktop={true}
+            mobile={true}
           >
             <Flex
               pt={"120px"}

@@ -38,6 +38,8 @@ export default function CoursesCards(props: any) {
                         duration={1000}
                         distance="500px"
                         reset={true}
+                        desktop={true}
+                        mobile={true}
                       >
                         <Heading
                           fontWeight={"bold"}
@@ -55,6 +57,8 @@ export default function CoursesCards(props: any) {
                         duration={1000}
                         distance="500px"
                         reset={true}
+                        desktop={true}
+                        mobile={true}
                       >
                         <Text
                           marginX={{ lg: "initial", base: "380px" }}
@@ -72,6 +76,8 @@ export default function CoursesCards(props: any) {
                         duration={1000}
                         distance="500px"
                         reset={true}
+                        desktop={true}
+                        mobile={true}
                       >
                         <Card
                           bg="linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)), rgba(18, 18, 18, 0.4)"
@@ -88,6 +94,8 @@ export default function CoursesCards(props: any) {
                             duration={1500}
                             distance="500px"
                             reset={true}
+                            desktop={true}
+                            mobile={true}
                           >
                             <CardHeader>
                               <Heading

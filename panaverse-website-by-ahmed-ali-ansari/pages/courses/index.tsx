@@ -102,6 +102,8 @@ export default function index() {
             duration={1000}
             distance="500px"
             reset={true}
+            desktop={true}
+            mobile={true}
           >
             <Heading
               fontSize={{ lg: "4xl", base: "xl" }}
@@ -117,6 +119,8 @@ export default function index() {
             duration={1000}
             distance="500px"
             reset={true}
+            desktop={true}
+            mobile={true}
           >
             <Text color="WhiteAlpha.700" fontWeight={"semibold"}>
               The first three quarters are shared by all specialties and are
@@ -143,6 +147,8 @@ export default function index() {
               duration={1000}
               distance="500px"
               reset={true}
+              desktop={true}
+              mobile={true}
             >
               <CommonCards
                 id="Quarter I"
@@ -158,6 +164,8 @@ export default function index() {
               duration={1000}
               distance="500px"
               reset={true}
+              desktop={true}
+              mobile={true}
             >
               <CommonCards
                 id="Quarter II"
@@ -173,6 +181,8 @@ export default function index() {
               duration={1000}
               distance="500px"
               reset={true}
+              desktop={true}
+              mobile={true}
             >
               <CommonCards
                 id="Quarter III"

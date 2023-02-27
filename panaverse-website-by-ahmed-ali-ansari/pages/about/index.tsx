@@ -43,6 +43,8 @@ export default function index() {
                 duration={1000}
                 distance="500px"
                 reset={true}
+                desktop={true}
+                mobile={true}
               >
                 <ImageNext src={PresidentPhoto} alt="president" />
               </RevealWrapper>
@@ -54,6 +56,8 @@ export default function index() {
                 duration={1000}
                 distance="500px"
                 reset={true}
+                desktop={true}
+                mobile={true}
               >
                 <Heading color="black" pb="40px">
                   Dr Arif Alvi
@@ -97,6 +101,8 @@ export default function index() {
                 duration={1000}
                 distance="500px"
                 reset={true}
+                desktop={true}
+                mobile={true}
               >
                 <Heading color="black" pb="40px">
                   About Panaverse Dao
@@ -125,6 +131,8 @@ export default function index() {
                 duration={1000}
                 distance="500px"
                 reset={true}
+                desktop={true}
+                mobile={true}
               >
                 <ImageNext src={Logoone} alt="panaverse" />
               </RevealWrapper>
@@ -138,6 +146,8 @@ export default function index() {
                 duration={1000}
                 distance="500px"
                 reset={true}
+                desktop={true}
+                mobile={true}
               >
                 <Heading
                   // fontSize={{ lg: "initial", base: "sm" }}
@@ -176,6 +186,8 @@ export default function index() {
                 duration={1000}
                 distance="500px"
                 reset={true}
+                desktop={true}
+                mobile={true}
               >
                 <ImageNext src={Rectangle} alt="icon" />
               </RevealWrapper>
@@ -194,6 +206,8 @@ export default function index() {
                 duration={1000}
                 distance="500px"
                 reset={true}
+                desktop={true}
+                mobile={true}
               >
                 <ImageNext src={Sirzia} alt="zia khan" />
               </RevealWrapper>
@@ -205,6 +219,8 @@ export default function index() {
                 duration={1000}
                 distance="500px"
                 reset={true}
+                desktop={true}
+                mobile={true}
               >
                 <Heading pb="40px">
                   COO PIAIC Zia Khan | Main Instructor
@@ -240,6 +256,8 @@ export default function index() {
             duration={1000}
             distance="500px"
             reset={true}
+            desktop={true}
+            mobile={true}
           >
             <Box px={{ lg: "590px", base: "110px" }} pt="100px">
               <Heading color="black">Faculty</Heading>
@@ -251,6 +269,8 @@ export default function index() {
             duration={1000}
             distance="500px"
             reset={true}
+            desktop={true}
+            mobile={true}
           >
             <Flex
               justifyContent="center"
@@ -274,6 +294,8 @@ export default function index() {
                   duration={1000}
                   distance="500px"
                   reset={true}
+                  desktop={true}
+                  mobile={true}
                 >
                   <Image
                     marginX={{ lg: "63px", base: "98px" }}
@@ -310,6 +332,8 @@ export default function index() {
                   duration={1000}
                   distance="500px"
                   reset={true}
+                  desktop={true}
+                  mobile={true}
                 >
                   <Image
                     marginX={{ lg: "63px", base: "98px" }}
@@ -346,6 +370,8 @@ export default function index() {
                   duration={1000}
                   distance="500px"
                   reset={true}
+                  desktop={true}
+                  mobile={true}
                 >
                   <Image
                     marginX={{ lg: "63px", base: "98px" }}
@@ -382,6 +408,8 @@ export default function index() {
                   duration={1000}
                   distance="500px"
                   reset={true}
+                  desktop={true}
+                  mobile={true}
                 >
                   <Image
                     marginX={{ lg: "63px", base: "98px" }}
