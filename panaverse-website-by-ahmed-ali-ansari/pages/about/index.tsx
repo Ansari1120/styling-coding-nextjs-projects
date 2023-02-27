@@ -39,9 +39,9 @@ export default function index() {
             <Box flexBasis={"50%"}>
               <RevealWrapper
                 origin="right"
-                delay={200}
+                delay={100}
                 duration={1000}
-                distance="500px"
+                distance="200px"
                 reset={true}
                 desktop={true}
                 mobile={true}
@@ -52,9 +52,9 @@ export default function index() {
             <Box flexBasis={"50%"} py="30px">
               <RevealWrapper
                 origin="left"
-                delay={200}
+                delay={100}
                 duration={1000}
-                distance="500px"
+                distance="200px"
                 reset={true}
                 desktop={true}
                 mobile={true}
@@ -96,9 +96,9 @@ export default function index() {
           >
             <RevealWrapper
               origin="right"
-              delay={200}
+              delay={100}
               duration={1000}
-              distance="500px"
+              distance="200px"
               reset={true}
               desktop={true}
               mobile={true}
@@ -125,9 +125,9 @@ export default function index() {
             </RevealWrapper>
             <RevealWrapper
               origin="left"
-              delay={200}
+              delay={100}
               duration={1000}
-              distance="500px"
+              distance="200px"
               reset={true}
               desktop={true}
               mobile={true}
@@ -141,9 +141,9 @@ export default function index() {
             <Box px={{ lg: "300px", base: "40px" }}>
               <RevealWrapper
                 origin="right"
-                delay={200}
+                delay={100}
                 duration={1000}
-                distance="500px"
+                distance="200px"
                 reset={true}
                 desktop={true}
                 mobile={true}
@@ -181,9 +181,9 @@ export default function index() {
             <Box pt="50px">
               <RevealWrapper
                 origin="left"
-                delay={200}
+                delay={100}
                 duration={1000}
-                distance="500px"
+                distance="200px"
                 reset={true}
                 desktop={true}
                 mobile={true}
@@ -201,9 +201,9 @@ export default function index() {
             <Box flexBasis={"50%"} pb="20px">
               <RevealWrapper
                 origin="left"
-                delay={200}
+                delay={100}
                 duration={1000}
-                distance="500px"
+                distance="200px"
                 reset={true}
                 desktop={true}
                 mobile={true}
@@ -214,9 +214,9 @@ export default function index() {
             <Box color="black" paddingRight={"20px"} flexBasis={"50%"}>
               <RevealWrapper
                 origin="right"
-                delay={200}
+                delay={100}
                 duration={1000}
-                distance="500px"
+                distance="200px"
                 reset={true}
                 desktop={true}
                 mobile={true}
@@ -251,9 +251,9 @@ export default function index() {
           </Flex>
           <RevealWrapper
             origin="bottom"
-            delay={200}
+            delay={100}
             duration={1000}
-            distance="500px"
+            distance="200px"
             reset={true}
             desktop={true}
             mobile={true}
@@ -264,9 +264,9 @@ export default function index() {
           </RevealWrapper>
           <RevealWrapper
             origin="bottom"
-            delay={200}
+            delay={100}
             duration={1000}
-            distance="500px"
+            distance="200px"
             reset={true}
             desktop={true}
             mobile={true}
@@ -289,9 +289,9 @@ export default function index() {
               >
                 <RevealWrapper
                   origin="right"
-                  delay={300}
+                  delay={200}
                   duration={1000}
-                  distance="500px"
+                  distance="200px"
                   reset={true}
                   desktop={true}
                   mobile={true}
@@ -327,9 +327,9 @@ export default function index() {
               >
                 <RevealWrapper
                   origin="right"
-                  delay={600}
+                  delay={300}
                   duration={1000}
-                  distance="500px"
+                  distance="200px"
                   reset={true}
                   desktop={true}
                   mobile={true}
@@ -365,9 +365,9 @@ export default function index() {
               >
                 <RevealWrapper
                   origin="right"
-                  delay={800}
+                  delay={400}
                   duration={1000}
-                  distance="500px"
+                  distance="200px"
                   reset={true}
                   desktop={true}
                   mobile={true}
@@ -403,9 +403,9 @@ export default function index() {
               >
                 <RevealWrapper
                   origin="right"
-                  delay={1000}
+                  delay={500}
                   duration={1000}
-                  distance="500px"
+                  distance="200px"
                   reset={true}
                   desktop={true}
                   mobile={true}

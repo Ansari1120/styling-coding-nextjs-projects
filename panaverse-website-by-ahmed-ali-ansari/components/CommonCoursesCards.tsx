@@ -9,9 +9,9 @@ export default function CommonCoursesCards(CourseProps: any) {
           <Box textAlign={"center"} py="30px">
             <RevealWrapper
               origin="left"
-              delay={600}
+              delay={100}
               duration={1000}
-              distance="500px"
+              distance="200px"
               reset={true}
               desktop={true}
               mobile={true}
@@ -22,9 +22,9 @@ export default function CommonCoursesCards(CourseProps: any) {
             </RevealWrapper>
             <RevealWrapper
               origin="right"
-              delay={600}
+              delay={100}
               duration={1000}
-              distance="500px"
+              distance="200px"
               reset={true}
               desktop={true}
               mobile={true}

@@ -74,9 +74,9 @@ export default function Landingpage() {
                 desktop={true}
                 mobile={true}
                 origin="right"
-                delay={200}
+                delay={100}
                 duration={1000}
-                distance="500px"
+                distance="100px"
                 reset={true}
               >
                 <ImageNext src={Character} alt="Character" width={"490"} />
@@ -108,9 +108,9 @@ export default function Landingpage() {
             >
               <RevealWrapper
                 origin="left"
-                delay={200}
+                delay={100}
                 duration={1000}
-                distance="500px"
+                distance="100px"
                 reset={true}
                 desktop={true}
                 mobile={true}
@@ -158,9 +158,9 @@ export default function Landingpage() {
             <Box flexBasis="50%" paddingLeft={"100px"}>
               <RevealWrapper
                 origin="right"
-                delay={200}
+                delay={100}
                 duration={1000}
-                distance="500px"
+                distance="100px"
                 reset={true}
                 desktop={true}
                 mobile={true}
@@ -179,9 +179,9 @@ export default function Landingpage() {
           <Box paddingX={{ lg: "350px", base: "30px" }}>
             <RevealWrapper
               origin="top"
-              delay={200}
+              delay={100}
               duration={1000}
-              distance="500px"
+              distance="100px"
               reset={true}
             >
               <Heading textAlign={"center"} color={"#11AD8E"} pb="25px">
@@ -190,9 +190,9 @@ export default function Landingpage() {
             </RevealWrapper>
             <RevealWrapper
               origin="left"
-              delay={200}
+              delay={100}
               duration={1000}
-              distance="500px"
+              distance="100px"
               reset={true}
               desktop={true}
               mobile={true}
@@ -206,11 +206,11 @@ export default function Landingpage() {
               </Text>
             </RevealWrapper>
             <RevealList
-              delay={500}
+              delay={100}
               interval={60}
               origin="top"
               duration={1500}
-              distance="500px"
+              distance="200px"
               reset={true}
               desktop={true}
               mobile={true}
@@ -312,10 +312,10 @@ export default function Landingpage() {
             </Box>
           </Flex>
           <RevealWrapper
-            delay={500}
+            delay={100}
             origin="left"
             duration={1500}
-            distance="500px"
+            distance="100px"
             reset={true}
             desktop={true}
             mobile={true}
@@ -362,10 +362,10 @@ export default function Landingpage() {
             </Flex>
           </RevealWrapper>
           <RevealWrapper
-            delay={500}
+            delay={100}
             origin="right"
             duration={1500}
-            distance="500px"
+            distance="100px"
             reset={true}
             desktop={true}
             mobile={true}

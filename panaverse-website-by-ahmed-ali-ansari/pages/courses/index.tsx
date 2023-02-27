@@ -98,9 +98,9 @@ export default function index() {
         <Box textAlign={"center"} py="30px" mx={{ lg: "200px", base: "30px" }}>
           <RevealWrapper
             origin="left"
-            delay={200}
+            delay={100}
             duration={1000}
-            distance="500px"
+            distance="60px"
             reset={true}
             desktop={true}
             mobile={true}
@@ -115,9 +115,9 @@ export default function index() {
           </RevealWrapper>
           <RevealWrapper
             origin="right"
-            delay={200}
+            delay={100}
             duration={1000}
-            distance="500px"
+            distance="50px"
             reset={true}
             desktop={true}
             mobile={true}
@@ -131,10 +131,20 @@ export default function index() {
             </Text>
           </RevealWrapper>
         </Box>
-        <CommonCoursesCards
-          title="Core Courses (Common in All Specializations):"
-          text="Every participant of the program will start by completing the following three core courses"
-        />
+        <RevealWrapper
+          origin="right"
+          delay={50}
+          duration={1000}
+          distance="50px"
+          reset={true}
+          desktop={true}
+          mobile={true}
+        >
+          <CommonCoursesCards
+            title="Core Courses (Common in All Specializations):"
+            text="Every participant of the program will start by completing the following three core courses"
+          />
+        </RevealWrapper>
         <Flex
           alignItems={"center"}
           justifyContent="center"
@@ -143,9 +153,9 @@ export default function index() {
           <Box flexBasis={"50%"}>
             <RevealWrapper
               origin="top"
-              delay={200}
+              delay={50}
               duration={1000}
-              distance="500px"
+              distance="150px0px"
               reset={true}
               desktop={true}
               mobile={true}
@@ -160,9 +170,9 @@ export default function index() {
           <Box flexBasis={"40%"}>
             <RevealWrapper
               origin="top"
-              delay={400}
+              delay={50}
               duration={1000}
-              distance="500px"
+              distance="50px"
               reset={true}
               desktop={true}
               mobile={true}
@@ -177,9 +187,9 @@ export default function index() {
           <Box flexBasis={"50%"}>
             <RevealWrapper
               origin="top"
-              delay={600}
+              delay={50}
               duration={1000}
-              distance="500px"
+              distance="50px"
               reset={true}
               desktop={true}
               mobile={true}
@@ -192,12 +202,21 @@ export default function index() {
             </RevealWrapper>
           </Box>
         </Flex>
-        <CommonCoursesCards
-          title="Specialized Tracks"
-          text="After completing the first three quarters the participants will select one or more specializations
+        <RevealWrapper
+          origin="left"
+          delay={50}
+          duration={1000}
+          distance="50px"
+          reset={true}
+          desktop={true}
+          mobile={true}
+        >
+          <CommonCoursesCards
+            title="Specialized Tracks"
+            text="After completing the first three quarters the participants will select one or more specializations
         consisting of two courses each:"
-        />
-
+          />
+        </RevealWrapper>
         <CoursesCards data={spacializedtracks} />
       </Container>
     </>
