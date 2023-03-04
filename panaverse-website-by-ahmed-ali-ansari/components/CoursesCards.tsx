@@ -34,9 +34,9 @@ export default function CoursesCards(props: any) {
                     <Box textAlign={"center"} py="30px">
                       <RevealWrapper
                         origin="left"
-                        delay={50}
+                        delay={10}
                         duration={1000}
-                        distance="50px"
+                        distance="10px"
                         reset={true}
                         desktop={true}
                         mobile={true}
@@ -53,9 +53,9 @@ export default function CoursesCards(props: any) {
                       </RevealWrapper>
                       <RevealWrapper
                         origin="right"
-                        delay={50}
+                        delay={10}
                         duration={1000}
-                        distance="50px"
+                        distance="10px"
                         reset={true}
                         desktop={true}
                         mobile={true}
@@ -72,9 +72,9 @@ export default function CoursesCards(props: any) {
                     <Box flexBasis={"50%"}>
                       <RevealWrapper
                         origin="right"
-                        delay={50}
+                        delay={10}
                         duration={1000}
-                        distance="50px"
+                        distance="10px"
                         reset={true}
                         desktop={true}
                         mobile={true}
@@ -88,11 +88,11 @@ export default function CoursesCards(props: any) {
                           marginX="400px"
                         >
                           <RevealList
-                            delay={50}
-                            interval={500}
+                            delay={10}
+                            interval={50}
                             origin="bottom"
                             duration={1000}
-                            distance="50px"
+                            distance="10px"
                             reset={true}
                             desktop={true}
                             mobile={true}

@@ -98,9 +98,9 @@ export default function index() {
         <Box textAlign={"center"} py="30px" mx={{ lg: "200px", base: "30px" }}>
           <RevealWrapper
             origin="left"
-            delay={100}
+            delay={10}
             duration={1000}
-            distance="60px"
+            distance="5px"
             reset={true}
             desktop={true}
             mobile={true}
@@ -115,9 +115,9 @@ export default function index() {
           </RevealWrapper>
           <RevealWrapper
             origin="right"
-            delay={100}
+            delay={10}
             duration={1000}
-            distance="50px"
+            distance="5px"
             reset={true}
             desktop={true}
             mobile={true}
@@ -133,9 +133,9 @@ export default function index() {
         </Box>
         <RevealWrapper
           origin="right"
-          delay={50}
+          delay={10}
           duration={1000}
-          distance="50px"
+          distance="5px"
           reset={true}
           desktop={true}
           mobile={true}
@@ -153,9 +153,9 @@ export default function index() {
           <Box flexBasis={"50%"}>
             <RevealWrapper
               origin="top"
-              delay={50}
+              delay={10}
               duration={1000}
-              distance="150px0px"
+              distance="5px"
               reset={true}
               desktop={true}
               mobile={true}
@@ -170,9 +170,9 @@ export default function index() {
           <Box flexBasis={"40%"}>
             <RevealWrapper
               origin="top"
-              delay={50}
+              delay={10}
               duration={1000}
-              distance="50px"
+              distance="5px"
               reset={true}
               desktop={true}
               mobile={true}
@@ -187,9 +187,9 @@ export default function index() {
           <Box flexBasis={"50%"}>
             <RevealWrapper
               origin="top"
-              delay={50}
+              delay={10}
               duration={1000}
-              distance="50px"
+              distance="5px"
               reset={true}
               desktop={true}
               mobile={true}
@@ -204,9 +204,9 @@ export default function index() {
         </Flex>
         <RevealWrapper
           origin="left"
-          delay={50}
+          delay={10}
           duration={1000}
-          distance="50px"
+          distance="5px"
           reset={true}
           desktop={true}
           mobile={true}
