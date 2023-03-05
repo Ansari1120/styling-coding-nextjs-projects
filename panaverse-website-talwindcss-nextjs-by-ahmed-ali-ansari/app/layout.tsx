@@ -1,6 +1,7 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "./globals.css";
+// import { ThemeProvider } from "next-themes";
 
 // export const metadata = {
 //   title: 'Create Next App',
@@ -13,10 +14,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+    // <ThemeProvider enableSystem={true} attribute="class">
     <html lang="en">
-    
-      <body>  <Header />{children} <Footer /></body>
-      
+      <body>
+        {" "}
+        <Header />
+        {children} <Footer />
+      </body>
     </html>
+    // </ThemeProvider>
   );
 }
