@@ -36,6 +36,28 @@ export default function Header() {
       </div>
       <div className="static md:hidden text-2xl ">
         <BiAlignJustify />
+        <ul className="md:grid mb-2 text-lg font-semibold hidden ">
+          <li className="hover:text-blue-600 pt-[8px]">
+            <Link href={"/"}>Home</Link>
+          </li>
+          <li className="hover:text-blue-600 pt-[8px]">
+            <Link href={"/"}>Syllabus</Link>
+          </li>
+          <li className="hover:text-blue-600 pt-[8px]">
+            <Link href={"/"}>About</Link>
+          </li>
+          <li className="hover:text-blue-600 pt-[8px]">
+            <Link href={"/"}>Contact</Link>
+          </li>
+          {/* <li>
+            <ToggleTheme />
+          </li> */}
+          <div>
+            <button className="bg-blue-700 px-6 py-2 text-white rounded-xl text-xl font-semibold hover:bg-blue-900 hover:animate-bounce  ">
+              Apply
+            </button>
+          </div>
+        </ul>
       </div>
     </div>
   );

@@ -64,7 +64,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="basis-1/4 my-4">
+        <div className="basis-1/4 ml-11 my-4">
           <h1 className="text-3xl font-semibold pb-10">Support</h1>
           <ul>
             <li className="pb-2">
@@ -81,7 +81,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="basis-1/4 my-4">
+        <div className="basis-1/4 ml-11  my-4">
           <h1 className="text-3xl font-semibold pb-10">Stay upto date</h1>
           <div className="flex flex-row">
             <input
@@ -100,7 +100,7 @@ export default function Footer() {
           </label>
         </div>
       </div>
-      <div className="grid text-white grid-column md:grid-cols-1 bg-gray-500 mx-[100px] rounded-t-lg p-4 mt-[-6px] space-x-2 justify-items-center">
+      <div className="grid text-white grid-column md:grid-cols-1 bg-gray-500 mx-[50px] md:mx-[100px] rounded-t-lg p-4 mt-[-6px] space-x-2 justify-items-center">
         <div className="md:flex flex-row grid grid-cols-1">
           <div className="basis-1/3 py-5 mr-4">
             <Image src={copyright} alt="copyright" />
@@ -108,7 +108,7 @@ export default function Footer() {
               AHMED ALI ANSARI PIAIC 171908
             </h1>
           </div>
-          <div className=" mr-7">
+          <div className=" mr-7 3xl:hidden static ">
             {" "}
             <Image src={rectangle} alt="line" />
           </div>
@@ -123,7 +123,7 @@ export default function Footer() {
               +923************
             </h1>
           </div>
-          <div className=" mx-7">
+          <div className="mx-7 3xl:hidden static">
             {" "}
             <Image src={rectangle} alt="line" />
           </div>
