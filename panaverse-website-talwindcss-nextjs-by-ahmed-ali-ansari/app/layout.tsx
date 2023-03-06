@@ -1,6 +1,9 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "./globals.css";
+import Provider from "./Provider";
+// import {mode} from "./ToggleTheme";
+
 // import { ThemeProvider } from "next-themes";
 
 // export const metadata = {
@@ -14,14 +17,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // <ThemeProvider enableSystem={true} attribute="class">
     <html lang="en">
       <body>
         {" "}
-        <Header />
-        {children} <Footer />
+        {/* <div className=" dark:bg-slate-900  dark:text-white bg-gray-400 "> */}
+        <Provider>
+          <Header />
+          {children} <Footer />
+          {/* </div> */}
+        </Provider>
       </body>
     </html>
-    // </ThemeProvider>
   );
 }
