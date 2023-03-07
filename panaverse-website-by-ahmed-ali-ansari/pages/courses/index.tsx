@@ -94,7 +94,7 @@ export default function index() {
           src="https://img.freepik.com/free-photo/book-with-green-board-background_1150-3837.jpg?w=740&t=st=1676621406~exp=1676622006~hmac=fe9e41ea8ccb5a8210ce3e2e6d64b2f9fb935daa82ed404cdfdf5fa554a74e22"
         />
       </Box>
-      <Container maxW={1400}>
+      <Container maxWidth={"-moz-fit-content"}>
         <Box textAlign={"center"} py="30px" mx={{ lg: "200px", base: "30px" }}>
           <RevealWrapper
             origin="left"

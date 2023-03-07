@@ -4,7 +4,7 @@ import { RevealWrapper } from "next-reveal";
 export default function CommonCoursesCards(CourseProps: any) {
   return (
     <Box>
-      <Container maxW={1400}>
+      <Container maxWidth={"-moz-fit-content"}>
         <Grid>
           <Box textAlign={"center"} py="30px">
             <RevealWrapper

@@ -29,7 +29,8 @@ function Navbar() {
       }
       position="absolute"
     >
-      <Container maxWidth={{ lg: 1400, base: 360 }}>
+      {/* {maxWidth={{ lg:"100%", base: 360 }} */}
+      <Container maxWidth={{ xl: "100%", lg: "1008px" , md:"144px" }}>
         {/*we have 3 divs each into one row */}
         <SimpleGrid
           templateColumns={{ base: "repeat(5,1fr)", lg: "repeat(7,1fr)" }}
@@ -59,7 +60,7 @@ function Navbar() {
             <Link href={"/contact"}>Contact</Link>
             <Link href={"/about"}>About</Link>
           </Flex>
-          <Box marginLeft={"38px"}>
+          <Box marginLeft={{ xl: "38px", lg: "-310px" }}>
             <Button
               display={{ lg: "initial", md: "initial", base: "none" }}
               left="262"
@@ -70,7 +71,7 @@ function Navbar() {
           </Box>
           <Box
             position="relative"
-            left={"240px"}
+            left={{ xl: "240px", lg: "141px" }}
             display={{ lg: "initial", md: "initial", base: "none" }}
           >
             <Icon as={Bar}></Icon>
@@ -79,7 +80,7 @@ function Navbar() {
             <Button
               display={{ lg: "initial", md: "initial", base: "none" }}
               float="right"
-              left={"206px"}
+              left={{xl:"206px",lg:"150px"}}
               onClick={toggleColorMode}
             >
               {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
@@ -92,8 +93,8 @@ function Navbar() {
                 display={{ lg: "initial", md: "initial", base: "none" }}
                 size={{ md: "md", lg: "lg" }}
                 bg="#11AD8E"
-                left={{ lg: "30px", md: "-30px" }}
-                marginLeft={"250px"}
+                left={{ xl: "30px", md: "-30px" }}
+                marginLeft={{ xl: "250px", lg: "190" }}
                 marginY={{ base: "6px" }}
               >
                 Apply Now

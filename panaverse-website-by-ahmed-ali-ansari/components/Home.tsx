@@ -10,7 +10,7 @@ export default function Home(hello: any) {
       fontStyle={"italic"}
       borderBottomRadius="150px"
     >
-      <Container maxW={1400}>
+      <Container maxWidth={"-moz-fit-content"}>
         <Heading color={"black"} size="2xl">
           {hello.title}
         </Heading>

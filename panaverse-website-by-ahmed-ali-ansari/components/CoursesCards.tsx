@@ -25,7 +25,7 @@ export default function CoursesCards(props: any) {
         bgAttachment="fixed"
         marginX="-4"
       >
-        <Container maxW={1400}>
+        <Container maxWidth={"-moz-fit-content"}>
           <Center>
             <Grid>
               {data.map((x: any, i: any) => {

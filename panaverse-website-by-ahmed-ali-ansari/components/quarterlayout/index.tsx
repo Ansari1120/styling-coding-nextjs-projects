@@ -13,7 +13,7 @@ export default function Quarterlayout({
 }: any) {
   return (
     <Box pt="130px">
-      <Container maxW={1400}>
+      <Container maxWidth={"-moz-fit-content"}>
         <Box>
           <Heading textAlign={"center"} size="md" pb="20px">
             {centerHeading}

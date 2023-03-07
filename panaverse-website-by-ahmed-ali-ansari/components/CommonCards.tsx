@@ -16,7 +16,7 @@ import Link from "next/link";
 export default function CommonCards({ id, description, link }: any) {
   return (
     <Box>
-      <Container maxW={1400}>
+      <Container maxWidth={"-moz-fit-content"}>
         <SimpleGrid templateColumns="repeat(auto-fill,(3,1fr))" py="10px">
           <Card
             bg="linear-gradient(0deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)), rgba(18, 18, 18, 0.4)"

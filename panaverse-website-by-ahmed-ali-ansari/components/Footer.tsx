@@ -19,7 +19,7 @@ import { PhoneIcon, EmailIcon } from "@chakra-ui/icons";
 export default function Footer() {
   return (
     <Box bg="#0c0c0c" fontFamily="sans-serif">
-      <Container maxW={1300}>
+      <Container maxWidth={"-moz-fit-content"}>
         <SimpleGrid
           spacing={"10px"}
           templateColumns={{

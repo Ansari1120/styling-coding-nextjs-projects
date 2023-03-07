@@ -28,7 +28,7 @@ export default function Landingpage() {
       <Box bgImage="./Landingpage.png">
         {/* {keep all content size (width or height same)} */}
 
-        <Container maxW={1400}>
+        <Container maxWidth={"-moz-fit-content"}>
           {/* {keep all content in column form */}
           <Flex
             pt={"150px"}
