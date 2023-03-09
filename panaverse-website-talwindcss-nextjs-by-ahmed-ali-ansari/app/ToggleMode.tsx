@@ -24,7 +24,7 @@ export const ToggleMode = () => {
         <option value="light">Light</option>
       </select> */}
       <button
-        className="w-10 h-10 bg-blue-100 rounded-lg dark:bg-slate-800 hover:ring:2 ring-blue-400 pl-3 mt-1"
+        className="w-10 h-10 bg-slate-800  rounded-lg dark:bg-slate-800 hover:ring:2 ring-blue-400 pl-3 mt-1 text-white"
         onClick={() => setTheme(theme === 'light' ? "dark" : "light")}
         aria-label="toggle dark mode"
         value={theme}
