@@ -3,6 +3,8 @@ import Logo from "../public/Logo.png";
 import Saylani from "../public/partners/saylanilogo.png";
 import Panacloud from "../public/partners/panacloudlogo.png";
 import CourseLayout from "./components/CourseLayout";
+import AI from "../public/ai1.png";
+import AITwo from "../public/ai2.png";
 
 export default function Home() {
   return (
@@ -33,13 +35,49 @@ export default function Home() {
       </div>
       <div>
         <h1 className="text-2xl text-center mt-14 font-bold">Our Programs</h1>
+      </div>
+      <div className="bg-[url('https://img.freepik.com/premium-vector/abstract-halftone-wallpaper_23-2148600733.jpg?w=740')] bg-fixed bg-cover bg-no-repeat  py-32">
         <CourseLayout
-          imgOne=""
-          imgTwo=""
-          Heading=""
-          BackIndex=""
-          Para=""
-          ExploreButton=" "
+          imgOne={AI}
+          imgTwo={AITwo}
+          Heading="Artificial  Intelligence"
+          BackIndex="1"
+          Para="A ONE YEAR AI PROGRAM DESIGNED FOR ABSOLUTE BEGINNERS.
+            GETTING PAKISTAN READY FOR THE NEW ERA OF COMPUTING ENABLED BY THE RISE OF AI."
+          ExploreButtonID="AI"
+        />
+      </div>
+      <div className="bg-[url('https://img.freepik.com/premium-vector/abstract-halftone-wallpaper_23-2148600733.jpg?w=740')] bg-fixed bg-cover bg-no-repeat  py-32">
+        <CourseLayout
+          imgOne={AI}
+          imgTwo={AITwo}
+          Heading="Artificial  Intelligence"
+          BackIndex="1"
+          Para="A ONE YEAR AI PROGRAM DESIGNED FOR ABSOLUTE BEGINNERS.
+            GETTING PAKISTAN READY FOR THE NEW ERA OF COMPUTING ENABLED BY THE RISE OF AI."
+          ExploreButtonID="AI"
+        />
+      </div>
+      <div className="bg-[url('https://img.freepik.com/premium-vector/abstract-halftone-wallpaper_23-2148600733.jpg?w=740')] bg-fixed bg-cover bg-no-repeat  py-32">
+        <CourseLayout
+          imgOne={AI}
+          imgTwo={AITwo}
+          Heading="Artificial  Intelligence"
+          BackIndex="1"
+          Para="A ONE YEAR AI PROGRAM DESIGNED FOR ABSOLUTE BEGINNERS.
+            GETTING PAKISTAN READY FOR THE NEW ERA OF COMPUTING ENABLED BY THE RISE OF AI."
+          ExploreButtonID="AI"
+        />
+      </div>
+      <div className="bg-[url('https://img.freepik.com/premium-vector/abstract-halftone-wallpaper_23-2148600733.jpg?w=740')] bg-fixed bg-cover bg-no-repeat  py-32">
+        <CourseLayout
+          imgOne={AI}
+          imgTwo={AITwo}
+          Heading="Artificial  Intelligence"
+          BackIndex="1"
+          Para="A ONE YEAR AI PROGRAM DESIGNED FOR ABSOLUTE BEGINNERS.
+            GETTING PAKISTAN READY FOR THE NEW ERA OF COMPUTING ENABLED BY THE RISE OF AI."
+          ExploreButtonID="AI"
         />
       </div>
     </>
