@@ -5,6 +5,14 @@ import Panacloud from "../public/partners/panacloudlogo.png";
 import CourseLayout from "./components/CourseLayout";
 import AI from "../public/ai1.png";
 import AITwo from "../public/ai2.png";
+import BCC from "../public/bc.png";
+import BCC1 from "../public/bc1.png";
+import CNC1 from "../public/iot1.png";
+import CNC2 from "../public/iot2.png";
+import IOT1 from "../public/iot1.png";
+import IOT2 from "../public/iot2.png";
+import WMD from "../public/wmd.png";
+import WMD2 from "../public/md.png";
 
 export default function Home() {
   return (
@@ -47,37 +55,45 @@ export default function Home() {
           ExploreButtonID="AI"
         />
       </div>
-      <div className="bg-[url('https://img.freepik.com/premium-vector/abstract-halftone-wallpaper_23-2148600733.jpg?w=740')] bg-fixed bg-cover bg-no-repeat  py-32">
+      <div className="bg-[url('https://img.freepik.com/free-photo/white-painted-wall-texture-background_53876-138197.jpg?w=740&t=st=1679506207~exp=1679506807~hmac=0bf4f163efbb6f32acdd791f576bfba8c35f700d55894de55a672ef05058f644')] bg-fixed bg-cover bg-no-repeat  py-32">
         <CourseLayout
-          imgOne={AI}
-          imgTwo={AITwo}
-          Heading="Artificial  Intelligence"
-          BackIndex="1"
-          Para="A ONE YEAR AI PROGRAM DESIGNED FOR ABSOLUTE BEGINNERS.
-            GETTING PAKISTAN READY FOR THE NEW ERA OF COMPUTING ENABLED BY THE RISE OF AI."
-          ExploreButtonID="AI"
+          imgOne={BCC}
+          imgTwo={BCC1}
+          Heading="Blockchain"
+          BackIndex="2"
+          Para="A ONE YEAR BLOCKCHAIN PROGRAM DESIGNED FOR ABSOLUTE BEGINNERS GETTING PAKISTAN READY FOR THE NEW ERA OF BLOCKCHAIN, FINTECH AND SMART CONTRACTS"
+          ExploreButtonID="BCC"
         />
       </div>
-      <div className="bg-[url('https://img.freepik.com/premium-vector/abstract-halftone-wallpaper_23-2148600733.jpg?w=740')] bg-fixed bg-cover bg-no-repeat  py-32">
+      <div className="bg-[url('https://img.freepik.com/free-photo/vintage-grunge-blue-concrete-texture-wall-background-with-vignette_1258-28373.jpg?w=740&t=st=1679516764~exp=1679517364~hmac=9134a8a2eb858bb1783faf80a829520be7e3c3e4d929fb4e042bc3d31fb942dd')] bg-fixed bg-cover bg-no-repeat  py-32">
         <CourseLayout
-          imgOne={AI}
-          imgTwo={AITwo}
-          Heading="Artificial  Intelligence"
-          BackIndex="1"
-          Para="A ONE YEAR AI PROGRAM DESIGNED FOR ABSOLUTE BEGINNERS.
-            GETTING PAKISTAN READY FOR THE NEW ERA OF COMPUTING ENABLED BY THE RISE OF AI."
-          ExploreButtonID="AI"
+          imgOne={CNC2}
+          imgTwo={CNC1}
+          Heading="Cloud Native Computing"
+          BackIndex="3"
+          Para="A ONE YEAR CLOUD COMPUTING PROGRAM DESIGNED FOR ABSOLUTE BEGINNERS.
+          GETTING PAKISTAN READY FOR THE NEW ERA OF MICROSERVICES AND MULTI-CLOUD NATIVE COMPUTING."
+          ExploreButtonID="CNC"
         />
       </div>
-      <div className="bg-[url('https://img.freepik.com/premium-vector/abstract-halftone-wallpaper_23-2148600733.jpg?w=740')] bg-fixed bg-cover bg-no-repeat  py-32">
+      <div className="bg-[url('https://img.freepik.com/free-vector/green-yellow-abstract-background_53876-99558.jpg?w=740&t=st=1679517181~exp=1679517781~hmac=d072843285ec572d15db8517fcf38d87879c65bb5de5a1b19d21ee74ba3a7d97')] bg-fixed bg-cover bg-no-repeat  py-32">
         <CourseLayout
-          imgOne={AI}
-          imgTwo={AITwo}
-          Heading="Artificial  Intelligence"
-          BackIndex="1"
-          Para="A ONE YEAR AI PROGRAM DESIGNED FOR ABSOLUTE BEGINNERS.
-            GETTING PAKISTAN READY FOR THE NEW ERA OF COMPUTING ENABLED BY THE RISE OF AI."
-          ExploreButtonID="AI"
+          imgOne={IOT2}
+          imgTwo={IOT1}
+          Heading="Internet Of things"
+          BackIndex="4"
+          Para="A FIFTEEN MONTHS IOT AND AI PROGRAM DESIGNED FOR ABSOLUTE BEGINNERS GETTING PAKISTAN READY FOR THE NEW ERA OF INTERNET OF THINGS AND AI"
+          ExploreButtonID="IOT"
+        />
+      </div>
+      <div className="bg-[url('https://img.freepik.com/free-photo/cement-wall-floor-copy-space_53876-30237.jpg?w=740&t=st=1679517544~exp=1679518144~hmac=e90426e4425a170e6d1e5538895e843f3d00dac1d38134ee6762b7be7bf74b9c')] bg-fixed bg-cover bg-no-repeat  py-32">
+        <CourseLayout
+          imgOne={WMD2}
+          imgTwo={WMD}
+          Heading="Web 3 Metaverse"
+          BackIndex="5"
+          Para="It is going to be a year-long hybrid programme that includes both onsite and online classes and is divided into four quarters of 13 weeks each. The emphasis will be on hands-on learning by educating students to produce projects."
+          ExploreButtonID="WMD"
         />
       </div>
     </>

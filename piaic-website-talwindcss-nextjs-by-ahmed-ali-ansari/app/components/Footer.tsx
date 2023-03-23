@@ -12,12 +12,14 @@ import copyright from "../../public/assets/copyright.png";
 import contact from "../../public/assets/contact.png";
 import panacloud from "../../public/assets/panacloud.png";
 import rectangle from "../../public/assets/Rectangle-8.png";
+import piaic from "../../public/piaic.svg";
+
 export default function Footer() {
   return (
     <div className="w-full bg-black ">
-      <div className="w-full bg-black text-white md:flex flex-row grid grid-cols-1">
+      <div className="w-full  bg-black text-white md:flex flex-row grid grid-cols-1   mb-6">
         <div className="basis-1/4 mx-7 my-4">
-          <Image src={panaverse} alt={"panaverse"} />
+          <Image src={piaic} alt={"PIAIC"} width={80} height={80} />
           <h1>
             The Future of the Web is Web 3.0, Metaverse, and Edge Computing.
             Panaverse DAO is a movement to spread these technolgies globally. It
@@ -90,7 +92,7 @@ export default function Footer() {
               // value={""}
               className="rounded-md pl-3"
             />
-            <button className=" bg-blue-700 hover:bg-blue-400  ml-2 p-1 rounded-sm">
+            <button className="focus:ring-2 focus:ring-blue-500 focus:outline-none bg-blue-700 hover:bg-blue-400  ml-2 p-1 rounded-sm">
               {" "}
               <HiMail />{" "}
             </button>
@@ -100,7 +102,7 @@ export default function Footer() {
           </label>
         </div>
       </div>
-      <div className="grid text-white grid-column md:grid-cols-1 bg-gray-500 mx-[50px] md:mx-[100px] rounded-t-lg p-4 mt-[-6px] space-x-2 justify-items-center">
+      <div className="grid text-white grid-column md:grid-cols-1 bg-gray-500 mx-[50px] md:mx-[100px] rounded-t-lg p-4 mt-[-6px] space-x-2 justify-items-center -mb-14">
         <div className="md:flex flex-row grid grid-cols-1">
           <div className="basis-1/3 py-5 mr-4">
             <Image src={copyright} alt="copyright" />
@@ -128,7 +130,9 @@ export default function Footer() {
             <Image src={rectangle} alt="line" />
           </div>
           <div className="basis-1/4">
-            <h1 className="text-sm pt-1 italic text-black font-semibold">Powered By:</h1>
+            <h1 className="text-sm pt-1 italic text-black font-semibold">
+              Powered By:
+            </h1>
             <Image src={panacloud} alt="panacloud" />
           </div>
         </div>
