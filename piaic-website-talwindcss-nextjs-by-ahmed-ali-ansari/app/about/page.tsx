@@ -1,3 +1,4 @@
+import Faculty from "../components/FacultyLayout"
 export default function page() {
   return (
     <>
@@ -7,7 +8,7 @@ export default function page() {
         </h1>
       </div>
       <div className="md:flex grid mt-9  mb-11">
-        <div className="md:w-[1250px] w-[300px] bg-slate-50   rounded-md  my-[54px]  md:ml-11 ml-3   pb-16 pt-8 md:px-16 px-2 md:-mr-11  mr-11 ">
+        <div className="shadow-2xl md:w-[1250px] w-[300px] bg-slate-50   rounded-md  my-[54px]  md:ml-11 ml-3   pb-16 pt-8 md:px-16 px-2 md:-mr-11  mr-11 ">
           <h1 className="text-black text-5xl font-bold border-l-[6px] border-l-blue-700 pl-3  mt-16">
             Dr. Arif Alvi
           </h1>
@@ -33,7 +34,7 @@ export default function page() {
       </div>
       <div className="md:flex grid mb-[1120px]">
         <div className="rounded-md bg-[url('https://tailwind-by-ahmed.vercel.app/_next/image?url=%2Fziakhan.jpg&w=640&q=75')] bg-cover bg-center md:w-[40%] w-[90%]  h-[14cm] md:ml-10 ml-4 ">
-          <div className=" md:mt-0 mt-[560px]  md:w-[800px] w-[275px] bg-slate-50  md:mx-[444px] mx-[4px] rounded-md  my-[54px]   md:mr-11  mr-2  pb-16 pt-8 md:px-16 px-8">
+          <div className="shadow-2xl md:mt-0 mt-[560px]  md:w-[800px] w-[275px] bg-slate-50  md:mx-[444px] mx-[4px] rounded-md  my-[54px]   md:mr-11  mr-2  pb-16 pt-8 md:px-16 px-8">
             <h1 className="text-black text-5xl font-bold border-l-[6px] border-l-blue-700 pl-3  mt-16">
               Zia Khan
             </h1>
@@ -53,6 +54,7 @@ export default function page() {
           </div>
         </div>
       </div>
+      <Faculty />
     </>
   );
 }

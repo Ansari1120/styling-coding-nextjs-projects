@@ -36,7 +36,7 @@ const CourseLayout = (props: {
           <button className="  bg-white text-indigo-500 hover:bg-indigo-300  rounded-lg m-auto p-2 font-semibold">
             Learn More
           </button>
-          <div className=" absolute text-gray-900 md:text-[200px]  text-[120px]  opacity-50   pb-0.5">
+          <div className=" absolute text-gray-900 md:text-[200px]  text-[120px]  opacity-50   pb-0.5 ">
             {BackIndex}
           </div>
         </div>
