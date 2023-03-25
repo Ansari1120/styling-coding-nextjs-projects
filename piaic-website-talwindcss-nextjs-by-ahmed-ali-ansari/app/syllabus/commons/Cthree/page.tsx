@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function page() {
-  return <div>syllabus</div>;
+  return <div>q3 common</div>;
 }

@@ -20,9 +20,9 @@ export default function Header() {
     return () => window.removeEventListener("click", handleListener);
   }, []);
   return (
-    <div className=" sticky top-0">
+    <div className="sticky top-0">
       <div className="flex justify-between items-center md:px-7 px-[20px] py-2 w-full absolute ">
-        <div className="md:relative fixed   top-5">
+        <div className="md:relative fixed  md:top-0 top-3">
           <Image src={piaic} alt="PIAIC" width={50} height={50} />
         </div>
         <div>
@@ -33,7 +33,7 @@ export default function Header() {
             <li className=" text-white hover:text-blue-600 pt-[8px] hover:border-b-2 relative">
               {/* <Link href={"/syllabus"}>Syllabus</Link> */}
               <button
-                className="drop flex items-center px-2 py-1 hover:text-accent "
+                className="drop flex items-center px-2 hover:text-accent "
                 type="button"
                 onClick={HandledropDownState}
               >
@@ -57,35 +57,35 @@ export default function Header() {
               {dropDownState ? (
                 <ul className="  drop  absolute left-2 top-16 z-10  w-96 cursor-pointer divide-y divide-gray-50  rounded-lg bg-white bg-opacity-40 px-2 py-2 text-sm text-black shadow backdrop-blur-md dark:divide-slate-600 dark:bg-gray-700 dark:bg-opacity-40  dark:text-gray-200 ">
                   <li>
-                    <Link href={"/"}>
+                    <Link href={"/syllabus/AI"}>
                       <span className="block px-4 py-2 hover:bg-gray-400  dark:hover:bg-gray-600">
                         Artificial Intelligence
                       </span>
                     </Link>
                   </li>
                   <li>
-                    <Link href={"/"}>
+                    <Link href={"/syllabus/BCC"}>
                       <span className="block px-4 py-2 hover:bg-gray-400  dark:hover:bg-gray-600">
                         Blockchain
                       </span>
                     </Link>
                   </li>
                   <li>
-                    <Link href={"/"}>
+                    <Link href={"/syllabus/CNC"}>
                       <span className="block px-4 py-2 hover:bg-gray-400  dark:hover:bg-gray-600">
                         Cloud Computing
                       </span>
                     </Link>
                   </li>
                   <li>
-                    <Link href={"/"}>
+                    <Link href={"/syllabus/IOT"}>
                       <span className="block px-4 py-2 hover:bg-gray-400  dark:hover:bg-gray-600">
                         Internet of Things
                       </span>
                     </Link>
                   </li>
                   <li>
-                    <Link href={"/"}>
+                    <Link href={"/syllabus/WMD"}>
                       <span className="block px-4 py-2 hover:bg-gray-400  dark:hover:bg-gray-600">
                         Web-03 & Metaverse
                       </span>
@@ -110,7 +110,7 @@ export default function Header() {
             </div>
           </ul>
         </div>
-        <div className=" md:hidden text-xl  ml-56">
+        <div className=" md:hidden text-xl  ml-56  ">
           <li>
             <button
               className=" block rounded-lg border-2  p-2  text-3xl shadow-md shadow-accent border-gray-300 text-slate-100  md:hidden"
@@ -119,7 +119,7 @@ export default function Header() {
               {hamburgerMenu ? <RiCloseFill /> : <BiAlignJustify />}
             </button>
             {hamburgerMenu ? (
-              <ul className="rounded-md shadow-xl bg-slate-100 text-black font-semibold p-4   md:-ml-0 -ml-14  mt-3">
+              <ul className="  rounded-md shadow-xl bg-slate-100 text-black font-semibold p-4   md:-ml-0 -ml-14  mt-3">
                 <li>
                   <Link href={"/"}>
                     <span className="block rounded-md py-2 hover:bg-gray-400  dark:hover:bg-gray-600">
@@ -128,73 +128,71 @@ export default function Header() {
                   </Link>
                 </li>
                 <li>
-                  <Link href={"/"}>
-                    <span className="relative block rounded-md py-2 hover:bg-gray-400  dark:hover:bg-gray-600">
-                      <button
-                        className="drop flex items-center py-1 hover:text-accent "
-                        type="button"
-                        onClick={HandledropDownState}
+                  <span className="relative block rounded-md py-2 hover:bg-gray-400  dark:hover:bg-gray-600">
+                    <button
+                      className="drop flex items-center py-1 hover:text-accent "
+                      type="button"
+                      onClick={HandledropDownState}
+                    >
+                      Courses
+                      <svg
+                        className="ml-2 h-4 w-4"
+                        aria-hidden="true"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        Courses
-                        <svg
-                          className="ml-2 h-4 w-4"
-                          aria-hidden="true"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M19 9l-7 7-7-7"
-                          ></path>
-                        </svg>
-                      </button>
-                      {dropDownState ? (
-                        <div>
-                          <ul className="drop  absolute  top-16 z-10  w-56 cursor-pointer divide-y divide-gray-50  rounded-lg bg-white bg-opacity-40 px-2 py-2 text-sm text-black shadow backdrop-blur-md dark:divide-slate-600 dark:bg-gray-700 dark:bg-opacity-40  dark:text-gray-200  md:-ml-0 -ml-32">
-                            <li>
-                              <Link href={"/"}>
-                                <span className="block px-4 py-2 hover:bg-gray-400  dark:hover:bg-gray-600">
-                                  Artificial Intelligence
-                                </span>
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href={"/"}>
-                                <span className="block px-4 py-2 hover:bg-gray-400  dark:hover:bg-gray-600">
-                                  Blockchain
-                                </span>
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href={"/"}>
-                                <span className="block px-4 py-2 hover:bg-gray-400  dark:hover:bg-gray-600">
-                                  Cloud Computing
-                                </span>
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href={"/"}>
-                                <span className="block px-4 py-2 hover:bg-gray-400  dark:hover:bg-gray-600">
-                                  Internet of Things
-                                </span>
-                              </Link>
-                            </li>
-                            <li>
-                              <Link href={"/"}>
-                                <span className="block px-4 py-2 hover:bg-gray-400  dark:hover:bg-gray-600">
-                                  Web-03 & Metaverse
-                                </span>
-                              </Link>
-                            </li>
-                          </ul>
-                        </div>
-                      ) : null}
-                    </span>
-                  </Link>
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </button>
+                    {dropDownState ? (
+                      <div>
+                        <ul className="drop  absolute  top-16 z-10  w-56 cursor-pointer divide-y divide-gray-50  rounded-lg bg-white bg-opacity-40 px-2 py-2 text-sm text-black shadow backdrop-blur-md dark:divide-slate-600 dark:bg-gray-700 dark:bg-opacity-40  dark:text-gray-200  md:-ml-0 -ml-32">
+                          <li>
+                            <Link href={"/"}>
+                              <span className="block px-4 py-2 hover:bg-gray-400  dark:hover:bg-gray-600">
+                                Artificial Intelligence
+                              </span>
+                            </Link>
+                          </li>
+                          <li>
+                            <Link href={"/"}>
+                              <span className="block px-4 py-2 hover:bg-gray-400  dark:hover:bg-gray-600">
+                                Blockchain
+                              </span>
+                            </Link>
+                          </li>
+                          <li>
+                            <Link href={"/"}>
+                              <span className="block px-4 py-2 hover:bg-gray-400  dark:hover:bg-gray-600">
+                                Cloud Computing
+                              </span>
+                            </Link>
+                          </li>
+                          <li>
+                            <Link href={"/"}>
+                              <span className="block px-4 py-2 hover:bg-gray-400  dark:hover:bg-gray-600">
+                                Internet of Things
+                              </span>
+                            </Link>
+                          </li>
+                          <li>
+                            <Link href={"/"}>
+                              <span className="block px-4 py-2 hover:bg-gray-400  dark:hover:bg-gray-600">
+                                Web-03 & Metaverse
+                              </span>
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                    ) : null}
+                  </span>
                 </li>
                 <li>
                   <Link href={"/about"}>
