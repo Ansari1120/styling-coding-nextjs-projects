@@ -28,14 +28,16 @@ export default function page() {
   const spacializedtracks = [
     {
       id: "Quarter IV",
-      link: "/syllabus/AI/quartersTwo",
+      link: "/syllabus/AI/quartersOne",
+
       description:
         "AI-351: Developing Planet-Scale Intelligent APIs and Python Programming",
     },
     {
       id: "Quarter V",
+      link: "/syllabus/AI/quartersTwo",
+
       description: "AI-361: Deep Learning and MLOps",
-      link: "/syllabus/AI/quartersOne",
     },
   ];
   return (
@@ -54,8 +56,8 @@ export default function page() {
         consisting of two courses each:"
       />
       <TrackIntroLayout
-        TrackName="I. Web 3.0 (Blockchain) and Metaverse Specialization"
-        Description="This Web 3.0 and Metaverse specialization focuses on developing full-stack Web 3.0 and Metaverse experiences for the next generation of the internet by specializing in building worlds that merge the best of cutting-edge decentralized distributed blockchains with 3D metaverse client experiences"
+        TrackName="II. Artificial Intelligence (AI) and Deep Learning Specialization"
+        Description="The AI and Deep Learning specialization focuses on building and deploying intelligent APIs using OpenAI models and building custom Deep Learning Tensorflow models"
       />
       <QuarterLayout data={spacializedtracks} />
     </>
