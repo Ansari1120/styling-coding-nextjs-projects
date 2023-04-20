@@ -84,7 +84,6 @@ export default function Header() {
                       </span>
                     </Link>
                   </li>
-                 
                 </ul>
               ) : null}
             </li>
@@ -156,7 +155,7 @@ export default function Header() {
                       <li>
                         <Link href={"/syllabus/BCC"}>
                           <span className="block px-4 py-2 hover:bg-gray-400  dark:hover:bg-gray-600">
-                          Web 03 (Blockchain) & Metaverse
+                            Web 03 (Blockchain) & Metaverse
                           </span>
                         </Link>
                       </li>
@@ -174,7 +173,6 @@ export default function Header() {
                           </span>
                         </Link>
                       </li>
-                    
                     </ul>
                   ) : null}
                 </li>

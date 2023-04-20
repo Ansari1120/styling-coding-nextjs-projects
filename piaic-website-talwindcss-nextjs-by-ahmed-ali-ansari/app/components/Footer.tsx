@@ -27,22 +27,39 @@ export default function Footer() {
           </h1>
 
           <div className="flex flex-row pt-6 space-x-2  ">
-            <Link href={"/"} className="bg-slate-300 rounded-md p-1">
+            <Link
+              href={"https://www.youtube.com/channel/UC2Makv_pLAtvrjHNgg-pBLg"}
+              className="bg-slate-300 rounded-md p-1"
+            >
               <Image src={Youtube} alt="youtube" />
             </Link>
-            <Link href={"/"} className="bg-slate-300 rounded-md p-1">
+            <Link
+              href={"https://www.facebook.com/groups/piaic/"}
+              className="bg-slate-300 rounded-md p-1"
+            >
               {" "}
               <Image src={insta} alt="Instagram" />
             </Link>
-            <Link href={"/"} className="bg-slate-300 rounded-md p-1">
+            <Link
+              href={
+                "https://discord.com/invite/fhDFfZcBcq?fbclid=IwAR0MN6Rt946g7TrlA6e3raf-n7tfy6xKJHjUAKt8METpg5Bkuot42vot2AY"
+              }
+              className="bg-slate-300 rounded-md p-1"
+            >
               {" "}
               <Image src={discord} alt="discord" />
             </Link>
-            <Link href={"/"} className="bg-slate-300 rounded-md p-1">
+            <Link
+              href={"https://twitter.com/piaicofficial?s=20"}
+              className="bg-slate-300 rounded-md p-1"
+            >
               {" "}
               <Image src={Twitter} alt="twitter" />
             </Link>
-            <Link href={"/"} className="bg-slate-300 rounded-md p-1">
+            <Link
+              href={"https://github.com/panaverse"}
+              className="bg-slate-300 rounded-md p-1"
+            >
               {" "}
               <Image src={github} alt="github" />
             </Link>
@@ -102,13 +119,13 @@ export default function Footer() {
       <div className="grid text-white grid-column md:grid-cols-1 bg-gray-500 mx-[50px] md:mx-[100px] rounded-t-lg p-4 mt-[-6px] space-x-2 justify-items-center -mb-14">
         <div className="md:flex flex-row grid grid-cols-1">
           <div className="basis-1/3 py-5 mr-4 md:border-r-2 md:border-black  ">
-            <Image src={copyright} alt="copyright" className="-ml-6" />
+            <Image src={copyright} alt="copyright" className="md:-ml-6" />
             <h1 className="text-sm pt-1 italic text-black font-semibold">
               AHMED ALI ANSARI PIAIC 171908
             </h1>
           </div>
           <div className="my-5 mr-3 ml-2">
-            <Image src={contact} alt="contact" />
+            <Image src={contact} alt="contact" className="md:mx-0 mx-[52px]" />
           </div>
           <div className="my-4 ">
             <h1 className="text-sm pt-1 italic text-black font-semibold">
@@ -118,11 +135,16 @@ export default function Footer() {
               +923************
             </h1>
           </div>
-          <div className="basis-1/4 md:border-l-2 md:border-black ">
+          <div className="basis-1/4 md:border-l-2 md:border-black justify-items-center align-middle text-center">
             <h1 className="ml-4 text-sm pt-1 italic text-black font-semibold">
               Powered By:
             </h1>
-            <Image src={panacloud} alt="panacloud" />
+
+            <Image
+              src={panacloud}
+              alt="panacloud"
+              className="md:mx-0 mx-[52px]"
+            />
           </div>
         </div>
       </div>

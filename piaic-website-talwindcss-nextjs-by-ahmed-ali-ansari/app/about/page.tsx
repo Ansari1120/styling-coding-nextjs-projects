@@ -75,7 +75,7 @@ export default function page() {
         </div>
         <div className=" rounded-md bg-[url('https://tailwind-by-ahmed.vercel.app/_next/image?url=%2Farifalvi.jpg&w=640&q=75')] bg-cover bg-center md:w-[60%] w-[80%]  h-[15cm] md:mr-10 ml-5 "></div>
       </div>
-      <div className="md:flex grid mb-[120px]">
+      <div className="md:flex grid mb-[220px]">
         <div className="rounded-md bg-[url('https://tailwind-by-ahmed.vercel.app/_next/image?url=%2Fziakhan.jpg&w=640&q=75')] bg-cover bg-center md:w-[40%] w-[90%]  h-[14cm] md:ml-10 ml-4 ">
           <div className="shadow-2xl md:mt-0 mt-[560px]  md:w-[800px] w-[275px] bg-slate-50  md:mx-[444px] mx-[4px] rounded-md  my-[54px]   md:mr-11  mr-2  pb-16 pt-8 md:px-16 px-8">
             <h1 className="text-black text-5xl font-bold border-l-[6px] border-l-blue-700 pl-3  mt-16">
