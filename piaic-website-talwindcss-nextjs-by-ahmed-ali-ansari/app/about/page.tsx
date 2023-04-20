@@ -1,8 +1,51 @@
-import Faculty from "../components/FacultyLayout"
+import Faculty from "../components/FacultyLayout";
+import Zia from "../../public/zia.jpg";
+import mamHira from "../../public/Faculty/miss-hira.jpg";
+import sirAdil from "../../public/Faculty/sir adil.jpg";
+import sirZeeshan from "../../public/Faculty/sir zeeshan.jpg";
+import sirDaniyal from "../../public/Faculty/sir daniyal.jpg";
+
 export default function page() {
+  const facultyData: Array<{
+    Name: string;
+    Label: string;
+    img: any;
+    desc: string;
+  }> = [
+    {
+      Name: "Zia",
+      Label: "COO PIAIC",
+      img: Zia,
+      desc: "Faculty Member of PIAIC Core Committee for Artificial Intelligence",
+    },
+    {
+      Name: "Adil Altaf",
+      Label: "Faculty Lead PIAIC",
+      img: mamHira,
+      desc: "Faculty Member of PIAIC Core Committee for Artificial Intelligence",
+    },
+    {
+      Name: "Hira Khan",
+      Label: "Faculty member PIAIC",
+      img: sirAdil,
+      desc: "Faculty Member of PIAIC Core Committee for Artificial Intelligence",
+    },
+    {
+      Name: "Daniyal Nagori",
+      Label: "CEO PIAIC",
+      img: sirZeeshan,
+      desc: "Faculty Member of PIAIC Core Committee for Artificial Intelligence",
+    },
+    {
+      Name: "Zeeshan Hanif",
+      Label: "Faculty Lead PIAIC",
+      img: sirDaniyal,
+      desc: "Faculty Member of PIAIC Core Committee for Artificial Intelligence",
+    },
+  ];
   return (
     <>
-      <div className="rounded-b-[30%] text-center bg-[url('https://img.freepik.com/free-vector/halftone-background-with-circles_23-2148907689.jpg?w=740&t=st=1679533278~exp=1679533878~hmac=2e328000e05e86faf65b46296f15a7950363919e1ca9612ae3997a2282231bed')] bg-fixed bg-cover bg-no-repeat  md:px-40  px-15 py-40  ">
+      <div className="rounded-b-[30%] text-center bg-[url('https://img.freepik.com/free-vector/halftone-background-with-circles_23-2148907689.jpg?w=740&t=st=1679533278~exp=1679533878~hmac=2e328000e05e86faf65b46296f15a7950363919e1ca9612ae3997a2282231bed')] bg-fixed bg-cover bg-no-repeat  md:px-40  px-15 py-40 ">
         <h1 className="text-6xl text-white font-bold italic  float-left">
           About
         </h1>
@@ -32,7 +75,7 @@ export default function page() {
         </div>
         <div className=" rounded-md bg-[url('https://tailwind-by-ahmed.vercel.app/_next/image?url=%2Farifalvi.jpg&w=640&q=75')] bg-cover bg-center md:w-[60%] w-[80%]  h-[15cm] md:mr-10 ml-5 "></div>
       </div>
-      <div className="md:flex grid mb-[1120px]">
+      <div className="md:flex grid mb-[120px]">
         <div className="rounded-md bg-[url('https://tailwind-by-ahmed.vercel.app/_next/image?url=%2Fziakhan.jpg&w=640&q=75')] bg-cover bg-center md:w-[40%] w-[90%]  h-[14cm] md:ml-10 ml-4 ">
           <div className="shadow-2xl md:mt-0 mt-[560px]  md:w-[800px] w-[275px] bg-slate-50  md:mx-[444px] mx-[4px] rounded-md  my-[54px]   md:mr-11  mr-2  pb-16 pt-8 md:px-16 px-8">
             <h1 className="text-black text-5xl font-bold border-l-[6px] border-l-blue-700 pl-3  mt-16">
@@ -54,8 +97,7 @@ export default function page() {
           </div>
         </div>
       </div>
-      <Faculty />
+      <Faculty facultyData={facultyData} />
     </>
   );
 }
-//mx

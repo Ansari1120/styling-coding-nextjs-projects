@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import panaverse from "../../public/Logo.png";
 import { HiMail } from "react-icons/hi";
 import Twitter from "../../public/assets/twitter.png";
 import Youtube from "../../public/assets/Youtube.png";
@@ -55,14 +54,12 @@ export default function Footer() {
             <li className="pb-2">
               <Link href={"/"}>Home</Link>
             </li>
+
             <li className="pb-2">
-              <Link href={"/"}>Syllabus</Link>
+              <Link href={"/about"}>About</Link>
             </li>
             <li className="pb-2">
-              <Link href={"/"}>About</Link>
-            </li>
-            <li className="pb-2">
-              <Link href={"/"}>Contact Us</Link>
+              <Link href={"/contact"}>Contact Us</Link>
             </li>
           </ul>
         </div>
@@ -104,20 +101,16 @@ export default function Footer() {
       </div>
       <div className="grid text-white grid-column md:grid-cols-1 bg-gray-500 mx-[50px] md:mx-[100px] rounded-t-lg p-4 mt-[-6px] space-x-2 justify-items-center -mb-14">
         <div className="md:flex flex-row grid grid-cols-1">
-          <div className="basis-1/3 py-5 mr-4">
-            <Image src={copyright} alt="copyright" />
+          <div className="basis-1/3 py-5 mr-4 md:border-r-2 md:border-black  ">
+            <Image src={copyright} alt="copyright" className="-ml-6" />
             <h1 className="text-sm pt-1 italic text-black font-semibold">
               AHMED ALI ANSARI PIAIC 171908
             </h1>
           </div>
-          <div className=" mr-7 3xl:hidden static ">
-            {" "}
-            <Image src={rectangle} alt="line" />
-          </div>
-          <div className="my-5 mr-3">
+          <div className="my-5 mr-3 ml-2">
             <Image src={contact} alt="contact" />
           </div>
-          <div className="my-4">
+          <div className="my-4 ">
             <h1 className="text-sm pt-1 italic text-black font-semibold">
               Have a Question ? call us at 24/6
             </h1>
@@ -125,12 +118,8 @@ export default function Footer() {
               +923************
             </h1>
           </div>
-          <div className="mx-7 3xl:hidden static">
-            {" "}
-            <Image src={rectangle} alt="line" />
-          </div>
-          <div className="basis-1/4">
-            <h1 className="text-sm pt-1 italic text-black font-semibold">
+          <div className="basis-1/4 md:border-l-2 md:border-black ">
+            <h1 className="ml-4 text-sm pt-1 italic text-black font-semibold">
               Powered By:
             </h1>
             <Image src={panacloud} alt="panacloud" />
