@@ -5,7 +5,10 @@ import React from "react";
 const FacultyLayout = ({ facultyData }: any) => {
   return (
     <>
-      <div className="grid md:grid-cols-3 grid-cols-1 mt-[1100px]">
+      <h1 className=" md:mt-0 mt-[1100px] text-4xl text-center font-bold text-slate-500 border-l-4 border-blue-500 ">
+        Faculty
+      </h1>
+      <div className="grid md:grid-cols-3 grid-cols-1 md:mt-6 mt-[100px] ">
         {facultyData.map((x: any, i: number) => {
           return (
             <div
