@@ -14,6 +14,7 @@ import IOT2 from "../public/iot2.png";
 import WMD from "../public/wmd.png";
 import WMD2 from "../public/md.png";
 import Button from "./components/Button";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -36,7 +37,9 @@ export default function Home() {
         {/* <button className="ease-in duration-300 bg-blue-700 px-5 py-3 rounded-lg text-white font-semibold mt-3 hover:bg-blue-300 ">
           Learn More
         </button> */}
-        <Button text={"Learn More"} />
+        <Link href="/about">
+          <Button text={"Learn More"} />
+        </Link>
       </div>
 
       <div className="md:flex grid shadow-2xl w-[60%] align-middle justify-items-center justify-around py-[60px] m-auto -mt-[80px] bg-white md:rounded-full  rounded-3xl">
@@ -62,7 +65,7 @@ export default function Home() {
         <CourseLayout
           imgOne={BCC}
           imgTwo={BCC1}
-          Heading="Blockchain"
+          Heading="Web03(Blockchain) and Metaverse"
           BackIndex="2"
           Para="A ONE YEAR BLOCKCHAIN PROGRAM DESIGNED FOR ABSOLUTE BEGINNERS GETTING PAKISTAN READY FOR THE NEW ERA OF BLOCKCHAIN, FINTECH AND SMART CONTRACTS"
           ExploreButtonID="BCC"
@@ -87,16 +90,6 @@ export default function Home() {
           BackIndex="4"
           Para="A FIFTEEN MONTHS IOT AND AI PROGRAM DESIGNED FOR ABSOLUTE BEGINNERS GETTING PAKISTAN READY FOR THE NEW ERA OF INTERNET OF THINGS AND AI"
           ExploreButtonID="IOT"
-        />
-      </div>
-      <div className="bg-[url('https://img.freepik.com/free-photo/cement-wall-floor-copy-space_53876-30237.jpg?w=740&t=st=1679517544~exp=1679518144~hmac=e90426e4425a170e6d1e5538895e843f3d00dac1d38134ee6762b7be7bf74b9c')] bg-fixed bg-cover bg-no-repeat  py-32">
-        <CourseLayout
-          imgOne={WMD2}
-          imgTwo={WMD}
-          Heading="Web 3 Metaverse"
-          BackIndex="5"
-          Para="It is going to be a year-long hybrid programme that includes both onsite and online classes and is divided into four quarters of 13 weeks each. The emphasis will be on hands-on learning by educating students to produce projects."
-          ExploreButtonID="WMD"
         />
       </div>
     </>

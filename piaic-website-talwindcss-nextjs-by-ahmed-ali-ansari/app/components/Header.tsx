@@ -191,7 +191,7 @@ export default function Header() {
                   </Link>
                 </li>
                 <li>
-                  <span className="block rounded-md py-2 hover:bg-gray-400  dark:hover:bg-gray-600">
+                  <span className="block rounded-md pb-2 hover:bg-gray-400 dark:hover:bg-gray-600">
                     <ToggleMode />
                   </span>
                 </li>
