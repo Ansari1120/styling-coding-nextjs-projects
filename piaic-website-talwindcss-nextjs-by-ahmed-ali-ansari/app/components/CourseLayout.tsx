@@ -34,11 +34,13 @@ const CourseLayout = (props: {
             {Heading}
           </h1>
           <p className="mb-2 italic md:text-2xl text-md md:mx-0 mx-2">{Para}</p>
-          <Link href={`/syllabus/${ExploreButtonID}`}>
-            <button className="  bg-white text-indigo-500 hover:bg-indigo-300  rounded-lg m-auto p-2 font-semibold">
+        
+            <button className="bg-white text-indigo-500 hover:bg-indigo-300  rounded-lg m-auto p-2 font-semibold mt-5">
+            <Link href={`/syllabus/${ExploreButtonID}`}>
               Learn More
+              </Link>
             </button>
-          </Link>
+         
 
           <div className=" absolute text-gray-900 md:text-[200px]  text-[120px]  opacity-50   pb-0.5 ">
             {BackIndex}
