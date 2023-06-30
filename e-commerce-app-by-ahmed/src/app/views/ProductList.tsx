@@ -1,6 +1,7 @@
 import React from "react";
 import ProductCard from "@/components/sections/ProductCard";
 import { Products } from "@/lib/mock";
+import Link from "next/link";
 
 const ProductList = () => {
   const randomIndices: number[] = [];
@@ -21,14 +22,16 @@ const ProductList = () => {
       </h2>
       <div className="flex justify-center place-items-center">
         {selectedProducts.map((product) => (
-          <ProductCard
-            width={500}
-            height={500}
-            key={product.id}
-            sourcePic={product.image}
-            ProductName={product.name}
-            Price={product.price}
-          />
+          <Link href={`/allProducts/${product.id}`}>
+            <ProductCard
+              width={500}
+              height={500}
+              key={product.id}
+              sourcePic={product.image}
+              ProductName={product.name}
+              Price={product.price}
+            />
+          </Link>
         ))}
       </div>
     </div>
