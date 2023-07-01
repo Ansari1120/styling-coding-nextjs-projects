@@ -1,5 +1,4 @@
 import AddToCart from "@/components/sections/AddToCart";
-import ProductCard from "@/components/sections/ProductCard";
 import { Products } from "@/lib/mock";
 import Image from "next/image";
 
