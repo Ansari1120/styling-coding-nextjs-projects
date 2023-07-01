@@ -1,17 +1,31 @@
 import React from "react";
 import ProductCard from "@/components/sections/ProductCard";
-import { Products } from "@/lib/mock";
 import Link from "next/link";
+import { client } from "@/lib/sanityClient";
 
-const ProductList = () => {
-  const randomIndices: number[] = [];
+const getProductData = async () => {
+  const res = await client.fetch(`*[_type == 'product']{
+    name,
+    'image': image.asset->url,
+    price,
+    category,
+    id,
+    type,
+  }`);
+  return res;
+};
+
+
+const ProductList = async () => {
+  const required = await getProductData();
+    const randomIndices: number[] = [];
   while (randomIndices.length < 3) {
-    const randomIndex = Math.floor(Math.random() * Products.length);
+    const randomIndex = Math.floor(Math.random() * required.length);
     if (!randomIndices.includes(randomIndex)) {
       randomIndices.push(randomIndex);
     }
   }
-  const selectedProducts = randomIndices.map((index) => Products[index]);
+  const selectedProducts = randomIndices.map((index) => required[index]);
   return (
     <div className="mx-32">
       <p className=" text-blue-600 mt-10 text-center font-bold text-base">

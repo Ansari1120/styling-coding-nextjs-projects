@@ -1,21 +1,36 @@
 import AddToCart from "@/components/sections/AddToCart";
-import { Products } from "@/lib/mock";
-import Image from "next/image";
+import { client } from "@/lib/sanityClient";
+import { product } from "@/lib/types";
+import { StaticImageData } from "next/image";
 
-const getProductsByid = (id: string | number) => {
-  return Products.filter((product) => product.id === id);
+const getProductData = async () => {
+  const res = await client.fetch(`*[_type == 'product']{
+    name,
+    'image': image.asset->url,
+    price,
+    category,
+    id,
+    type,
+  }`);
+  return res;
 };
-export default function Page({ params }: { params: { id: string } }) {
-  const result = getProductsByid(params.id);
+
+const getProductsByid = async (id: string | number) => {
+  const required = await getProductData();
+  return required.filter((product: product) => product.id === id);
+};
+
+export default async function Page({ params }: { params: { id: string } }) {
+  const result = await getProductsByid(params.id);
   console.log(result);
   return (
     <>
       <div className="flex justify-evenly mt-4 py-10 flex-wrap">
-        {result.map((product) => (
+        {result.map((product: product) => (
           <div key={product.id} className="flex justify-between gap-6">
             <div className="basis-1/2">
-              <Image
-                src={product.image}
+              <img
+                src={product.image as any}
                 alt={product.name}
                 width={600}
                 height={600}
