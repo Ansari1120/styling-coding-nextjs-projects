@@ -10,13 +10,14 @@ const ProductCard = (props: {
   type?: string;
   width: number;
   height: number;
+  item: any;
 }) => {
-  const { sourcePic, ProductName, Price, width, height, type } = props;
-
+  const { sourcePic, ProductName, Price, width, height, type, item } = props;
+  //max-h-[200px]
   return (
     <div className="mr-3">
       <Image
-        className="hover:scale-125"
+        className="hover:scale-125  object-cover object-top"
         src={sourcePic}
         width={width}
         height={height}
@@ -28,7 +29,7 @@ const ProductCard = (props: {
       <p className="font-bold mt-1 text-lg">{ProductName}</p>
       <p className="font-semibold text-base opacity-50 text-black">{type}</p>
       <p className="font-bold text-lg">${Price}</p>
-      <AddToCart />
+       <AddToCart item={item} />
     </div>
   );
 };

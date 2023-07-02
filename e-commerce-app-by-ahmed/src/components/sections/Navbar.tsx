@@ -12,8 +12,11 @@ import {
   NavigationMenuViewport,
 } from "./../ui/navigation-menu";
 import Link from "next/link";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/store/store";
 
 const Navbar = () => {
+  const cartValue = useSelector((state: RootState) => state.cart.totalQuantity);
   return (
     <nav className="flex justify-between items-center h-20 px-20">
       <Link href={"/"}>
@@ -55,7 +58,7 @@ const Navbar = () => {
       <div className="p-2 rounded-full bg-gray-300">
         <ShoppingCart className="relative" />
         <span className="absolute top-2 right-20 h-6 w-6 text-center rounded-full bg-[#f02d34] text-white">
-          0
+        {cartValue}
         </span>
       </div>
     </nav>

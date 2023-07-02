@@ -9,7 +9,9 @@ const getProductData = async () => {
     name,
     'image': image.asset->url,
     price,
-    category,
+    category -> {
+      name
+    },
     id,
     type,
   }`);
@@ -21,7 +23,7 @@ const AllProducts = async () => {
   console.log(result);
   return (
     <>
-      <div className="flex justify-evenly mt-4  py-10 flex-wrap">
+      <div className="grid grid-cols-[repeat(4,auto)] justify-center gap-x-10  mt-4 py-10 flex-wrap">
         {result.map((product: product) => (
           <Link href={`/allProducts/${product.id}`}>
             <ProductCard
@@ -32,6 +34,7 @@ const AllProducts = async () => {
               ProductName={product.name}
               type={product.type}
               Price={product.price}
+              item={product}
             />
           </Link>
         ))}

@@ -8,7 +8,9 @@ const getProductData = async () => {
     name,
     'image': image.asset->url,
     price,
-    category,
+    category -> {
+      name
+    },
     id,
     type,
   }`);
@@ -25,11 +27,12 @@ export default async function Page({ params }: { params: { id: string } }) {
   console.log(result);
   return (
     <>
-      <div className="flex justify-evenly mt-4 py-10 flex-wrap">
+      <div className="grid grid-cols-[repeat(4,auto)] justify-center gap-x-10 mt-4 py-10 flex-wrap">
         {result.map((product: product) => (
           <div key={product.id} className="flex justify-between gap-6">
             <div className="basis-1/2">
               <img
+                className="hover:scale-125 max-h-[200px] object-cover object-top"
                 src={product.image as any}
                 alt={product.name}
                 width={600}
@@ -45,7 +48,7 @@ export default async function Page({ params }: { params: { id: string } }) {
               </p>
               <div className="flex flex-wrap">
                 <div className="mr-7">
-                  <AddToCart />
+                  <AddToCart item={product} />
                 </div>
                 <div className=" font-bold text-black text-3xl mt-5">
                   $ {product.price}

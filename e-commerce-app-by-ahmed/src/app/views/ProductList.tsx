@@ -8,17 +8,18 @@ const getProductData = async () => {
     name,
     'image': image.asset->url,
     price,
-    category,
+    category -> {
+      name
+    },
     id,
     type,
   }`);
   return res;
 };
 
-
 const ProductList = async () => {
   const required = await getProductData();
-    const randomIndices: number[] = [];
+  const randomIndices: number[] = [];
   while (randomIndices.length < 3) {
     const randomIndex = Math.floor(Math.random() * required.length);
     if (!randomIndices.includes(randomIndex)) {
@@ -34,7 +35,7 @@ const ProductList = async () => {
       <h2 className=" font-bold text-3xl text-center mt-7 mb-10">
         Check What we Have
       </h2>
-      <div className="flex justify-center place-items-center">
+      <div className="grid grid-cols-[repeat(3,auto)] justify-center gap-x-10 place-items-center">
         {selectedProducts.map((product) => (
           <Link href={`/allProducts/${product.id}`}>
             <ProductCard
@@ -44,6 +45,7 @@ const ProductList = async () => {
               sourcePic={product.image}
               ProductName={product.name}
               Price={product.price}
+              item={product}
             />
           </Link>
         ))}
