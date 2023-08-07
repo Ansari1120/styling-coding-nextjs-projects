@@ -1,16 +1,15 @@
 import React, { cache } from "react";
-import AddPost from "../components/AddPost";
-import PostsList from "../components/PostsList";
+import PublicList from "../components/PublicPostList";
+import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { options } from "../api/auth/[...nextauth]/options";
-import { redirect } from "next/navigation";
-
 async function getPosts() {
   const session = await getServerSession(options);
-  
+
   if (!session) {
-    redirect("/admin");
+    redirect("/login");
   }
+
   const response = await fetch("http://localhost:3000/api/post", {
     cache: "no-store",
   });
@@ -27,10 +26,9 @@ const page = async () => {
     <div className="mt-10 absolute lg:left-[92px]">
       <div className="my-5 flex flex-col gap-4">
         <h1 className="text-3xl font-bold border-l-8 border-white pl-4">
-          My Custom Crud Apis Post Page
+          Our Blogs{" "}
         </h1>
-        <AddPost />
-        <PostsList posts={data} />
+        <PublicList posts={data} />
       </div>
     </div>
   );
