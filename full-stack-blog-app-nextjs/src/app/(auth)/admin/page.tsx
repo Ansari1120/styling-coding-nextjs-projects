@@ -1,104 +1,30 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, FormEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import axios from "axios";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import Loader from "../../../../public/loader.gif";
 import LoaderTwo from "../../../../public/loader2.gif";
+import { redirect } from "next/navigation";
+
 export default function Admin() {
   const params = useSearchParams();
+  const router = useRouter();
   const [cridentials, setCridentials] = useState({
     email: "",
     password: "",
   });
   const [loading, setLoading] = useState(false);
-  const [loadingGithub, setLoadingGithub] = useState(false);
-  const [loadingGoogle, setLoadingGoogle] = useState(false);
-  const [loadingFaceBook, setLoadingFaceBook] = useState(false);
   const [errors, setErrors] = useState<any>([]);
-  const submitForm = () => {
-    setLoading(true);
-    console.log(cridentials);
-    axios
-      .post("/api/auth/adminlogin", cridentials)
-      .then((res: any) => {
-        setLoading(false);
-        console.log(res);
-        const response = res.data;
-        if (response.status == 200) {
-          console.log(response.message);
-          signIn("credentials", {
-            email: cridentials.email,
-            password: cridentials.password,
-            callbackUrl: "/", // where to land when logged in.
-            redirect: true,
-          });
-        } else if (response?.status == 404) {
-          console.log(response.message);
-          if (response.message) {
-            setErrors(response);
-          } else {
-            const { errors } = response;
-            setErrors(errors);
-          }
-        } else {
-          const { errors } = response;
-          setErrors(errors);
-        }
-      })
-      .catch((e) => {
-        setLoading(false);
-        console.log("somethng went wrong", e);
-      });
-  };
-  const GithubSignin = () => {
-    setLoadingGithub(true);
-    signIn("github", {
-      callbackUrl: "/",
+  const onSubmit = () => {
+    signIn("credentials", {
+      ...cridentials,
       redirect: true,
-    })
-      .then(() => {
-        console.log("sucessfully signed in with github");
-        setLoadingGithub(false);
-      })
-      .catch((e) => {
-        console.log("something went wrong", e);
-        setLoadingGithub(false);
-      });
+      callbackUrl: "/blogs",
+    });
   };
-  const GoogleSignin = () => {
-    setLoadingGoogle(true);
-    signIn("google", {
-      callbackUrl: "/",
-      redirect: true,
-    })
-      .then(() => {
-        console.log("sucessfully signed in with google");
-        setLoadingGoogle(false);
-      })
-      .catch((e) => {
-        console.log("something went wrong", e);
-        setLoadingGoogle(false);
-      });
-  };
-  const FacebookSignin = () => {
-    setLoadingFaceBook(true);
-    signIn("facebook", {
-      callbackUrl: "/",
-      redirect: true,
-    })
-      .then(() => {
-        console.log("sucessfully signed in with facebook");
-        setLoadingFaceBook(false);
-      })
-      .catch((e) => {
-        console.log("something went wrong", e);
-        setLoadingFaceBook(false);
-      });
-  };
-  console.log(errors);
   return (
     <section>
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen">
@@ -123,7 +49,7 @@ export default function Admin() {
                 </Link>
               </p>
             )}
-            <form action="#" method="POST" className="mt-8">
+            <form action="#" method="POST" className="mt-8" onSubmit={onSubmit}>
               <div className="space-y-5">
                 <div>
                   <label
@@ -164,14 +90,6 @@ export default function Admin() {
                       {" "}
                       Password{" "}
                     </label>
-                    <a
-                      href="#"
-                      title=""
-                      className="text-sm font-semibold text-black hover:underline"
-                    >
-                      {" "}
-                      Forgot password?{" "}
-                    </a>
                   </div>
                   <div className="mt-2">
                     <input
@@ -196,8 +114,8 @@ export default function Admin() {
                 </div>
                 <div>
                   <button
-                    onClick={submitForm}
-                    type="button"
+                    // onClick={onSubmit}
+                    type="submit"
                     className={`inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white`}
                   >
                     {loading ? (

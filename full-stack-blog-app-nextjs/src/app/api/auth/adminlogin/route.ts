@@ -1,4 +1,4 @@
-import { connect } from "@/lib/mongo.config";
+// import { connect } from "@/lib/mongo.config";
 import { NextRequest, NextResponse } from "next/server";
 import vine, { errors } from "@vinejs/vine";
 import { loginSchema, registerSchema } from "@/validator/authSchema";

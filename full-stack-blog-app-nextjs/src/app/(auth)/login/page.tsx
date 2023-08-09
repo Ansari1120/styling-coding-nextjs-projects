@@ -3,12 +3,13 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import axios from "axios";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import Loader from "../../../../public/loader.gif";
 import LoaderTwo from "../../../../public/loader2.gif";
 export default function Login() {
   const params = useSearchParams();
+  const router = useRouter();
   const [cridentials, setCridentials] = useState({
     email: "",
     password: "",
@@ -18,11 +19,19 @@ export default function Login() {
   const [loadingGoogle, setLoadingGoogle] = useState(false);
   const [loadingFaceBook, setLoadingFaceBook] = useState(false);
   const [errors, setErrors] = useState<any>([]);
-  const submitForm = () => {
+  const submitForm = async () => {
     setLoading(true);
     console.log(cridentials);
-    axios
-      .post("/api/auth/login", cridentials)
+    const customHeaders = {
+      "X-Login-Source": "user", // Adjust this value accordingly
+    };
+    await axios
+      .post("/api/auth/login", cridentials, {
+        headers: {
+          "Content-Type": "application/json",
+          "X-Login-Source": "user",
+        },
+      })
       .then((res: any) => {
         setLoading(false);
         console.log(res);

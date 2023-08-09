@@ -16,6 +16,9 @@ export default function Register() {
   const submitForm = () => {
     setLoading(true);
     console.log(cridentials);
+    if (cridentials.email.includes("admin")) {
+      return alert("user other keywords for email !");
+    }
     axios
       .post("/api/auth/register", cridentials)
       .then((res: any) => {

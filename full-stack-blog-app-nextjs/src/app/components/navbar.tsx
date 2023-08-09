@@ -20,11 +20,7 @@ const Navbar = () => {
     },
     {
       name: "Public Blogs",
-      route: "/public_blogs  ",
-    },
-    {
-      name: "Blogs",
-      route: "/blogs",
+      route: "/public_blogs",
     },
   ];
   return (
