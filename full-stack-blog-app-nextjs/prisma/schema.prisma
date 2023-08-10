@@ -15,6 +15,9 @@ model Post {
   title       String?
   description String?
   imageSrc    String?
+  authorImg   String?
+  authorName  String?
+  blogLikes   Int?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }

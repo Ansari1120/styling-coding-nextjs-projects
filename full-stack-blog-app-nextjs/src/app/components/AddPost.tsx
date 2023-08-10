@@ -5,6 +5,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { Toaster, toast } from "react-hot-toast";
 import ImageUpload from "./ImageUpload";
+import BASE_URL from "@/lib/URL";
 interface userType {
   title: string;
   imageSrc: string;
@@ -22,7 +23,7 @@ const AddPost = () => {
     e.preventDefault();
     toast.loading("Adding Post please wait.... 🚀", { id: "1" });
     axios
-      .post("http://localhost:3000/api/post", userInput)
+      .post(`${BASE_URL}/api/post`, userInput)
       .then((res) => {
         console.log(res);
         toast.success("Blog Post Added Sucessfully ");

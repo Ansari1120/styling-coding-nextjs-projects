@@ -7,6 +7,7 @@ import { Toaster, toast } from "react-hot-toast";
 import { Trash2, FileEdit } from "lucide-react";
 import Image from "next/image";
 import ImageUpload from "./ImageUpload";
+import BASE_URL from "@/lib/URL";
 interface userType {
   title: string;
   description: string;
@@ -27,7 +28,7 @@ const Post = (props: any) => {
     e.preventDefault();
     toast.loading("Editing Post please wait.... 🚀", { id: post.id });
     axios
-      .patch(`http://localhost:3000/api/post/${post.id}`, postToEdit)
+      .patch(`${BASE_URL}/api/post/${post.id}`, postToEdit)
       .then((res) => {
         console.log(res);
         toast.success("Blog Edited Successfully", { id: post.id });
@@ -43,7 +44,7 @@ const Post = (props: any) => {
   const handleDelete = () => {
     toast.loading("Deleting Post please wait.... 🚀", { id: post.id });
     axios
-      .delete(`http://localhost:3000/api/post/${post.id}`)
+      .delete(`${BASE_URL}/api/post/${post.id}`)
       .then((res) => {
         console.log(res);
         toast.success("Blog Deleted Successfully", { id: post.id });

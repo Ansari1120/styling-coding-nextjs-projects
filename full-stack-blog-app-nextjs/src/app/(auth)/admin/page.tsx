@@ -2,28 +2,32 @@
 import React, { useState, FormEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import axios from "axios";
 import { useSearchParams, useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
-import Loader from "../../../../public/loader.gif";
 import LoaderTwo from "../../../../public/loader2.gif";
-import { redirect } from "next/navigation";
 
 export default function Admin() {
   const params = useSearchParams();
-  const router = useRouter();
   const [cridentials, setCridentials] = useState({
     email: "",
     password: "",
   });
   const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState<any>([]);
   const onSubmit = () => {
+    setLoading(true);
     signIn("credentials", {
       ...cridentials,
       redirect: true,
       callbackUrl: "/blogs",
-    });
+    })
+      .then(() => {
+        console.log("sucess");
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+      });
   };
   return (
     <section>
@@ -71,14 +75,6 @@ export default function Admin() {
                         })
                       }
                     ></input>
-                    <span className="text-red-500 font-bold">
-                      {errors.length >= 2 && !errors.message
-                        ? errors
-                            .filter((obj: any) => obj.field == "email")
-                            .map((obj: any) => obj.message)
-                        : errors.message}
-                      {/* {errors} */}
-                    </span>
                   </div>
                 </div>
                 <div>
@@ -103,13 +99,7 @@ export default function Admin() {
                         })
                       }
                     ></input>
-                    <span className="text-red-500 font-bold">
-                      {errors.length >= 2 && !errors.message
-                        ? errors
-                            .filter((obj: any) => obj.field == "password")
-                            .map((obj: any) => obj.message)
-                        : ""}
-                    </span>
+
                   </div>
                 </div>
                 <div>

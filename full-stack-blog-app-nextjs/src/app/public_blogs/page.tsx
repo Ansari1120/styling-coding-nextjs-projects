@@ -3,21 +3,21 @@ import PublicList from "../components/PublicPostList";
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { options } from "../api/auth/[...nextauth]/options";
+import axios from "axios";
+import BASE_URL from "@/lib/URL";
 async function getPosts() {
   const session = await getServerSession(options);
 
   if (!session) {
     redirect("/login");
   }
-
-  const response = await fetch("http://localhost:3000/api/post", {
-    cache: "no-store",
-  });
-
-  if (!response.ok) {
-    throw new Error("Failed to fetch data");
+  try {
+    const response = await axios.get(`${BASE_URL}/api/post`);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return []; // Return an empty array or handle the error case accordingly
   }
-  return response.json();
 }
 const page = async () => {
   const data = await getPosts();
