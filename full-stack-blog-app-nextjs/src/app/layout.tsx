@@ -16,6 +16,8 @@ export const metadata: Metadata = {
   description: "MY Blog App",
 };
 
+{/* <link rel="icon" href="/favicon.ico" sizes="any" /> */}
+
 export default function RootLayout({
   children,
 }: {

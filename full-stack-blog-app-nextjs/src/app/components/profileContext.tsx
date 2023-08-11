@@ -75,6 +75,7 @@ const ProfileContext = (props: MyComponentProps) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+  const userJSON = JSON.stringify(session);
 
   return (
     <>
@@ -125,86 +126,12 @@ const ProfileContext = (props: MyComponentProps) => {
               </button>
             </li>
             <li>
-              {/* <Link
+              <Link
                 className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                href={"/components/profileUpdate"}
+                href={`/settings?data=${encodeURIComponent(userJSON)}`}
               >
                 Settings
-              </Link> */}
-              {/* <button
-                onClick={() => router.push('/settings')}
-              >
-                settings
-              </button> */}
-              {/* <Link
-                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                href={{
-                  pathname: "/settings",
-                  query: {
-                    session: session?.name,
-                  },
-                }}
-              >
-                Settings
-              </Link> */}
-              <button onClick={() => setOpenEditSettings(true)}>
-                settings
-              </button>
-              {openEditSettings && (
-                <AdminProfileSettings
-                  session={session}
-                  openEditSettings={openEditSettings}
-                  setOpenEditSettings={setOpenEditSettings}
-                />
-              )}
-              {/* {openEditSettings && (
-                <Modal
-                  openModal={openEditSettings}
-                  setOpenModal={setOpenEditSettings}
-                >
-                  <form className="w-full" onSubmit={handleSubmit}>
-                    <h1 className="text-2xl pb-3">Edit Post</h1>
-                    <div>
-                      <ImageUpload
-                        value={postToEdit.image}
-                        onChange={(value) => setCustomValue("image", value)}
-                      />
-                    </div>
-                    <input
-                      type="text"
-                      placeholder="Edit Name"
-                      name="Edit Name"
-                      className="w-full p-2 mb-2 rounded-md"
-                      value={postToEdit.name || ""}
-                      onChange={(e) => {
-                        setPostToEdit((prevState: any) => ({
-                          ...prevState,
-                          name: e.target.value,
-                        }));
-                      }}
-                    />
-                    <input
-                      type="email"
-                      placeholder="Email"
-                      name="Edit Email"
-                      className="w-full p-2 mb-2 rounded-md"
-                      value={postToEdit.email || ""}
-                      onChange={(e) => {
-                        setPostToEdit((prevState: any) => ({
-                          ...prevState,
-                          email: e.target.value,
-                        }));
-                      }}
-                    />
-                    <button
-                      type="submit"
-                      className="bg-blue-700 text-white px-5 py-2 rounded-md"
-                    >
-                      Submit
-                    </button>
-                  </form>
-                </Modal>
-              )} */}
+              </Link>
             </li>
           </ul>
           <div>

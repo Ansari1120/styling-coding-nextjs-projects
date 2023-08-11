@@ -12,15 +12,22 @@ interface userType {
   title: string;
   description: string;
   imageSrc: string;
+  authorImg?: string;
+  authorName?: string;
+  blogLikes?: number;
+  session?: any;
 }
 const Post = (props: any) => {
   const router = useRouter();
-  const { post } = props;
+  const { post,session } = props;
   const [openModalEdit, setOpenModalEdit] = useState<boolean>(false);
   const [postToEdit, setPostToEdit] = useState<userType>({
     title: post.title,
     description: post.description,
     imageSrc: post.imageSrc,
+    authorImg: session?.user?.image,
+    authorName: session?.user?.name,
+    blogLikes: 0,
   });
   const [openModalDelete, setOpenModalDelete] = useState(false);
   console.log(postToEdit);
@@ -28,7 +35,7 @@ const Post = (props: any) => {
     e.preventDefault();
     toast.loading("Editing Post please wait.... 🚀", { id: post.id });
     axios
-      .patch(`${BASE_URL}/api/post/${post.id}`, postToEdit)
+      .patch(`/api/post/${post.id}`, postToEdit)
       .then((res) => {
         console.log(res);
         toast.success("Blog Edited Successfully", { id: post.id });
@@ -44,7 +51,7 @@ const Post = (props: any) => {
   const handleDelete = () => {
     toast.loading("Deleting Post please wait.... 🚀", { id: post.id });
     axios
-      .delete(`${BASE_URL}/api/post/${post.id}`)
+      .delete(`/api/post/${post.id}`)
       .then((res) => {
         console.log(res);
         toast.success("Blog Deleted Successfully", { id: post.id });

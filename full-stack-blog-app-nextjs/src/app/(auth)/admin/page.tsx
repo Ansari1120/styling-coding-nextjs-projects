@@ -1,13 +1,10 @@
 "use client";
-import React, { useState, FormEvent } from "react";
-import Link from "next/link";
+import React, { useState } from "react";
 import Image from "next/image";
-import { useSearchParams, useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import LoaderTwo from "../../../../public/loader2.gif";
 
 export default function Admin() {
-  const params = useSearchParams();
   const [cridentials, setCridentials] = useState({
     email: "",
     password: "",
@@ -37,22 +34,6 @@ export default function Admin() {
             <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">
               Administrator
             </h2>
-            {params.get("message") ? (
-              <p className="mt-2 bg-green-500 font-bold rounded-md p-4">
-                {params.get("message")}
-              </p>
-            ) : (
-              <p className="mt-2 text-sm text-gray-600">
-                Don&apos;t have an account?{" "}
-                <Link
-                  href="/register"
-                  title="navigate to registration page"
-                  className="font-semibold text-black transition-all duration-200 hover:underline"
-                >
-                  Create a free account
-                </Link>
-              </p>
-            )}
             <form action="#" method="POST" className="mt-8" onSubmit={onSubmit}>
               <div className="space-y-5">
                 <div>
@@ -60,8 +41,7 @@ export default function Admin() {
                     htmlFor=""
                     className="text-base font-medium text-gray-900"
                   >
-                    {" "}
-                    Email address{" "}
+                    Email address
                   </label>
                   <div className="mt-2">
                     <input
@@ -99,12 +79,10 @@ export default function Admin() {
                         })
                       }
                     ></input>
-
                   </div>
                 </div>
                 <div>
                   <button
-                    // onClick={onSubmit}
                     type="submit"
                     className={`inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white`}
                   >

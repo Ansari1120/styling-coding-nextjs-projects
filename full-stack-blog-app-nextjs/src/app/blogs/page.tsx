@@ -1,4 +1,4 @@
-import React, { cache } from "react";
+import React from "react";
 import AddPost from "../components/AddPost";
 import PostsList from "../components/PostsList";
 import { getServerSession } from "next-auth";
@@ -42,8 +42,8 @@ const page = async () => {
         <h1 className="text-3xl font-bold border-l-8 border-white pl-4">
           My Custom Crud Apis Post Page
         </h1>
-        <AddPost />
-        <PostsList posts={data} />
+        <AddPost session = {session} />
+        <PostsList posts={data} session={session} />
       </div>
     </div>
   );

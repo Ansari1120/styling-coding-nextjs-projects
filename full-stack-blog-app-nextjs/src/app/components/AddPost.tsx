@@ -1,29 +1,40 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "./Modal";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { Toaster, toast } from "react-hot-toast";
 import ImageUpload from "./ImageUpload";
 import BASE_URL from "@/lib/URL";
+import { getServerSession } from "next-auth";
+import { options } from "../api/auth/[...nextauth]/options";
 interface userType {
-  title: string;
-  imageSrc: string;
-  description: string;
+  title?: string;
+  imageSrc?: string;
+  description?: string;
+  authorImg?: string;
+  authorName?: string;
+  blogLikes?: number;
+  session?: any;
 }
-const AddPost = () => {
+const AddPost = (props: userType) => {
+  const { session } = props;
   const router = useRouter();
   const [openModal, setOpenModal] = useState<any>(false);
+  // const [admin_session, setAdminSession] = useState();
   const [userInput, setUserInput] = useState<userType>({
     title: "",
     imageSrc: "",
     description: "",
+    authorImg: session?.user?.image,
+    authorName: session?.user?.name,
+    blogLikes: 0,
   });
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     toast.loading("Adding Post please wait.... 🚀", { id: "1" });
     axios
-      .post(`${BASE_URL}/api/post`, userInput)
+      .post(`http://localhost:3000/api/post`, userInput)
       .then((res) => {
         console.log(res);
         toast.success("Blog Post Added Sucessfully ");
@@ -47,6 +58,13 @@ const AddPost = () => {
       [id]: value,
     }));
   };
+  // useEffect(() => {
+  //   async function getSession() {
+  //     const session:any = await getServerSession(options);
+  //     setAdminSession(session);
+  //   }
+  //   getSession();
+  // }, []);
   return (
     <div>
       <Toaster />
@@ -61,7 +79,7 @@ const AddPost = () => {
           <h1 className="text-2xl pb-3 ">Add New Post</h1>
           <div>
             <ImageUpload
-              value={userInput.imageSrc}
+              value={userInput.imageSrc || ""}
               onChange={(value) => setCustomValue("imageSrc", value)}
             />
           </div>

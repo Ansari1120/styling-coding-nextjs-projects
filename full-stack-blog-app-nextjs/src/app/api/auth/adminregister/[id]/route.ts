@@ -7,7 +7,7 @@ export const PATCH = async (
 ) => {
   try {
     const body = await req.json();
-    const { name, email, image, hashedPassword } = body;
+    const { name, email, image} = body;
     const { id } = params;
     const updatePost = await prisma.admin.update({
       where: {
@@ -17,7 +17,6 @@ export const PATCH = async (
         name,
         email,
         image,
-        hashedPassword,
       },
     });
 

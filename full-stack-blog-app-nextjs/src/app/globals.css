@@ -4,7 +4,9 @@
  
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    background-image: url('https://cdn.pixabay.com/photo/2019/09/17/18/48/computer-4484282_1280.jpg');
+    background-size: cover; /* Adjust as needed */    
+    color: text-foreground;   
     --foreground: 222.2 84% 4.9%;
  
     --muted: 210 40% 96.1%;

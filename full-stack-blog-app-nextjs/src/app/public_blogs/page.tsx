@@ -23,9 +23,9 @@ const page = async () => {
   const data = await getPosts();
   console.log(data);
   return (
-    <div className="mt-10 absolute lg:left-[92px]">
-      <div className="my-5 flex flex-col gap-4">
-        <h1 className="text-3xl font-bold border-l-8 border-white pl-4">
+    <div className="mt-10 ">
+      <div className="my-5 flex flex-col gap-4 lg:ml-40 ml-5  ">
+        <h1 className="text-3xl font-bold border-l-8 border-white text-gray-100 pl-4">
           Our Blogs{" "}
         </h1>
         <PublicList posts={data} />
