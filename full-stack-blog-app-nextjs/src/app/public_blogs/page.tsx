@@ -12,7 +12,9 @@ async function getPosts() {
     redirect("/login");
   }
   try {
-    const response = await axios.get(`${BASE_URL}/api/post`);
+    const response = await axios.get(
+      `${BASE_URL}/api/post/pagination/${1}?order=desc`
+    );
     return response.data;
   } catch (error) {
     console.log(error);

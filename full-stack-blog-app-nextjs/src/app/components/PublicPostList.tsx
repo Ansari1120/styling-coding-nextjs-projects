@@ -7,7 +7,7 @@ const PublicList = (props: any) => {
   return (
     <Fragment>
       <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-4 ">
-        {posts.map((data: any) => {
+        {posts.data.map((data: any) => {
           return <PublicPostCard data={data} />;
         })}
       </div>
