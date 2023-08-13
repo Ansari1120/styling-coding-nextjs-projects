@@ -1,12 +1,10 @@
 "use client";
 import React from "react";
-import { cookies } from "next/headers";
 
 interface propTypes {
   posts: any;
 }
 const PaginationBar: React.FC<propTypes> = ({ posts }) => {
-  const setCookies = cookies();
 
   const numbersArray = Array.from(
     { length: posts.totalPages },
@@ -15,7 +13,6 @@ const PaginationBar: React.FC<propTypes> = ({ posts }) => {
   //   const [page, setActivePage] = useState(1);
   const highlight = (number: number) => {
     console.log(number);
-    setCookies.set("page_Number", `${number}`);
   };
 
   return (

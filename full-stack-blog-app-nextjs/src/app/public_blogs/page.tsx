@@ -23,9 +23,7 @@ async function getPosts(number?: any) {
 }
 const page = async () => {
   const data = await getPosts();
-  // const pageNumber = localStorage.getItem("pageNumber");
-
-  // console.log("Page number", pageNumber);
+  
   return (
     <div className="mt-10">
       <div className="my-5 flex flex-col gap-4 lg:ml-40 ml-5  ">
