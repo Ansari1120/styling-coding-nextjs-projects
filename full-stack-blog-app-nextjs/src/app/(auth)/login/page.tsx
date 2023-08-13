@@ -22,16 +22,8 @@ export default function Login() {
   const submitForm = async () => {
     setLoading(true);
     console.log(cridentials);
-    const customHeaders = {
-      "X-Login-Source": "user", // Adjust this value accordingly
-    };
     await axios
-      .post("/api/auth/login", cridentials, {
-        headers: {
-          "Content-Type": "application/json",
-          "X-Login-Source": "user",
-        },
-      })
+      .post("/api/auth/login", cridentials)
       .then((res: any) => {
         setLoading(false);
         console.log(res);

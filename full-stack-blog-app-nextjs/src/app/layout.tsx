@@ -16,7 +16,9 @@ export const metadata: Metadata = {
   description: "MY Blog App",
 };
 
-{/* <link rel="icon" href="/favicon.ico" sizes="any" /> */}
+{
+  /* <link rel="icon" href="/favicon.ico" sizes="any" /> */
+}
 
 export default function RootLayout({
   children,
@@ -30,10 +32,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <AuthProvider>
-          <div className="bg-scroll bg-my_bg_image bg-cover mx-auto py-5 justify-center bg-no-repeat">
-            {nextToken?.value ? <Navbar /> : null}
-          {children}
-          </div>
+            <div className="bg-scroll bg-my_bg_image bg-cover mx-auto py-5 justify-center bg-no-repeat">
+              {nextToken?.value ? <Navbar /> : null}
+              {children}
+            </div>
         </AuthProvider>
       </body>
     </html>

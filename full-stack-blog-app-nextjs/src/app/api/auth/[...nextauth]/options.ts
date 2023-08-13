@@ -10,6 +10,8 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import bcrypt from "bcryptjs";
 import { headers } from "next/headers";
 import { NextRequest } from "next/server";
+import { JWT } from "next-auth/jwt";
+import { SessionStrategy } from "next-auth";
 
 export const options: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
@@ -88,6 +90,14 @@ export const options: NextAuthOptions = {
   pages: {
     signIn: "/login",
   },
+  secret: process.env.NEXTAUTH_SECRET,
+  session: {
+    strategy: "jwt" as SessionStrategy,
+    maxAge: 60 * 60 * 3,
+  },
+  jwt: {
+    maxAge: 60 * 60 * 3,
+  },
   callbacks: {
     async signIn({ user, account, profile, email }) {
       try {
@@ -125,6 +135,7 @@ export const options: NextAuthOptions = {
         return false;
       }
     },
+
     session: ({ session, token }) => {
       console.log("Session Callback", { session, token });
       return {
@@ -149,9 +160,4 @@ export const options: NextAuthOptions = {
       return token;
     },
   },
-
-  session: {
-    strategy: "jwt",
-  },
-  secret: process.env.NEXTAUTH_SECRET,
 };
