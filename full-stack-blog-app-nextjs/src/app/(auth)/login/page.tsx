@@ -19,6 +19,7 @@ export default function Login() {
   const [loadingGoogle, setLoadingGoogle] = useState(false);
   const [loadingFaceBook, setLoadingFaceBook] = useState(false);
   const [errors, setErrors] = useState<any>([]);
+
   const submitForm = async () => {
     setLoading(true);
     console.log(cridentials);
@@ -53,6 +54,13 @@ export default function Login() {
         setLoading(false);
         console.log("somethng went wrong", e);
       });
+  };
+  const EnterKeyPress = (e: any) => {
+    if (e.key === "Enter" && e.keyCode === 13) {
+      console.log("enter key pressed!");
+      e.preventDefault();
+      submitForm();
+    }
   };
   const GithubSignin = () => {
     setLoadingGithub(true);
@@ -179,6 +187,7 @@ export default function Login() {
                       className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                       type="password"
                       placeholder="Password"
+                      onKeyDown={EnterKeyPress}
                       onChange={(e) =>
                         setCridentials({
                           ...cridentials,
@@ -197,9 +206,12 @@ export default function Login() {
                 </div>
                 <div>
                   <button
+                    disabled={loading ? true : false}
                     onClick={submitForm}
                     type="button"
-                    className={`inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white`}
+                    className={` ${
+                      loading ? "cursor-not-allowed" : "cursor-pointer"
+                    } inline-flex w-full items-center justify-center bg-black  rounded-md  px-3.5 py-2.5 font-semibold leading-7 text-white`}
                   >
                     {loading ? (
                       <div className="flex items-center">

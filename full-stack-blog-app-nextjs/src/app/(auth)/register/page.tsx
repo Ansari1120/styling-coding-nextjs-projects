@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import Link from "next/link";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import LoaderTwo from "../../../../public/loader2.gif";
+
 export default function Register() {
   const router = useRouter();
   const [cridentials, setCridentials] = useState({
@@ -37,14 +40,14 @@ export default function Register() {
         setLoading(false);
         console.log("somethng went wrong", e);
       });
-    // setCridentials({
-    //   name: "",
-    //   email: "",
-    //   password: "",
-    //   password_confirmation: "",
-    // });
   };
-
+  const EnterKeyPress = (e: any) => {
+    if (e.key === "Enter" && e.keyCode === 13) {
+      console.log("enter key pressed!");
+      e.preventDefault();
+      submitForm();
+    }
+  };
   return (
     <section>
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen">
@@ -175,6 +178,7 @@ export default function Register() {
                       className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                       type="password"
                       placeholder="Confirm Password"
+                      onKeyDown={EnterKeyPress}
                       onChange={(e) =>
                         setCridentials({
                           ...cridentials,
@@ -186,13 +190,28 @@ export default function Register() {
                 </div>
                 <div>
                   <button
+                    disabled={loading ? true : false}
                     onClick={submitForm}
                     type="button"
-                    className={`inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80 ${
-                      loading ? "bg-gray" : "bg-black"
-                    }`}
+                    className={` ${
+                      loading ? "cursor-not-allowed" : "cursor-pointer"
+                    } inline-flex w-full items-center justify-center bg-black  rounded-md  px-3.5 py-2.5 font-semibold leading-7 text-white`}
                   >
-                    {loading ? "processing..." : "Register"}
+                    {loading ? (
+                      <div className="flex items-center">
+                        <div className="mr-2">processing</div>
+                        <div>
+                          <Image
+                            src={LoaderTwo}
+                            width={20}
+                            height={20}
+                            alt="loader"
+                          />
+                        </div>
+                      </div>
+                    ) : (
+                      "Register"
+                    )}
                   </button>
                 </div>
               </div>

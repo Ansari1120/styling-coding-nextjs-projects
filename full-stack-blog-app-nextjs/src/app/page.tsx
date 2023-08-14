@@ -3,6 +3,7 @@ import { getServerSession } from "next-auth";
 import { options } from "@/app/api/auth/[...nextauth]/options";
 import { redirect } from "next/navigation";
 import Image from "next/image";
+import Loader from "@/lib/loader";
 export default async function Home() {
   const session = await getServerSession(options);
   if (!session) {
@@ -15,6 +16,7 @@ export default async function Home() {
       </h1>
       <p>{JSON.stringify(session)}</p>
       <SignOutButton />
+      <Loader />
     </div>
   );
 }

@@ -20,7 +20,6 @@ async function getPosts() {
 const page = async () => {
   const data = await getPosts();
   const session = await getServerSession(options);
-  console.log("yoo man hers then session", session);
   function containsAdmin(input: string): boolean {
     const targetWord = "admin";
     if (input !== undefined) {

@@ -128,7 +128,7 @@ const PublicPostCard = (props: any) => {
                   <Heart onClick={handleBlogLikes} />
                 )}
               </span>
-              <span>{data.blogLikes !== null ? data.blogLikes : 20}</span>
+              <span>{data.blogLikes !== null ? data.blogLikes : 0}</span>
             </div>
           </div>
         </div>

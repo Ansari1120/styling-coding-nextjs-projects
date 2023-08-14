@@ -7,9 +7,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import BASE_URL from "@/lib/URL";
-import Modal from "./Modal";
-import ImageUpload from "./ImageUpload";
-import AdminProfileSettings from "../settings/page";
+
 
 interface userType {
   name: string;
@@ -23,42 +21,9 @@ interface MyComponentProps {
 
 const ProfileContext = (props: MyComponentProps) => {
   const { session } = props;
-  console.log("ping poo", session);
-  const router = useRouter();
   const [openProfile, setOpenProfile] = useState(false);
-  const [openEditSettings, setOpenEditSettings] = useState(false);
   const dropdownRef: any = useRef(null); // Reference to the dropdown element
-  const [postToEdit, setPostToEdit] = useState<userType>({
-    name: session?.user?.name,
-    email: session?.user?.email,
-    image: session?.user?.image,
-  });
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    toast.loading("Editing Post please wait.... 🚀", { id: session?.user?.id });
-    axios
-      .patch(
-        `${BASE_URL}/api/auth/adminregister/${session?.user?.id}`,
-        postToEdit
-      )
-      .then((res) => {
-        console.log(res);
-        toast.success("Blog Edited Successfully", { id: session?.user?.id });
-        router.refresh();
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        setOpenEditSettings(false);
-      });
-  };
-  const setCustomValue = (id: any, value: any) => {
-    setPostToEdit((prevValues) => ({
-      ...prevValues,
-      [id]: value,
-    }));
-  };
+  
   useEffect(() => {
     // Function to close dropdown when clicked outside
     const handleClickOutside = (event: any) => {
@@ -76,7 +41,6 @@ const ProfileContext = (props: MyComponentProps) => {
     };
   }, []);
   const userJSON = JSON.stringify(session);
-
   return (
     <>
       <div ref={dropdownRef} className="flex flex-col ">

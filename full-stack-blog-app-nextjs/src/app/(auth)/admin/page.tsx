@@ -26,6 +26,13 @@ export default function Admin() {
         setLoading(false);
       });
   };
+  const EnterKeyPress = (e: any) => {
+    if (e.key === "Enter" && e.keyCode === 13) {
+      console.log("enter key pressed!");
+      e.preventDefault();
+      onSubmit();
+    }
+  };
   return (
     <section>
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen">
@@ -72,6 +79,7 @@ export default function Admin() {
                       className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                       type="password"
                       placeholder="Password"
+                      onKeyDown={EnterKeyPress}
                       onChange={(e) =>
                         setCridentials({
                           ...cridentials,
@@ -83,8 +91,12 @@ export default function Admin() {
                 </div>
                 <div>
                   <button
-                    type="submit"
-                    className={`inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white`}
+                    disabled={loading ? true : false}
+                    onClick={onSubmit}
+                    type="button"
+                    className={` ${
+                      loading ? "cursor-not-allowed" : "cursor-pointer"
+                    } inline-flex w-full items-center justify-center bg-black  rounded-md  px-3.5 py-2.5 font-semibold leading-7 text-white`}
                   >
                     {loading ? (
                       <div className="flex items-center">
@@ -99,7 +111,7 @@ export default function Admin() {
                         </div>
                       </div>
                     ) : (
-                      "Sign in"
+                      "Login"
                     )}
                   </button>
                 </div>
