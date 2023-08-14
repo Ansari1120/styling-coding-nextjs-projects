@@ -16,7 +16,6 @@ export default async function Home() {
       </h1>
       <p>{JSON.stringify(session)}</p>
       <SignOutButton />
-      <Loader />
     </div>
   );
 }

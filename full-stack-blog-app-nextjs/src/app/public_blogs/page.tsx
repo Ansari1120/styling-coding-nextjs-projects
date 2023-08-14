@@ -4,10 +4,11 @@ import PublicList from "../components/PublicPostList";
 import { options } from "../api/auth/[...nextauth]/options";
 import axios from "axios";
 import BASE_URL from "@/lib/URL";
+import { getServerSession } from "next-auth";
 import { PaginationBar } from "../components/paginationBar";
 import { redirect } from "next/navigation";
 import Loader from "@/lib/loader";
-import { getSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 async function getPosts(page?: number, order?: string) {
   try {
@@ -26,8 +27,13 @@ interface Mytypes {
   totalPages: any;
   page: any;
 }
-const Page = ({ session }) => {
-  console.log(session);
+const Page = () => {
+  // const [session, setSession] = useState("");
+  const { data: session } = useSession(); // Use the useSession hook
+
+  if (!session) {
+    return redirect("/login");
+  }
   // const { data: session, status } = useSession();
 
   // console.log(status);
@@ -64,6 +70,12 @@ const Page = ({ session }) => {
 
   useEffect(() => {
     console.log("Fetching data...");
+    // const checkSession = async () => {
+    //   const mysession: any = await getServerSession(options);
+    //   console.log(mysession);
+    //   setSession(mysession);
+    // };
+    // checkSession();
     const fetchData = async () => {
       console.log("Inside fetchData");
       const data = await getPosts(currentPage, currentOrder);
@@ -156,23 +168,14 @@ const Page = ({ session }) => {
   );
 };
 
-export async function getServerSideProps(context) {
-  const session = await getSession(context);
+// export async function getServerSideProps(context) {
+//   const { req } = context;
 
-  if (!session) {
-    return {
-      redirect: {
-        destination: "/login",
-        permanent: false,
-      },
-    };
-  }
-
-  return {
-    props: {
-      session,
-    },
-  };
-}
+//   return {
+//     props: {
+//       session,
+//     },
+//   };
+// }
 
 export default Page;
