@@ -28,18 +28,12 @@ interface Mytypes {
   page: any;
 }
 const Page = () => {
-  // const [session, setSession] = useState("");
   const { data: session } = useSession(); // Use the useSession hook
 
   if (!session) {
     return redirect("/login");
   }
-  // const { data: session, status } = useSession();
 
-  // console.log(status);
-  // if (status !== "authenticated") {
-  //   redirect("/login");
-  // }
   const [posts, setPosts] = useState<Mytypes>({
     data: [],
     totalPages: null,
@@ -167,15 +161,5 @@ const Page = () => {
     </div>
   );
 };
-
-// export async function getServerSideProps(context) {
-//   const { req } = context;
-
-//   return {
-//     props: {
-//       session,
-//     },
-//   };
-// }
 
 export default Page;
