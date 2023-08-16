@@ -8,6 +8,7 @@ import { Trash2, FileEdit } from "lucide-react";
 import Image from "next/image";
 import ImageUpload from "./ImageUpload";
 import BASE_URL from "@/lib/URL";
+import FormattedHTML from "./FormattedHtml";
 interface userType {
   title: string;
   description: string;
@@ -19,7 +20,7 @@ interface userType {
 }
 const Post = (props: any) => {
   const router = useRouter();
-  const { post,session } = props;
+  const { post, session } = props;
   const [openModalEdit, setOpenModalEdit] = useState<boolean>(false);
   const [postToEdit, setPostToEdit] = useState<userType>({
     title: post.title,
@@ -95,7 +96,8 @@ const Post = (props: any) => {
           <div className="w-[530px] flex flex-col gap-4 leading-[1.5]">
             <h1 className="text-2xl font-semibold">{post.title}</h1>
 
-            <p className="text-xl pt-2">{post.description}</p>
+            {/* <p className="text-xl pt-2">{post.description}</p> */}
+            <FormattedHTML content={post.description} />
           </div>
         </div>
       </div>

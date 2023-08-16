@@ -1,0 +1,28 @@
+/* Example custom styles for the react-quill editor */
+.ql-container {
+    font-family: Arial, sans-serif;
+    background-color: wheat;
+  }
+  
+  .ql-editor {
+    background-color: #f8f8f8;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .ql-toolbar {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* Customize toolbar buttons */
+  .ql-toolbar .ql-button {
+    background-color: #f2f2f2;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin: 2px;
+  }
+  

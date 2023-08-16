@@ -78,3 +78,21 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* react-quill-styles.css or react-quill-styles.scss */
+
+/* Required for toolbar styling */
+.ql-toolbar {
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 4px 4px 0 0;
+}
+
+/* Adjust other styles as needed */
+
+/* Required for editor content styling */
+.ql-container {
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+}

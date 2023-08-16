@@ -8,6 +8,9 @@ import ImageUpload from "./ImageUpload";
 import BASE_URL from "@/lib/URL";
 import { getServerSession } from "next-auth";
 import { options } from "../api/auth/[...nextauth]/options";
+import ReactQuill from "react-quill"; // Import the react-quill library
+import "react-quill/dist/quill.snow.css";
+import "./page.module.css";
 interface userType {
   title?: string;
   imageSrc?: string;
@@ -29,6 +32,11 @@ const AddPost = (props: userType) => {
     authorName: session?.user?.name,
     blogLikes: 0,
   });
+
+  const handleEditorChange = (content: string) => {
+    setUserInput({ ...userInput, description: content });
+  };
+
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     toast.loading("Adding Post please wait.... 🚀", { id: "1" });
@@ -57,13 +65,7 @@ const AddPost = (props: userType) => {
       [id]: value,
     }));
   };
-  // useEffect(() => {
-  //   async function getSession() {
-  //     const session:any = await getServerSession(options);
-  //     setAdminSession(session);
-  //   }
-  //   getSession();
-  // }, []);
+
   return (
     <div>
       <Toaster />
@@ -92,7 +94,7 @@ const AddPost = (props: userType) => {
               setUserInput({ ...userInput, title: e.target.value });
             }}
           />
-          <input
+          {/* <input
             type="text"
             placeholder="description"
             name="Description"
@@ -101,6 +103,10 @@ const AddPost = (props: userType) => {
             onChange={(e) => {
               setUserInput({ ...userInput, description: e.target.value });
             }}
+          /> */}
+          <ReactQuill
+            value={userInput.description || ""}
+            onChange={handleEditorChange} // Handle editor content change
           />
           <button
             type="submit"
