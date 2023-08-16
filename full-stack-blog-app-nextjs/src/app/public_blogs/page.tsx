@@ -1,14 +1,13 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import PublicList from "../components/PublicPostList";
-import { options } from "../api/auth/[...nextauth]/options";
 import axios from "axios";
-import BASE_URL from "@/lib/URL";
-import { getServerSession } from "next-auth";
 import { PaginationBar } from "../components/paginationBar";
 import { redirect } from "next/navigation";
 import Loader from "@/lib/loader";
 import { useSession } from "next-auth/react";
+import { ChevronUp } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 async function getPosts(page?: number, order?: string) {
   try {
@@ -63,15 +62,7 @@ const Page = () => {
   };
 
   useEffect(() => {
-    console.log("Fetching data...");
-    // const checkSession = async () => {
-    //   const mysession: any = await getServerSession(options);
-    //   console.log(mysession);
-    //   setSession(mysession);
-    // };
-    // checkSession();
     const fetchData = async () => {
-      console.log("Inside fetchData");
       const data = await getPosts(currentPage, currentOrder);
       console.log("Fetched Data:", data);
       setPosts(data);
@@ -96,11 +87,16 @@ const Page = () => {
         className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 float-right right-32"
         type="button"
         onClick={() => {
-          setDropDown(!dropDown);
+          setDropDown((prev) => !prev);
         }}
       >
         Sort By
-        <svg
+        {dropDown ? (
+          <ChevronDown size={20} className="ml-2" />
+        ) : (
+          <ChevronUp size={20} className="ml-2" />
+        )}
+        {/* <svg
           className="w-2.5 h-2.5 ml-2.5"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +110,7 @@ const Page = () => {
             stroke-width="2"
             d="m1 1 4 4 4-4"
           />
-        </svg>
+        </svg> */}
       </button>
       {dropDown && (
         <div

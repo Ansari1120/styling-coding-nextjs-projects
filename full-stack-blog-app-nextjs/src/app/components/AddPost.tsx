@@ -21,7 +21,6 @@ const AddPost = (props: userType) => {
   const { session } = props;
   const router = useRouter();
   const [openModal, setOpenModal] = useState<any>(false);
-  // const [admin_session, setAdminSession] = useState();
   const [userInput, setUserInput] = useState<userType>({
     title: "",
     imageSrc: "",

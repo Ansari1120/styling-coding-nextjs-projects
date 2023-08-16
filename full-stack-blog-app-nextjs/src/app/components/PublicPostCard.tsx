@@ -5,6 +5,7 @@ import { Dot } from "lucide-react";
 import { Heart } from "lucide-react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import Link from "next/link";
 const PublicPostCard = (props: any) => {
   const { data } = props;
   const router = useRouter();
@@ -28,7 +29,7 @@ const PublicPostCard = (props: any) => {
   };
   const [liked, setLiked] = useState(hasLiked());
   const handleBlogLikes = (e: any) => {
-    const updatedData = { ...data };
+    const updatedData = { ...data }; // single blog data
     const newLikedState = !liked; // Toggle liked state
     e.preventDefault();
     if (newLikedState && updatedData.blogLikes >= 1) {
@@ -70,9 +71,9 @@ const PublicPostCard = (props: any) => {
     console.log("check returned data overwrite or not? ", data.blogLikes);
   }, [data]);
   return (
-    <a
+    <Link
       key={data.id}
-      href="#"
+      href={`/public_blogs/${data.id}`}
       className="flex flex-col items-center  bg-slate-400 bg-opacity-75 border border-slate-500 rounded-lg shadow md:flex-row hover:bg-slate-500 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
     >
       <Image
@@ -110,7 +111,7 @@ const PublicPostCard = (props: any) => {
           <div className="flex space-x-2">
             <div className="flex space-x-1 items-center">
               <span>
-                {!liked ? (
+                {liked ? (
                   <svg
                     onClick={handleBlogLikes}
                     xmlns="http://www.w3.org/2000/svg"
@@ -144,7 +145,7 @@ const PublicPostCard = (props: any) => {
           </span>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 
