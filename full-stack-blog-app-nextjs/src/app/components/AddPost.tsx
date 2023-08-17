@@ -1,13 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Modal from "./Modal";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { Toaster, toast } from "react-hot-toast";
 import ImageUpload from "./ImageUpload";
-import BASE_URL from "@/lib/URL";
-import { getServerSession } from "next-auth";
-import { options } from "../api/auth/[...nextauth]/options";
 import ReactQuill from "react-quill"; // Import the react-quill library
 import "react-quill/dist/quill.snow.css";
 import "./page.module.css";
@@ -23,6 +20,7 @@ interface userType {
 const AddPost = (props: userType) => {
   const { session } = props;
   const router = useRouter();
+  const maxHeight = window.innerHeight * 0.8; // Set a maximum height (80% of screen height)
   const [openModal, setOpenModal] = useState<any>(false);
   const [userInput, setUserInput] = useState<userType>({
     title: "",
@@ -77,6 +75,12 @@ const AddPost = (props: userType) => {
       </button>
       <Modal openModal={openModal} setOpenModal={setOpenModal}>
         <form className="w-full" onSubmit={handleSubmit}>
+          <button
+            type="submit"
+            className="bg-blue-700 text-white px-5 py-2 rounded-md float-right"
+          >
+            Submit
+          </button>
           <h1 className="text-2xl pb-3 ">Add New Post</h1>
           <div>
             <ImageUpload
@@ -94,27 +98,17 @@ const AddPost = (props: userType) => {
               setUserInput({ ...userInput, title: e.target.value });
             }}
           />
-          {/* <input
-            type="text"
-            placeholder="description"
-            name="Description"
-            className="w-full p-2 mb-2 rounded-md"
-            value={userInput.description || ""}
-            onChange={(e) => {
-              setUserInput({ ...userInput, description: e.target.value });
-            }}
-          /> */}
-          <ReactQuill
-            value={userInput.description || ""}
-            onChange={handleEditorChange} // Handle editor content change
-          />
-          <button
-            type="submit"
-            className="bg-blue-700 text-white px-5 py-2 rounded-md"
-          >
-            Submit
-          </button>
         </form>
+        <div
+          className="overflow-y-auto overflow-x-auto w-full"
+          style={{ maxHeight: `${maxHeight}px` }}
+        >
+          <ReactQuill
+            className="bg-white mb-2 rounded-md"
+            value={userInput.description || ""}
+            onChange={handleEditorChange}
+          />
+        </div>
       </Modal>
     </div>
   );

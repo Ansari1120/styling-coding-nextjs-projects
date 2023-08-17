@@ -6,6 +6,7 @@ import { Heart } from "lucide-react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import Link from "next/link";
+import FormattedHTML from "./FormattedHtml";
 const PublicPostCard = (props: any) => {
   const { data } = props;
   const router = useRouter();
@@ -74,24 +75,24 @@ const PublicPostCard = (props: any) => {
     <Link
       key={data.id}
       href={`/public_blogs/${data.id}`}
-      className="flex flex-col items-center  bg-slate-400 bg-opacity-75 border border-slate-500 rounded-lg shadow md:flex-row hover:bg-slate-500 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+      className="flex flex-col items-center bg-slate-400 bg-opacity-75 border border-slate-500 rounded-lg shadow md:flex-row hover:bg-slate-500 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
     >
       <Image
-        className="object-none h-96 w-full rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+        className="lg:h-[196px] lg:w-[196px] h-[196px] w-full object-cover rounded-tl-lg"
         src={data.imageSrc}
+        width={400}
+        height={400}
         alt="blog image"
-        width={200}
-        height={100}
       />
-      <div className="flex flex-col justify-between p-4 leading-normal">
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white line-clamp-1">
+      <div className="flex flex-col justify-between px-4 leading-normal">
+        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white line-clamp-1">
           {data.title}
         </h5>
-        <p className="mb-3 font-semibold italic text-gray-800 dark:text-gray-400 line-clamp-3">
-          {data.description}
+        <p className="mb-3 text-base font-semibold italic text-gray-800 dark:text-gray-400 line-clamp-3">
+          <FormattedHTML content={data.description} />
         </p>
 
-        <div className="flex pb-4 justify-between space-x-5">
+        <div className="flex justify-between space-x-5">
           <div className="flex items-center space-x-2">
             <Image
               className="w-10 rounded-full"

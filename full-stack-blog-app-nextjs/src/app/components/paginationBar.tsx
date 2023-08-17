@@ -25,7 +25,7 @@ export const PaginationBar: React.FC<propTypes> = ({
   };
 
   return (
-    <li className="mt-8 flex py-19 gap-5 justify-center items-center text-lg font-semibold text-black dark:text-white">
+    <li className="mt-8 flex py-19 gap-3 justify-center items-center text-lg font-semibold text-black dark:text-white">
       <ChevronLeft
         className="cursor-pointer hover:animate-ping"
         onClick={(e) => {

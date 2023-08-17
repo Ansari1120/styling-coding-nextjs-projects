@@ -27,9 +27,9 @@ interface Mytypes {
   page: any;
 }
 const Page = () => {
-  const { data: session } = useSession(); // Use the useSession hook
+  const { data: session, status } = useSession(); // Use the useSession hook
 
-  if (!session) {
+  if (status === "unauthenticated") {
     return redirect("/login");
   }
 
@@ -80,70 +80,56 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="mt-10">
-      <button
-        id="dropdownDefaultButton"
-        data-dropdown-toggle="dropdown"
-        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 float-right right-32"
-        type="button"
-        onClick={() => {
-          setDropDown((prev) => !prev);
-        }}
-      >
-        Sort By
-        {dropDown ? (
-          <ChevronDown size={20} className="ml-2" />
-        ) : (
-          <ChevronUp size={20} className="ml-2" />
-        )}
-        {/* <svg
-          className="w-2.5 h-2.5 ml-2.5"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 10 6"
+    <div className="flex justify-center my-5 items-center flex-col gap-4 lg:mr-28 mr-10">
+      <div className="absolute lg:bottom-[500px] bottom-[338px] lg:right-20 right-5 float-right ">
+        <button
+          id="dropdownDefaultButton"
+          data-dropdown-toggle="dropdown"
+          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "
+          type="button"
+          onClick={() => {
+            setDropDown((prev) => !prev);
+          }}
         >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="m1 1 4 4 4-4"
-          />
-        </svg> */}
-      </button>
-      {dropDown && (
-        <div
-          ref={dropdownRef}
-          id="dropdown"
-          className="bg-white divide-y divide-gray-100 rounded-lg shadow w-28 dark:bg-gray-700 absolute mt-12 right-48"
-        >
-          <ul
-            className="py-2 text-sm text-gray-700 dark:text-gray-200"
-            aria-labelledby="dropdownDefaultButton"
+          Sort By
+          {dropDown ? (
+            <ChevronDown size={20} className="ml-2" />
+          ) : (
+            <ChevronUp size={20} className="ml-2" />
+          )}
+        </button>
+        {dropDown && (
+          <div
+            ref={dropdownRef}
+            id="dropdown"
+            className="bg-white divide-y divide-gray-100 rounded-lg shadow w-28 dark:bg-gray-700 absolute"
           >
-            <li>
-              <button
-                onClick={() => handleSort("asc")}
-                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-              >
-                A-To-Z
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => handleSort("desc")}
-                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-              >
-                Z-To-A
-              </button>
-            </li>
-          </ul>
-        </div>
-      )}
-
-      <div className="my-5 flex flex-col gap-4 lg:ml-40 ml-5">
-        <h1 className="text-3xl font-bold border-l-8 border-white text-gray-100 pl-4">
+            <ul
+              className="py-2 text-sm text-gray-700 dark:text-gray-200"
+              aria-labelledby="dropdownDefaultButton"
+            >
+              <li>
+                <button
+                  onClick={() => handleSort("asc")}
+                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  A-To-Z
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleSort("desc")}
+                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  Z-To-A
+                </button>
+              </li>
+            </ul>
+          </div>
+        )}
+      </div>
+      <div className="my-5 flex flex-col gap-4 ml-10 justify-between w-screen">
+        <h1 className="lg:text-3xl text-2xl lg:font-bold font-semibold lg:border-l-8 border-l-4 border-black text-black lg:pl-4 pl-2 lg:ml-24 ml-2">
           Our Blogs
         </h1>
 

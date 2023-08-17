@@ -43,13 +43,13 @@ const ProfileContext = (props: MyComponentProps) => {
   const userJSON = JSON.stringify(session);
   return (
     <>
-      <div ref={dropdownRef} className="flex flex-col ">
+      <div ref={dropdownRef} className="flex flex-col top-0 right-0">
         <div>
           <button
             onClick={() => setOpenProfile(!openProfile)}
             id="dropdownUserAvatarButton"
             data-dropdown-toggle="dropdownAvatar"
-            className="lg:ml-32"
+            className="lg:ml-32 ml-24"
             type="button"
           >
             <span className="sr-only">Open user menu</span>
@@ -67,9 +67,9 @@ const ProfileContext = (props: MyComponentProps) => {
         </div>
         <div
           id="dropdownAvatar"
-          className={`mt-12 absolute ${
+          className={`mt-12 absolute rounded-md ${
             !openProfile && `hidden`
-          } bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600 mr-20`}
+          } bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600 lg:mr-20 mr-96`}
         >
           <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
             <div>{session?.user?.name}</div>
@@ -86,7 +86,7 @@ const ProfileContext = (props: MyComponentProps) => {
                   // Handle Dashboard action here
                 }}
               >
-                Admin Info
+                User Info
               </button>
             </li>
             <li>
