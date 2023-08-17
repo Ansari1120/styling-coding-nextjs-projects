@@ -49,7 +49,7 @@ const ProfileContext = (props: MyComponentProps) => {
             onClick={() => setOpenProfile(!openProfile)}
             id="dropdownUserAvatarButton"
             data-dropdown-toggle="dropdownAvatar"
-            className="lg:ml-32 ml-24"
+            className="lg:ml-32 ml-32"
             type="button"
           >
             <span className="sr-only">Open user menu</span>

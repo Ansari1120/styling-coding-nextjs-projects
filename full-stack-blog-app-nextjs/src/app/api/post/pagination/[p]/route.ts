@@ -8,7 +8,7 @@ export const GET = async (
 ) => {
   try {
     const { p } = params;
-    const blogsPerPage = 4;
+    const blogsPerPage = 6;
     const skip = (parseInt(p) - 1) * blogsPerPage;
     const take = blogsPerPage;
     const parsedUrl = parse(req.url, true);
