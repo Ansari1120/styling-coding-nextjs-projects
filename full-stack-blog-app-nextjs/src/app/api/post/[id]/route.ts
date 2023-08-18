@@ -11,6 +11,9 @@ export const GET = async (
       where: {
         id,
       },
+      include: {
+        comments: true,
+      },
     });
     if (!Post) {
       return NextResponse.json(
