@@ -38,8 +38,16 @@ const AddPost = (props: userType) => {
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     toast.loading("Adding Post please wait.... 🚀", { id: "1" });
+    const updateBlog = {
+      title: userInput.title,
+      imageSrc: userInput.imageSrc,
+      description: userInput.description,
+      authorImg: session?.user?.image,
+      authorName: session?.user?.name,
+      blogLikes: 0,
+    };
     axios
-      .post(`http://localhost:3000/api/post`, userInput)
+      .post(`http://localhost:3000/api/post`, updateBlog)
       .then((res) => {
         console.log(res);
         toast.success("Blog Post Added Sucessfully ");
@@ -71,7 +79,7 @@ const AddPost = (props: userType) => {
         onClick={() => setOpenModal(true)}
         className="bg-blue-500 text-white p-3 cursor-pointer rounded-md"
       >
-        Add New Post
+        Add New Blog
       </button>
       <Modal openModal={openModal} setOpenModal={setOpenModal}>
         <form className="w-full" onSubmit={handleSubmit}>
