@@ -26,7 +26,7 @@ interface Mytypes {
   totalPages: any;
   page: any;
 }
-const Page = () => {
+const PublicBlogs = () => {
   const { data: session, status } = useSession(); // Use the useSession hook
 
   if (status === "unauthenticated") {
@@ -69,7 +69,9 @@ const Page = () => {
     };
 
     fetchData();
+  }, []);
 
+  useEffect(() => {
     // Attach the click event listener
     document.addEventListener("mousedown", handleClickOutside);
 
@@ -144,4 +146,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default PublicBlogs;

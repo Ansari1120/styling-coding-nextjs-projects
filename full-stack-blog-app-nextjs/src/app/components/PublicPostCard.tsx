@@ -7,6 +7,8 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import Link from "next/link";
 import FormattedHTML from "./FormattedHtml";
+import { Toaster, toast } from "react-hot-toast";
+
 const PublicPostCard = (props: any) => {
   const { data } = props;
   const router = useRouter();
@@ -46,7 +48,7 @@ const PublicPostCard = (props: any) => {
         .patch(`http://localhost:3000/api/post/${data.id}`, updatedData)
         .then((res) => {
           console.log(res);
-          //   toast.success("Blog Edited Successfully", { id: data?.user?.id });
+          toast.success("Liked !", { id: data?.user?.id });
           router.refresh();
           const likedPosts = JSON.parse(
             localStorage.getItem("likedPosts") || "[]"
@@ -77,6 +79,7 @@ const PublicPostCard = (props: any) => {
       href={`/public_blogs/${data.id}`}
       className="flex flex-col items-center bg-slate-400 bg-opacity-75 border border-slate-500 rounded-lg shadow md:flex-row hover:bg-slate-500 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
     >
+      <Toaster />
       <Image
         className="lg:h-[196px] lg:w-[196px] h-[196px] w-full object-cover rounded-tl-lg"
         src={data.imageSrc}

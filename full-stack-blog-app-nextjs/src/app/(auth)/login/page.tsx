@@ -233,7 +233,13 @@ export default function Login() {
               </div>
             </form>
             <p className="text-center my-5">
-              ------------------ OR ------------------
+              <span className="hidden md:inline">---</span>
+              <span className="hidden lg:inline">-----</span>
+              <span className=" inline">-------</span>{" "}
+              <span className="inline">OR</span>{" "}
+              <span className=" inline">-------</span>{" "}
+              <span className="hidden lg:inline">-----</span>
+              <span className="hidden md:inline">---</span>{" "}
             </p>
             <div className="mt-3 space-y-3">
               <button
